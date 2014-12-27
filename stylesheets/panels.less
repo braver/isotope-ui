@@ -1,0 +1,60 @@
+.panel {
+  &.bordered {
+    /* border: 1px solid @base-border-color; */
+    border-radius: @component-border-radius;
+  }
+}
+
+.tool-panel.tool-panel {
+  .text(normal);
+  color: @text-color-subtle;
+  position: relative;
+  background-color: @tool-panel-background-color;
+
+  &.panel-bottom {
+    /* border-top: 1px solid @tool-panel-border-color; */
+    height: @tab-height;
+    line-height: @tab-height;
+  }
+
+  &.panel-left {
+    padding-top: @modular-scale-s * 1rem;
+    /* border-right: 1px solid @tool-panel-border-color; */
+  }
+
+  &.panel-right {
+    /* border-left: 1px solid @tool-panel-border-color; */
+  }
+}
+status-bar {
+  height: @tab-height;
+  line-height: @tab-height;
+}
+
+.inset-panel {
+  position: relative;
+  background-color: @inset-panel-background-color;
+  &.bordered {
+    /* border: 1px solid @base-border-color; */
+    border-radius: @component-border-radius;
+  }
+  & .panel-heading {
+    /* border-color: @inset-panel-border-color; */
+  }
+}
+
+.panel-heading {
+  .text(normal);
+  /* border-bottom: 1px solid @panel-heading-border-color; */
+  background-color: @panel-heading-background-color;
+
+  .btn {
+    padding: 0 @component-padding;
+
+    @bg: lighten(@button-background-color, 10%);
+    @hover: lighten(@button-background-color-hover, 10%);
+    @selected: lighten(@button-background-color-selected, 10%);
+    @text: lighten(#fff, 10%);
+    .btn-background(@bg, @text);
+  }
+}

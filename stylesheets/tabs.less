@@ -1,0 +1,155 @@
+@modified-icon-width: 8px;
+@tab-top-padding: 0;
+@tab-bottom-border-height: 0;
+@tab-border: 0 solid @tab-border-color;
+@tab-max-width: 160px;
+@tab-min-width: 28px;
+
+.tab-bar {
+  margin-top: @modular-scale-s * 1rem;
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    max-width: @tab-max-width;
+    min-width: @tab-min-width;
+    height: @tab-height;
+    line-height: @tab-height;
+    padding: 0;
+    margin: 0;
+    color: @tab-text-color;
+    background: @tab-background-color;
+    border-right: @tab-border;
+
+    &:hover .close-icon {
+      transform: scale(1);
+    }
+
+    .title {
+      position: relative;
+      z-index: 1;
+      padding: 0  @component-padding;
+    }
+
+    .close-icon {
+      right: 0;
+      z-index: 3;
+      margin-right: @component-padding;
+      text-align: right;
+      line-height: @tab-height;
+      color: @tab-icon-color;
+      background: inherit;
+      transform: scale(0);
+      transition: transform .1s;
+
+      &:hover {
+        color: inherit;
+      }
+
+      &:active {
+        opacity: .3;
+      }
+    }
+  }
+
+  .tab.active {
+    z-index: 1;
+    flex: 2 0 auto;
+    padding-right: @modified-icon-width + 2px;
+    background-color: @tab-background-color-active;
+    color: @text-color;
+    opacity: 1;
+
+    &:last-of-type {
+      border-right-color: @tab-border-color;
+    }
+
+    &:hover .close-icon {
+      color: @text-color;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    & .close-icon {
+      color: @text-color;
+      transform: scale(1);
+    }
+
+    // Seamless tab border cover
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      border-bottom: @tab-bottom-border-height solid @tab-background-color-active;
+    }
+
+    // Active pane marker
+    atom-pane.active &:before {
+      transform: scaleY(1);
+    }
+
+  }
+
+  .tab.modified {
+    &:not(:hover) .close-icon {
+      right: 0;
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+      border-color: @base-accent-color;
+      transform: scale(1);
+    }
+
+    &:hover .close-icon:hover {
+      color: @text-color-highlight;
+    }
+  }
+
+  .tab.is-dragging {
+    background: darken(@tab-background-color, 6%);
+    border-color: transparent;
+    opacity: .5;
+    & .close-icon,
+    &:before,
+    &:after {
+      visibility: hidden;
+    }
+  }
+
+  .placeholder {
+    margin: 0;
+    height: @tab-height + @tab-top-padding;
+    background: @base-accent-color;
+    pointer-events: none;
+    &:after {
+      top: @tab-height/2 + @tab-top-padding - 5px ;
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      border-radius: 0;
+      border: 5px solid;
+      border-color: transparent transparent transparent @base-accent-color;
+      background: transparent;
+    }
+
+    &:last-child {
+      margin-left: -2px;
+
+      &:after {
+        margin-left: -10px;
+        border-color: transparent @base-accent-color transparent transparent;
+      }
+    }
+  }
+}

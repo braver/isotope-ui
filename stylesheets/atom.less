@@ -1,0 +1,35 @@
+* {
+	box-sizing: border-box;
+}
+
+atom-workspace {
+  background-color: @app-background-color;
+	/* background-image: url(http://imgsrc.hubblesite.org/hu/db/images/hs-2006-07-a-1440x960_wallpaper.jpg); */
+	/* background-size: cover; */
+}
+
+// Scrollbars
+.scrollbars-visible-always {
+	/deep/ ::-webkit-scrollbar {
+		width: @component-padding;
+		height: @component-padding;
+	}
+
+	/deep/ ::-webkit-scrollbar-track {
+		background: @scrollbar-background-color;
+	}
+
+	/deep/ ::-webkit-scrollbar-thumb,
+	/deep/ ::-webkit-scrollbar-corner {
+		border-radius: @component-padding;
+		border: 3px solid transparent;
+		background: @scrollbar-color;
+		background-clip: content-box;
+	}
+
+	/deep/ ::-webkit-scrollbar-thumb:active {
+		border-radius: 0;
+		border-left-width: 0;
+		border-right-width: 0;
+	}
+}

@@ -1,0 +1,44 @@
+.tree-view {
+  font-size: @font-size;
+  /* background: @tree-view-background-color; */
+  color: @text-color-subtle;
+
+  .project-root {
+    &:before {
+      height: @tab-height;
+    }
+    & > .header .name {
+        line-height: @tab-height;
+    }
+  }
+
+  .selected {
+    color: @text-color;
+    background: @tab-background-color-active;
+    &:before {
+      background: @tab-background-color-active;
+    }
+  }
+
+}
+
+.focusable-panel:focus {
+  .selected,
+  .selected > .name,
+  .selected > .name:before,
+  .selected > .list-item > .name,
+  .selected > .list-item > .name:before {
+    color: @text-color-selected;
+    background: @tab-background-color-active;
+    &:before {
+      background: @tab-background-color-active;
+    }
+  }
+}
+
+
+.tree-view-resizer {
+  .tree-view-resize-handle {
+    width: 8px;
+  }
+}

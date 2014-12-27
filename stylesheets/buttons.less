@@ -1,0 +1,77 @@
+@color: #fff;
+.btn-background (@bg-color, @fg-color) {
+  color: @fg-color;
+  background-color: @color;
+  text-shadow: none;
+
+  &:focus {
+    .focus();
+  }
+  &:focus,
+  &:hover {
+    color: lighten(@fg-color, 20%);
+    background: lighten(@bg-color, 20%);
+  }
+  &:active {
+    color: darken(@fg-color, 4%);
+    background: darken(@bg-color, 4%);
+    box-shadow: none;
+  }
+  &.selected {
+    color: darken(@fg-color, 4%);
+    background: darken(@bg-color, 4%);
+    box-shadow: none;
+  }
+  &.selected:hover {
+    color: lighten(@fg-color, 20%);
+    background: lighten(@bg-color, 20%);
+  }
+}
+
+.btn-variant (@color) {
+  @fg-color: contrast(@color, hsl(0,0%,25%), white, 70% );
+  @bg-color: @color;
+  .btn-background(@bg-color, @fg-color);
+  color: @text-color;
+  text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
+  border-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: @text-color;
+  }
+}
+
+.btn {
+  // .btn-background(@bg-color, @fg-color);
+}
+
+// .btn.btn-primary {
+//   .btn-variant(@base-accent-color);
+// }
+// .btn.btn-info {
+//   .btn-variant(@background-color-info);
+// }
+// .btn.btn-success {
+//   .btn-variant(@background-color-success);
+// }
+// .btn.btn-warning {
+//   .btn-variant(@background-color-warning);
+// }
+// .btn.btn-error {
+//   .btn-variant(@background-color-error);
+// }
+
+
+// Button Group
+
+.btn-group > .btn {
+
+}
+
+
+// TODO: Move to a better place, not sure where it gets used
+.caret {
+  border-top: 5px solid #fff;
+  margin-top: -1px;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "somehow-ui",
+  "theme": "ui",
+  "version": "0.0.0",
+  "description": "Somehow UI theme",
+  "license": "MIT",
+  "repository": "https://github.com/braver/somehow-ui",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}

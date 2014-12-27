@@ -1,0 +1,35 @@
+atom-text-editor.mini {
+  padding-left: 0;
+  border-radius: @component-border-radius;
+  color: @text-color-highlight;
+  border: 1px solid @input-border-color;
+  background-color: @input-background-color;
+  padding-left: @component-padding/2;
+
+  &,
+  &::shadow {
+    .placeholder-text {
+      color: @text-color-subtle;
+    }
+    .selection .region {
+      background-color: @input-selection-color;
+    }
+  }
+
+  &.is-focused,
+  &.is-focused::shadow {
+    .focus();
+    background-color: @input-background-color-focus;
+    .selection .region {
+      background-color: @input-selection-color-focus;
+    }
+  }
+}
+
+.editor {
+  border-top-left-radius: @component-border-radius;
+}
+
+::shadow .cursor-line {
+  background: @level-4-color;
+}

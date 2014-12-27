@@ -1,0 +1,25 @@
+atom-pane-container atom-pane .item-views .pane-item {
+  background-color: @tab-background-color-active;
+
+  .panel {
+    // Not sure if this is still needed. Disabled for now
+    //border-color: fadeout(@inset-panel-border-color, 30%);
+  }
+}
+
+.panes {
+  atom-pane {
+    position: relative;
+    background-color: @tab-background-color;
+  }
+
+  .pane-row > * {
+    border-right: 1px solid @pane-item-border-color;
+    &:last-child { border-right: none; }
+  }
+
+  .pane-column > * {
+    border-bottom: 1px solid @pane-item-border-color;
+    &:last-child { border-bottom: none; }
+  }
+}
