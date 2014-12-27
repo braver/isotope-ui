@@ -7,6 +7,15 @@
   li.list-nested-item > .list-item {
     line-height: @modular-scale-xl * 1rem;
     height: @modular-scale-xl * 1rem;
+    .selected:not(.project-root) {
+      color: @base-fg;
+      background: @theme-color;
+      &:before {
+        line-height: @modular-scale-xl * 1rem;
+        height: @modular-scale-xl * 1rem;
+        background: @theme-color;
+      }
+    }
   }
 
 
@@ -26,16 +35,6 @@
     }
   }
 
-  .selected:not(.project-root) {
-    color: @base-fg;
-    background: @level-3-bg;
-    &:before {
-      line-height: @modular-scale-xl * 1rem;
-      height: @modular-scale-xl * 1rem;
-      background: @level-3-bg;
-    }
-  }
-
 }
 
 .focusable-panel:focus {
@@ -45,9 +44,9 @@
   .selected > .list-item > .name,
   .selected > .list-item > .name:before {
     color: @fg-selected;
-    background: @level-3-bg;
+    background: @theme-color;
     &:before {
-      background: @level-3-bg;
+      background: @theme-color;
     }
   }
 }

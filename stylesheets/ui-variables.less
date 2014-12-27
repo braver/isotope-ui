@@ -1,3 +1,5 @@
+@import "syntax-variables";
+
 // Settings -----------------------------------
 
 /*
@@ -10,7 +12,8 @@
 
 
 // leading color
-@theme-color: hsl(212, 56%, 17%);
+@theme-color: @syntax-background-color;
+/* @theme-color: hsl(212, 56%, 17%); */
 
 // tweaks
 @theme-adjust-saturation: 0%;
