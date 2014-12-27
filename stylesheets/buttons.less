@@ -1,77 +1,68 @@
-@color: #fff;
-.btn-background (@bg-color, @fg-color) {
-  color: @fg-color;
-  background-color: @color;
-  text-shadow: none;
+// text color indicates state, background indicates interaction
 
-  &:focus {
-    .focus();
-  }
+
+.btn-mixin (@bg-color, @fg-color) {
+
+  @level-0-color: lighten(@bg-color, @ui-contrast + 12%);
+  @level-1-color: lighten(@bg-color, @ui-contrast + 6%);
+  @level-2-color:  darken(@bg-color, @ui-contrast);
+  @level-3-color:  darken(@bg-color, @ui-contrast + 3%);
+  @level-4-color:  darken(@bg-color, @ui-contrast + 6%);
+  @level-5-color:  darken(@bg-color, @ui-contrast + 9%);
+
+  color: @fg-color;
+  background: @level-2-color;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0,0,0,.2);
+
   &:focus,
   &:hover {
-    color: lighten(@fg-color, 20%);
-    background: lighten(@bg-color, 20%);
+    color: @fg-color;
+    background: @level-4-color;
   }
   &:active {
-    color: darken(@fg-color, 4%);
-    background: darken(@bg-color, 4%);
-    box-shadow: none;
+    color: @fg-color;
+    background: @level-5-color;
   }
   &.selected {
-    color: darken(@fg-color, 4%);
-    background: darken(@bg-color, 4%);
-    box-shadow: none;
+    color: @text-color-selected;
+    background: @level-2-color;
   }
   &.selected:hover {
-    color: lighten(@fg-color, 20%);
-    background: lighten(@bg-color, 20%);
-  }
-}
-
-.btn-variant (@color) {
-  @fg-color: contrast(@color, hsl(0,0%,25%), white, 70% );
-  @bg-color: @color;
-  .btn-background(@bg-color, @fg-color);
-  color: @text-color;
-  text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
-  border-color: transparent;
-
-  &:hover,
-  &:focus {
-    color: @text-color;
+    color: @text-color-selected;
+    background: @level-1-color;
   }
 }
 
 .btn {
-  // .btn-background(@bg-color, @fg-color);
+  .btn-mixin(@button-background-color, @text-color);
 }
+.btn-variant(@var) {}
 
-// .btn.btn-primary {
-//   .btn-variant(@base-accent-color);
-// }
-// .btn.btn-info {
-//   .btn-variant(@background-color-info);
-// }
-// .btn.btn-success {
-//   .btn-variant(@background-color-success);
-// }
-// .btn.btn-warning {
-//   .btn-variant(@background-color-warning);
-// }
-// .btn.btn-error {
-//   .btn-variant(@background-color-error);
-// }
+.btn.btn-primary {
+  .btn-mixin(@button-background-color, @text-color-highlight);
+}
+.btn.btn-info {
+  .btn-mixin(@background-color-info, @text-color);
+}
+.btn.btn-success {
+  .btn-mixin(@background-color-success, @text-color);
+}
+.btn.btn-warning {
+  .btn-mixin(@background-color-warning, @text-color);
+}
+.btn.btn-error {
+  .btn-mixin(@background-color-error, @text-color);
+}
 
 
 // Button Group
 
 .btn-group > .btn {
-
+  border-left-color: @text-color-subtle;
+  border-right-color: @text-color-subtle;
 }
-
-
-// TODO: Move to a better place, not sure where it gets used
-.caret {
-  border-top: 5px solid #fff;
-  margin-top: -1px;
+.btn-group > .btn:first-child,
+.btn-group > .btn:last-child {
+  /* border-radius: 0; */
 }

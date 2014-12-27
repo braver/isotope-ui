@@ -30,6 +30,11 @@ atom-text-editor.mini {
   border-top-left-radius: @component-border-radius;
 }
 
-::shadow .cursor-line {
-  background: @level-4-color;
+::shadow {
+  .line-number {
+    padding-left: @modular-scale-s * 1rem;
+  }
+  .cursor-line {
+    background: @level-4-color;
+  }
 }
