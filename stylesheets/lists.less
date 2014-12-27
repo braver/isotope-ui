@@ -1,9 +1,32 @@
 .list-group,
 .list-tree {
+  li {
+    height: @component-line-height;
+    line-height: @component-line-height;
+    padding-left: @modular-scale-s * 1rem;
+  }
   li:not(.list-nested-item),
   li.list-nested-item > .list-item {
     .text(normal);
     color: @text-color-subtle;
+    line-height: @component-line-height;
+  }
+
+  .icon {
+    display: inline-block;
+  }
+
+  .primary-line,
+  .secondary-line {
+    display: inline-block;
+  }
+
+  .selected {
+    &:before {
+      line-height: @component-line-height;
+      height: @component-line-height;
+      background-color: @level-3-color;
+    }
   }
 
   .generate-list-item-text-color(@class) {
@@ -25,7 +48,6 @@
       color: @color;
     }
   }
-
   .generate-list-item-status-color(@text-color-subtle, ignored);
   .generate-list-item-status-color(@text-color-added, added);
   .generate-list-item-status-color(@text-color-renamed, renamed);
@@ -36,6 +58,9 @@
   li.list-nested-item.selected > .list-item {
     .text(selected);
     color: @text-color;
+    &:before {
+      background-color: @level-3-color;
+    }
   }
 }
 
@@ -55,6 +80,7 @@
   // know their size.
   li.selected {
     background-color: @background-color-selected;
+    color: @text-color-selected;
     &:before{ display: none; }
   }
 

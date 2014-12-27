@@ -1,21 +1,37 @@
 .tree-view {
   font-size: @font-size;
-  /* background: @tree-view-background-color; */
   color: @text-color-subtle;
 
-  .project-root {
+  li,
+  li:not(.list-nested-item),
+  li.list-nested-item > .list-item {
+    line-height: @modular-scale-xl * 1rem;
+    height: @modular-scale-xl * 1rem;
+  }
+
+
+  // align project root with tabs
+  .project-root,
+  .project-root > .header {
+    height: @tab-height;
+    line-height: @tab-height;
+    &:not(.list-nested-item),
+    &.list-nested-item > .list-item {
+      height: @tab-height;
+      line-height: @tab-height;
+    }
     &:before {
       height: @tab-height;
-    }
-    & > .header .name {
-        line-height: @tab-height;
+      line-height: @tab-height;
     }
   }
 
-  .selected {
+  .selected:not(.project-root) {
     color: @text-color;
     background: @tab-background-color-active;
     &:before {
+      line-height: @modular-scale-xl * 1rem;
+      height: @modular-scale-xl * 1rem;
       background: @tab-background-color-active;
     }
   }
