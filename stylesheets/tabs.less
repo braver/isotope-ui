@@ -1,7 +1,7 @@
 @modified-icon-width: 8px;
 @tab-top-padding: 0;
 @tab-bottom-border-height: 0;
-@tab-border: 0 solid @tab-border-color;
+@tab-border: 0 solid @level-5-bg;
 @tab-max-width: 160px;
 @tab-min-width: 28px;
 
@@ -25,7 +25,7 @@
     padding: 0;
     margin: 0;
     color: @tab-text-color;
-    background: @tab-background-color;
+    background: @level-2-bg;
     border-right: @tab-border;
 
     &:hover .close-icon {
@@ -44,7 +44,6 @@
       margin-right: @component-padding;
       text-align: right;
       line-height: @tab-height;
-      color: @tab-icon-color;
       background: inherit;
       transform: scale(0);
       transition: transform .1s;
@@ -63,16 +62,16 @@
     z-index: 1;
     flex: 2 0 auto;
     padding-right: @modified-icon-width + 2px;
-    background-color: @tab-background-color-active;
-    color: @text-color;
+    background-color: @level-3-bg;
+    color: @base-fg;
     opacity: 1;
 
     &:last-of-type {
-      border-right-color: @tab-border-color;
+      border-right-color: @level-5-bg;
     }
 
     &:hover .close-icon {
-      color: @text-color;
+      color: @base-fg;
 
       &:hover {
         color: inherit;
@@ -80,7 +79,7 @@
     }
 
     & .close-icon {
-      color: @text-color;
+      color: @base-fg;
       transform: scale(1);
     }
 
@@ -91,7 +90,7 @@
       left: 0;
       right: 0;
       bottom: -1px;
-      border-bottom: @tab-bottom-border-height solid @tab-background-color-active;
+      border-bottom: @tab-bottom-border-height solid @level-3-bg;
     }
 
     // Active pane marker
@@ -107,17 +106,17 @@
       top: @tab-height/2 - @modified-icon-width/2 + 1px;
       width: @modified-icon-width;
       height: @modified-icon-width;
-      border-color: @base-accent-color;
+      border-color: @level-5-bg;
       transform: scale(1);
     }
 
     &:hover .close-icon:hover {
-      color: @text-color-highlight;
+      color: @fg-highlight;
     }
   }
 
   .tab.is-dragging {
-    background: darken(@tab-background-color, 6%);
+    background: darken(@level-2-bg, 6%);
     border-color: transparent;
     opacity: .5;
     & .close-icon,
@@ -130,7 +129,7 @@
   .placeholder {
     margin: 0;
     height: @tab-height + @tab-top-padding;
-    background: @base-accent-color;
+    background: @level-5-bg;
     pointer-events: none;
     &:after {
       top: @tab-height/2 + @tab-top-padding - 5px ;
@@ -139,7 +138,7 @@
       margin: 0;
       border-radius: 0;
       border: 5px solid;
-      border-color: transparent transparent transparent @base-accent-color;
+      border-color: transparent transparent transparent @level-5-bg;
       background: transparent;
     }
 
@@ -148,7 +147,7 @@
 
       &:after {
         margin-left: -10px;
-        border-color: transparent @base-accent-color transparent transparent;
+        border-color: transparent @level-5-bg transparent transparent;
       }
     }
   }

@@ -3,12 +3,12 @@ atom-panel {
   &.right,
   &.bottom,
   &.left {
-    background: @level-3-color;
+    background: @level-3-bg;
   }
 
   &.modal {
-    background: @level-1-color;
-    color: @text-color;
+    background: @level-1-bg;
+    color: @base-fg;
     padding: @modular-scale-m * 1rem;
     box-shadow: 0 0 4px rgba(0,0,0,.2);
   }
@@ -22,7 +22,7 @@ atom-panel {
 
 .tool-panel.tool-panel {
   .text(normal);
-  color: @text-color-subtle;
+  color: @fg-subtle;
   position: relative;
   background-color: @tool-panel-background-color;
 
@@ -50,7 +50,7 @@ atom-panel {
 
 .inset-panel {
   position: relative;
-  background-color: @inset-panel-background-color;
+  background-color: @level-1-bg;
   &.bordered {
     border-radius: @component-border-radius;
   }
@@ -67,7 +67,7 @@ atom-panel {
 
   @bg: lighten(@button-background-color, 10%);
   @hover: lighten(@button-background-color-hover, 10%);
-  @selected: lighten(@button-background-color-selected, 10%);
+  @selected: lighten(@button-level-3-bg, 10%);
   @text: lighten(#fff, 10%);
   .btn-mixin(@bg, @text);
 } */

@@ -3,28 +3,28 @@
 
 body .settings-view {
 	.panels {
-		background: @level-2-color;
-		color: @text-color;
+		background: @level-2-bg;
+		color: @base-fg;
 	}
 
 	.settings-panel {
 		label {
-			color: @text-color;
+			color: @base-fg;
 		}
 	}
 
 	.section .section-heading:first-child,
 	section .section-heading:first-child {
-		color: @text-color;
-		border-color: @base-border-color;
+		color: @base-fg;
+		border-color: @level-5-bg;
 	}
 
 	.thumbnail {
-		background: @inset-panel-background-color;
+		background: @level-1-bg;
 		border: @inset-panel-border-color;
 
 		.caption {
-			color: @text-color;
+			color: @base-fg;
 		}
 	}
 
@@ -34,7 +34,7 @@ body .settings-view {
 	}
 
 	atom-text-editor.mini.mini.mini {
-		color: @text-color-highlight;
+		color: @fg-highlight;
 		background-color: @input-background-color;
 		border: 1px solid @input-border-color;
 		border-radius: @component-border-radius;
@@ -43,16 +43,16 @@ body .settings-view {
 		&,
 		&::shadow {
 			.placeholder-text {
-				color: @text-color-subtle;
+				color: @fg-subtle;
 			}
 			.text {
-				color: @text-color-highlight;
+				color: @fg-highlight;
 			}
 			.selection .region {
 				background-color: lighten(@input-background-color, 10%);
 			}
 			.cursor {
-				border-color: @base-accent-color;
+				border-color: @level-5-bg;
 			}
 		}
 
@@ -62,20 +62,20 @@ body .settings-view {
 			background-color: darken(@input-background-color, 2%);
 
 			.placeholder-text {
-				color: @text-color-subtle;
+				color: @fg-subtle;
 			}
 			.selection .region {
-				background-color: @background-color-selected;
+				background-color: @level-3-bg;
 			}
 			.cursor {
-				border-color: @base-accent-color;
+				border-color: @level-5-bg;
 			}
 		}
 
 	}
 
 	.text, .text-subtle {
-		color: @text-color;
+		color: @base-fg;
 	}
 
 	.btn {
@@ -83,19 +83,19 @@ body .settings-view {
 	}
 
 	.btn.btn-primary {
-		.btn-variant(@background-color-info);
+		.btn-variant(@bg-info);
 	}
 	.btn.btn-info {
-		.btn-variant(@background-color-info);
+		.btn-variant(@bg-info);
 	}
 	.btn.btn-success {
-		.btn-variant(@background-color-success);
+		.btn-variant(@bg-success);
 	}
 	.btn.btn-warning {
-		.btn-variant(@background-color-warning);
+		.btn-variant(@bg-warning);
 	}
 	.btn.btn-error {
-		.btn-variant(@background-color-error);
+		.btn-variant(@bg-error);
 	}
 	.btn-group > .btn-default {
 		.btn();
@@ -103,9 +103,9 @@ body .settings-view {
 
 	.config-menu {
 		position: relative;
-		background: @level-2-color;
+		background: @level-2-bg;
 		box-shadow: none;
-		border-right: 1px solid @base-border-color;
+		border-right: 1px solid @level-5-bg;
 
 		// smoothen border with a gradient
 		&:after {
@@ -115,7 +115,7 @@ body .settings-view {
 			right: -1px;
 			width: 1px;
 			height: 100px;
-			background: linear-gradient(@level-2-color 10%, @base-border-color);
+			background: linear-gradient(@level-2-bg 10%, @level-5-bg);
 		}
 
 		.nav-stacked > li + li {
@@ -123,30 +123,30 @@ body .settings-view {
 		}
 
 		.nav > li > a {
-			color: @text-color;
+			color: @base-fg;
 		}
 		.nav > li > a:hover {
-			background: @background-color-highlight;
-			color: @text-color;
+			background: @level-2-bg;
+			color: @base-fg;
 			box-shadow: none;
 		}
 		.nav > li.active > a {
-			color: @text-color-selected;
-			box-shadow: inset 0 1px 0 @base-border-color, inset 0 -1px 0 @base-border-color;
-			background: @background-color-selected;
+			color: @fg-selected;
+			box-shadow: inset 0 1px 0 @level-5-bg, inset 0 -1px 0 @level-5-bg;
+			background: @level-3-bg;
 			.package-author {
-				color: @text-color-selected;
+				color: @fg-selected;
 			}
 		}
 	}
 
 	.table > tbody > tr > td,
 	.table > thead > tr > th {
-		border-color: @base-border-color;
+		border-color: @level-5-bg;
 	}
 
 	.table > tbody > .success > td {
-		background: @background-color-highlight;
+		background: @level-2-bg;
 	}
 
 	.config-menu .panels-menu .panel-menu-separator {
@@ -155,14 +155,14 @@ body .settings-view {
 
 	.config-menu .panels-packages {
 		background: @settings-list-background-color;
-		border-top: 1px solid @base-border-color;
-		border-bottom: 1px solid @base-border-color;
+		border-top: 1px solid @level-5-bg;
+		border-bottom: 1px solid @level-5-bg;
 
 		li {
 			a {
 				border-radius: 0 !important;
 				box-shadow: none !important;
-				border-bottom: 1px solid @base-border-color;
+				border-bottom: 1px solid @level-5-bg;
 			}
 			a:hover {
 				box-shadow: none !important;
@@ -181,27 +181,27 @@ body .settings-view {
 		}
 
 		.package-title {
-			color: @text-color-highlight;
+			color: @fg-highlight;
 		}
 
 		.package-version {
-			color: @text-color !important;
+			color: @base-fg !important;
 		}
 
 		.package-author {
-			color: @text-color !important;
+			color: @base-fg !important;
 		}
 	}
 
 	.packages .available-package-view {
 		.package-name {
-			color: @text-color-highlight;
+			color: @fg-highlight;
 		}
 		.downloads {
-			color: @text-color;
+			color: @base-fg;
 		}
 		.description {
-			color: @text-color;
+			color: @base-fg;
 		}
 	}
 
@@ -228,49 +228,30 @@ body .settings-view {
 		.theme-contrast {
 			background-color: transparent;
 		}
-
-		// TODO: Remove once these get moved to inline styles
-		.theme-base-color-1 { background-color: @theme-base-color-1; }
-		.theme-base-color-2 { background-color: @theme-base-color-2; }
-		.theme-base-color-3 { background-color: @theme-base-color-3; }
-		.theme-base-color-4 { background-color: @theme-base-color-4; }
-		.theme-base-color-5 { background-color: @theme-base-color-5; }
-
-		.theme-saturation-1 { background-color: @theme-saturation-1; } //   40%
-		.theme-saturation-2 { background-color: @theme-saturation-2; } //   20%
-		.theme-saturation-3 { background-color: @theme-saturation-3; } //    0%
-		.theme-saturation-4 { background-color: @theme-saturation-4; } //  -10%
-		.theme-saturation-5 { background-color: @theme-saturation-5; } // -100%
-
-		.theme-contrast-1 { color: @theme-contrast-1; } //  40%
-		.theme-contrast-2 { color: @theme-contrast-2; } //  20%
-		.theme-contrast-3 { color: @theme-contrast-3; } //   0%
-		.theme-contrast-4 { color: @theme-contrast-4; } // -10%
-		.theme-contrast-5 { color: @theme-contrast-5; } // -20%
 	}
 
 	.error-message .error-details {
-		background: @inset-panel-background-color;
+		background: @level-1-bg;
 		border: @inset-panel-border-color;
-		color: @text-color;
+		color: @base-fg;
 	}
 
 	.setting-description {
-		color: @text-color-subtle;
+		color: @fg-subtle;
 	}
 
 
 	.alert (@color) {
-		@faded-color: fade(mix(@color, @level-1-color), 20%);
+		@faded-color: fade(mix(@color, @level-1-bg), 20%);
 		color: @color;
 		border-color: @faded-color;
 		background-color: @faded-color;
 	}
 
-	.alert         { .alert( @text-color ); }
-	.alert-success { .alert( @text-color-success ); }
-	.alert-info    { .alert( @text-color-info ); }
-	.alert-warning { .alert( @text-color-warning ); }
-	.alert-danger  { .alert( @text-color-error ); }
+	.alert         { .alert( @base-fg ); }
+	.alert-success { .alert( @fg-success ); }
+	.alert-info    { .alert( @fg-info ); }
+	.alert-warning { .alert( @fg-warning ); }
+	.alert-danger  { .alert( @fg-error ); }
 
 }

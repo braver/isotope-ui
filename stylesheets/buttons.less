@@ -3,64 +3,66 @@
 
 .btn-mixin (@bg-color, @fg-color) {
 
-  @level-0-color: lighten(@bg-color, @ui-contrast + 12%);
-  @level-1-color: lighten(@bg-color, @ui-contrast + 6%);
-  @level-2-color:  darken(@bg-color, @ui-contrast);
-  @level-3-color:  darken(@bg-color, @ui-contrast + 3%);
-  @level-4-color:  darken(@bg-color, @ui-contrast + 6%);
-  @level-5-color:  darken(@bg-color, @ui-contrast + 9%);
+  @level-0-bg: lighten(@bg-color, @ui-contrast + 12%);
+  @level-1-bg: lighten(@bg-color, @ui-contrast + 6%);
+  @level-2-bg:  darken(@bg-color, @ui-contrast);
+  @level-3-bg:  darken(@bg-color, @ui-contrast + 3%);
+  @level-4-bg:  darken(@bg-color, @ui-contrast + 6%);
+  @level-5-bg:  darken(@bg-color, @ui-contrast + 9%);
 
   color: @fg-color;
-  background: @level-2-color;
+  background: @level-2-bg;
   border-radius: 2px;
   box-shadow: 0 0 2px rgba(0,0,0,.2);
+  transition: all .2s .1s;
 
   &:focus,
   &:hover {
     color: @fg-color;
-    background: @level-4-color;
+    background: @level-4-bg;
+    transition: all .1s;
   }
   &:active {
     color: @fg-color;
-    background: @level-5-color;
+    background: @level-5-bg;
   }
   &.selected {
-    color: @text-color-selected;
-    background: @level-2-color;
+    color: @fg-selected;
+    background: @level-2-bg;
   }
   &.selected:hover {
-    color: @text-color-selected;
-    background: @level-1-color;
+    color: @fg-selected;
+    background: @level-1-bg;
   }
 }
 
 .btn {
-  .btn-mixin(@button-background-color, @text-color);
+  .btn-mixin(@button-background-color, @base-fg);
 }
 .btn-variant(@var) {}
 
 .btn.btn-primary {
-  .btn-mixin(@button-background-color, @text-color-highlight);
+  .btn-mixin(@button-background-color, @fg-highlight);
 }
 .btn.btn-info {
-  .btn-mixin(@background-color-info, @text-color);
+  .btn-mixin(@bg-info, @base-fg);
 }
 .btn.btn-success {
-  .btn-mixin(@background-color-success, @text-color);
+  .btn-mixin(@bg-success, @base-fg);
 }
 .btn.btn-warning {
-  .btn-mixin(@background-color-warning, @text-color);
+  .btn-mixin(@bg-warning, @base-fg);
 }
 .btn.btn-error {
-  .btn-mixin(@background-color-error, @text-color);
+  .btn-mixin(@bg-error, @base-fg);
 }
 
 
 // Button Group
 
 .btn-group > .btn {
-  border-left-color: @text-color-subtle;
-  border-right-color: @text-color-subtle;
+  border-left-color: @fg-subtle;
+  border-right-color: @fg-subtle;
 }
 .btn-group > .btn:first-child,
 .btn-group > .btn:last-child {

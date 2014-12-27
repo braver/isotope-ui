@@ -1,6 +1,6 @@
 .tree-view {
   font-size: @font-size;
-  color: @text-color-subtle;
+  color: @fg-subtle;
 
   li,
   li:not(.list-nested-item),
@@ -27,12 +27,12 @@
   }
 
   .selected:not(.project-root) {
-    color: @text-color;
-    background: @tab-background-color-active;
+    color: @base-fg;
+    background: @level-3-bg;
     &:before {
       line-height: @modular-scale-xl * 1rem;
       height: @modular-scale-xl * 1rem;
-      background: @tab-background-color-active;
+      background: @level-3-bg;
     }
   }
 
@@ -44,10 +44,10 @@
   .selected > .name:before,
   .selected > .list-item > .name,
   .selected > .list-item > .name:before {
-    color: @text-color-selected;
-    background: @tab-background-color-active;
+    color: @fg-selected;
+    background: @level-3-bg;
     &:before {
-      background: @tab-background-color-active;
+      background: @level-3-bg;
     }
   }
 }

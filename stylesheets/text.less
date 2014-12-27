@@ -19,8 +19,8 @@ label {
 
 pre {
   box-shadow: none;
-  color: @text-color;
-  background: @inset-panel-background-color;
+  color: @base-fg;
+  background: @level-1-bg;
   border-radius: @component-border-radius;
   border: none;
   margin: 0;
@@ -28,7 +28,7 @@ pre {
 
 code {
   .text(highlight);
-  background: @background-color-highlight;
+  background: @level-2-bg;
   border-radius: @component-border-radius;
 }
 
@@ -42,15 +42,15 @@ code {
 .text-error { .text(error); }
 .text-info {
   .text(info);
-  &:hover { color: @text-color-info; }
+  &:hover { color: @fg-info; }
 }
 .text-warning {
   .text(warning);
-  &:hover { color: @text-color-warning; }
+  &:hover { color: @fg-warning; }
 }
 .text-success {
   .text(success);
-  &:hover { color: @text-color-success; }
+  &:hover { color: @fg-success; }
 }
 
 .highlight-mixin {
@@ -58,25 +58,25 @@ code {
   font-weight: bold;
   text-shadow: none;
   border-radius: @component-border-radius;
-  color: @text-color-highlight;
+  color: @fg-highlight;
 }
 
 .highlight {
   .highlight-mixin();
-  background-color: @background-color-highlight;
+  background-color: @level-2-bg;
 }
 
-.highlight-color(@name, @color, @text-color) {
+.highlight-color(@name, @color, @base-fg) {
   .highlight-@{name} {
     .highlight-mixin();
     background-color: fadeout(@color, 50%);
   }
 }
-.highlight-color(info, @background-color-info, @text-color-info);
-.highlight-color(warning, @background-color-warning, @text-color-warning);
-.highlight-color(error, @background-color-error, @text-color-error);
-.highlight-color(success, @background-color-success, @text-color-success);
+.highlight-color(info, @bg-info, @fg-info);
+.highlight-color(warning, @bg-warning, @fg-warning);
+.highlight-color(error, @bg-error, @fg-error);
+.highlight-color(success, @bg-success, @fg-success);
 
 .results-view .path-details.list-item {
-  color: darken(@text-color-highlight, 18%);
+  color: darken(@fg-highlight, 18%);
 }

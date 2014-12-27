@@ -3,34 +3,34 @@
 
 .text(normal) {
   font-weight: normal;
-  color: @text-color;
+  color: @base-fg;
 }
 .text(subtle) {
   font-weight: normal;
-  color: @text-color-subtle;
+  color: @fg-subtle;
 }
 .text(highlight) {
   font-weight: normal;
-  color: @text-color-highlight;
+  color: @fg-highlight;
 }
 .text(selected) {
   .text(highlight)
 }
 
 .text(info) {
-  color: @text-color-info;
+  color: @fg-info;
 }
 .text(success) {
-  color: @text-color-success;
+  color: @fg-success;
 }
 .text(warning) {
-  color: @text-color-warning;
+  color: @fg-warning;
 }
 .text(error) {
-  color: @text-color-error;
+  color: @fg-error;
 }
 
 .focus() {
   outline: none;
-  box-shadow: 0 0 0 2px @base-accent-color;
+  box-shadow: 0 0 0 2px @level-5-bg;
 }

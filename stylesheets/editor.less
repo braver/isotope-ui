@@ -1,7 +1,7 @@
 atom-text-editor.mini {
   padding-left: 0;
   border-radius: @component-border-radius;
-  color: @text-color-highlight;
+  color: @fg-highlight;
   border: 1px solid @input-border-color;
   background-color: @input-background-color;
   padding-left: @component-padding/2;
@@ -9,7 +9,7 @@ atom-text-editor.mini {
   &,
   &::shadow {
     .placeholder-text {
-      color: @text-color-subtle;
+      color: @fg-subtle;
     }
     .selection .region {
       background-color: @input-selection-color;
@@ -35,6 +35,6 @@ atom-text-editor.mini {
     padding-left: @modular-scale-s * 1rem;
   }
   .cursor-line {
-    background: @level-4-color;
+    background: @level-4-bg;
   }
 }

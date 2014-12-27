@@ -8,7 +8,7 @@
   li:not(.list-nested-item),
   li.list-nested-item > .list-item {
     .text(normal);
-    color: @text-color-subtle;
+    color: @fg-subtle;
     line-height: @component-line-height;
   }
 
@@ -25,7 +25,7 @@
     &:before {
       line-height: @component-line-height;
       height: @component-line-height;
-      background-color: @level-3-color;
+      background-color: @level-3-bg;
     }
   }
 
@@ -48,18 +48,18 @@
       color: @color;
     }
   }
-  .generate-list-item-status-color(@text-color-subtle, ignored);
-  .generate-list-item-status-color(@text-color-added, added);
-  .generate-list-item-status-color(@text-color-renamed, renamed);
-  .generate-list-item-status-color(@text-color-modified, modified);
-  .generate-list-item-status-color(@text-color-removed, removed);
+  .generate-list-item-status-color(@fg-subtle, ignored);
+  .generate-list-item-status-color(@fg-added, added);
+  .generate-list-item-status-color(@fg-renamed, renamed);
+  .generate-list-item-status-color(@fg-modified, modified);
+  .generate-list-item-status-color(@fg-removed, removed);
 
   li:not(.list-nested-item).selected,
   li.list-nested-item.selected > .list-item {
     .text(selected);
-    color: @text-color;
+    color: @base-fg;
     &:before {
-      background-color: @level-3-color;
+      background-color: @level-3-bg;
     }
   }
 }
@@ -68,10 +68,10 @@
 &.select-list ol.list-group {
   li.two-lines {
     .secondary-line {
-      color: @text-color-subtle;
+      color: @fg-subtle;
     }
     &.selected .secondary-line {
-      color: fade(@text-color-highlight, 50%);
+      color: fade(@fg-highlight, 50%);
       text-shadow: none;
     }
   }
@@ -79,8 +79,8 @@
   // We want to highlight the background of the list items because we dont
   // know their size.
   li.selected {
-    background-color: @background-color-selected;
-    color: @text-color-selected;
+    background-color: @level-3-bg;
+    color: @fg-selected;
     &:before{ display: none; }
   }
 
@@ -106,7 +106,7 @@
       .octicon(check, @active-icon-size);
       &:before {
         margin-right: @component-icon-padding;
-        color: @text-color-success;
+        color: @fg-success;
       }
     }
   }
@@ -147,6 +147,6 @@ li.ui-sortable-helper {
   border-radius: 0;
   list-style: none;
   padding: 0 @component-padding;
-  background: @background-color-highlight;
-  box-shadow: 0 0 1px @base-border-color;
+  background: @level-2-bg;
+  box-shadow: 0 0 1px @level-5-bg;
 }
