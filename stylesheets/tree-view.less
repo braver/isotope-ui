@@ -6,13 +6,13 @@
   li:not(.list-nested-item),
   li.list-nested-item > .list-item {
     line-height: @modular-scale-xl * 1rem;
-    height: @modular-scale-xl * 1rem;
+    min-height: @modular-scale-xl * 1rem;
     .selected:not(.project-root) {
       color: @base-fg;
       background: @theme-color;
       &:before {
-        line-height: @modular-scale-xl * 1rem;
         height: @modular-scale-xl * 1rem;
+        min-height: @modular-scale-xl * 1rem;
         background: @theme-color;
       }
     }
@@ -22,15 +22,15 @@
   // align project root with tabs
   .project-root,
   .project-root > .header {
-    height: @tab-height;
+    min-height: @tab-height;
     line-height: @tab-height;
     &:not(.list-nested-item),
     &.list-nested-item > .list-item {
-      height: @tab-height;
+      min-height: @tab-height;
       line-height: @tab-height;
     }
     &:before {
-      height: @tab-height;
+      min-height: @tab-height;
       line-height: @tab-height;
     }
   }

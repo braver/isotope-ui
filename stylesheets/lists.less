@@ -1,7 +1,7 @@
 .list-group,
 .list-tree {
   li {
-    height: @component-line-height;
+    min-height: @component-line-height;
     line-height: @component-line-height;
     padding-left: @modular-scale-s * 1rem;
   }
@@ -14,18 +14,46 @@
 
   .icon {
     display: inline-block;
+    &:before{
+      height: 100%;
+      line-height: 100%;
+    }
+  }
+  .no-icon {
+    padding-left: @component-icon-size + @component-icon-padding;
+  }
+
+  .status {
+    float: left;
   }
 
   .primary-line,
   .secondary-line {
     display: inline-block;
   }
+  .primary-line {
+    color: @fg-highlight;
+  }
 
   .selected {
+    color: @fg-selected;
+
     &:before {
       line-height: @component-line-height;
-      height: @component-line-height;
-      background-color: @level-3-bg;
+      min-height: @component-line-height;
+      background-color: @level-4-bg;
+    }
+
+    .primary-line {
+      color: @fg-selected;
+    }
+  }
+
+  li:not(.list-nested-item).selected,
+  li.list-nested-item.selected > .list-item {
+    .text(selected);
+    &:before {
+      background-color: @level-4-bg;
     }
   }
 
@@ -54,19 +82,12 @@
   .generate-list-item-status-color(@fg-modified, modified);
   .generate-list-item-status-color(@fg-removed, removed);
 
-  li:not(.list-nested-item).selected,
-  li.list-nested-item.selected > .list-item {
-    .text(selected);
-    color: @base-fg;
-    &:before {
-      background-color: @level-3-bg;
-    }
-  }
 }
 
 .select-list ol.list-group,
 &.select-list ol.list-group {
   li.two-lines {
+    height: @component-line-height;
     .secondary-line {
       color: @fg-subtle;
     }

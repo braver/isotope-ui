@@ -1,10 +1,21 @@
 @import "syntax-variables";
 
+// all sizes based on a perfect fourth (1.333) scale
+@modular-scale-xxs: 0.422;
+@modular-scale-xs: 0.563;
+@modular-scale-s: 0.75;
+@modular-scale-m: 1;
+@modular-scale-l: 1.333;
+@modular-scale-xl: 1.777;
+@modular-scale-xxl: 2.369;
+@modular-scale-xxxl: 3.157;
+
+
 // Settings -----------------------------------
 
 /*
 * This is sortof prepared for adjustable themes.
-* Everything is based of a single color.
+* Everything is based of a single color taken from the syntax theme.
 * Which can be set.
 * Saturation tweaks derived color saturation.
 * Contrast tweaks overall contrast (e.g. lower contrast at night)
@@ -42,10 +53,15 @@
 // Foreground levels
 
 @base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness + @ui-contrast) * 3) );
+@text-color: @base-fg;
 @fg-subtle: fadeout(@base-fg, 40%);
+@text-color-subtle: @fg-subtle;
 @fg-faded: fade(@base-fg, 20%);
+@text-color-faded: @fg-faded;
 @fg-highlight: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 88%);
+@text-color-highlight: @fg-highlight;
 @fg-selected: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 98%);
+@text-color-selected: @fg-selected;
 
 // Var + State Colors
 
@@ -108,11 +124,13 @@
 @scrollbar-color:                  @level-1-bg;
 @scrollbar-background-color:       transparent;
 
+@tree-view-background-color:       @level-2-bg;
+@tree-view-border-color:           @level-2-bg;
 
 // Utilities
 
-@key-binding-border-color:     hsla(0,0%,100%,.1);
-@key-binding-background-color: hsla(0,0%,100%,.1);
+@key-binding-border-color:     transparent;
+@key-binding-background-color: transparent;
 
 
 
@@ -123,22 +141,11 @@
 @font-size:       12px;
 @input-font-size: 14px;
 
-// visual scale - perfect fourth
-
-@modular-scale-xxs: 0.422;
-@modular-scale-xs: 0.563;
-@modular-scale-s: 0.75;
-@modular-scale-m: 1;
-@modular-scale-l: 1.333;
-@modular-scale-xl: 1.777;
-@modular-scale-xxl: 2.369;
-@modular-scale-xxxl: 3.157;
-
 @disclosure-arrow-size: 12px;
 
 @component-padding:      @modular-scale-l * 1rem;
-@component-icon-padding:  5px;
-@component-icon-size:    16px;
+@component-icon-padding:  @modular-scale-xs * 1rem;
+@component-icon-size:    16/12 * 1rem;
 @component-line-height:  @modular-scale-xxl * 1rem;
 @component-border-radius: 0;
 
