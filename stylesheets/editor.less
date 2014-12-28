@@ -25,21 +25,26 @@ atom-text-editor.mini {
   }
 }
 
-
 ::shadow {
   .gutter {
     background: @theme-color;
     color: @fg-subtle;
     border: none;
-    border-right: 1px solid @syntax-wrap-guide-color;
-  }
-  .line-number {
-    padding-left: @modular-scale-s * 1rem;
-    .icon-right {
-      padding: 0 @modular-scale-xxs * 1rem;
+    /* border-right: 1px solid @syntax-wrap-guide-color; */
+
+    .line-number {
+      padding-left: @modular-scale-s * 1rem;
+      background-color: transparent;
+
+      .icon-right {
+        padding: 0 @modular-scale-xxs * 1rem;
+      }
     }
   }
   .cursor-line {
     background: fadeout( darken(@theme-color, @ui-contrast + 6%), 42.2%);
+  }
+  .scroll-view {
+    padding-left: 0;
   }
 }

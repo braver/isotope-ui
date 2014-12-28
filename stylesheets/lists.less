@@ -7,7 +7,7 @@
   }
   li:not(.list-nested-item),
   li.list-nested-item > .list-item {
-    .text(normal);
+    color: @base-fg;
     color: @fg-subtle;
     line-height: @component-line-height;
   }
@@ -51,7 +51,7 @@
 
   li:not(.list-nested-item).selected:not(.directory),
   li.list-nested-item.selected:not(.directory) > .list-item {
-    .text(selected);
+    color: @fg-highlight;
     &:before {
       background-color: @level-4-bg;
     }
@@ -60,7 +60,7 @@
   .generate-list-item-text-color(@class) {
     li:not(.list-nested-item).text-@{class},
     li.list-nested-item.text-@{class} > .list-item {
-      .text(@class);
+      /* .color(@class) */;
     }
   }
   .generate-list-item-text-color(subtle);
@@ -86,6 +86,8 @@
 
 .select-list ol.list-group,
 &.select-list ol.list-group {
+  margin: 0;
+
   li.two-lines {
     height: @component-line-height;
     .secondary-line {
@@ -117,9 +119,12 @@
       background-color: transparent;
       position: static;
       display: inline-block;
-      left: auto; right: auto;
-      height: @active-icon-size;
+      left: auto;
+      right: auto;
+      height: @component-line-height;
+      line-height: @component-line-height;
       width: @active-icon-size;
+      float: left;
     }
     > li:not(.active):before {
       margin-right: @component-icon-padding;
@@ -129,6 +134,9 @@
       &:before {
         margin-right: @component-icon-padding;
         color: @fg-success;
+        height: @component-line-height;
+        line-height: @component-line-height;
+        
       }
     }
   }

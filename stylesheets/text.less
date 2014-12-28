@@ -27,29 +27,29 @@ pre {
 }
 
 code {
-  .text(highlight);
+  color: @fg-highlight;
   background: @level-2-bg;
   border-radius: @component-border-radius;
 }
 
-.selected { .text(highlight); }
+.selected { color: @fg-highlight; }
 
 .text-smaller { font-size: 0.9em; }
 
-.text-subtle { .text(subtle); }
-.text-highlight { .text(highlight); }
+.text-subtle { color: @fg-subtle; }
+.text-highlight { color: @fg-highlight; }
 
-.text-error { .text(error); }
+.text-error { color: @fg-error; }
 .text-info {
-  .text(info);
+  color: @fg-info;
   &:hover { color: @fg-info; }
 }
 .text-warning {
-  .text(warning);
+  color: @fg-warning;
   &:hover { color: @fg-warning; }
 }
 .text-success {
-  .text(success);
+  color: @fg-success;
   &:hover { color: @fg-success; }
 }
 

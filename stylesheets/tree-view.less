@@ -2,6 +2,7 @@
 
 .list-tree.tree-view {
   padding: 0;
+  margin-top: @modular-scale-xxs * 1rem; // align with tabs
 
   > li {
     padding-left: 0;
@@ -15,7 +16,7 @@
       background: @theme-color;
     }
     &.status-modified {
-      .text(warning);
+      color: @fg-warning;
     }
   }
 }
