@@ -1,9 +1,6 @@
-// Based on https://github.com/postcasio/themed-settings
-// TODO: Implement in core
-
 body .settings-view {
 	.panels {
-		background: @level-2-bg;
+		background: @level-3-bg;
 		color: @base-fg;
 	}
 
@@ -11,20 +8,37 @@ body .settings-view {
 		label {
 			color: @base-fg;
 		}
+		.section-body {
+			padding: 0;
+		}
 	}
 
 	.section .section-heading:first-child,
 	section .section-heading:first-child {
 		color: @base-fg;
 		border-color: @level-5-bg;
+		padding: 0 0 @modular-scale-xl * 1rem 0;
+		margin: 0 0 @modular-scale-xl * 1rem 0;
+		font-size: @modular-scale-xl * 1rem;
+		line-height: @modular-scale-xxl * 1rem;
 	}
 
 	.thumbnail {
-		background: @level-1-bg;
-		border: @inset-panel-border-color;
+		background: @level-2-bg;
+		border: none;
+		box-shadow: 0 0 2px rgba(0,0,0,.2);
 
 		.caption {
 			color: @base-fg;
+		}
+	}
+
+	.link {
+		color: @fg-highlight;
+		text-decoration: none;
+		&:hover {
+			color: @fg-highlight;
+			text-decoration: underline;
 		}
 	}
 
@@ -58,8 +72,8 @@ body .settings-view {
 
 		&.is-focused,
 		&.is-focused::shadow {
-			.focus();
-			background-color: darken(@input-background-color, 2%);
+
+			background-color: @input-background-color-focus;
 
 			.placeholder-text {
 				color: @fg-subtle;
@@ -78,34 +92,93 @@ body .settings-view {
 		color: @base-fg;
 	}
 
-	.btn {
-		.btn();
+	.btn-mixin (@bg-color, @fg-color) {
+
+		@level-0-bg: lighten(@bg-color, @ui-contrast + 12%);
+		@level-1-bg: lighten(@bg-color, @ui-contrast + 6%);
+		@level-2-bg:  darken(@bg-color, @ui-contrast);
+		@level-3-bg:  darken(@bg-color, @ui-contrast + 3%);
+		@level-4-bg:  darken(@bg-color, @ui-contrast + 6%);
+		@level-5-bg:  darken(@bg-color, @ui-contrast + 9%);
+
+		color: @fg-color;
+		background: @level-2-bg;
+		border-radius: @component-border-radius;
+		border: none;
+		box-shadow: 0 0 2px rgba(0,0,0,.2);
+		transition: all .2s .1s;
+
+		padding: 0 @modular-scale-s * 1rem;
+
+		margin: 0 @modular-scale-xxs * 1rem @modular-scale-xxs * 1rem 0;
+		&:last-child {
+			margin: 0;
+		}
+
+		height: @modular-scale-xxl * 1rem;
+		line-height: @modular-scale-xxl * 1rem;
+
+		&.btn-xs {
+			padding: 0 @modular-scale-s * 1rem;
+			height: @modular-scale-l * 1rem;
+			line-height: @modular-scale-l * 1rem;
+		}
+		&.btn-sm {
+			padding: 0 @modular-scale-s * 1rem;
+			height: @modular-scale-xl * 1rem;
+			line-height: @modular-scale-xl * 1rem;
+		}
+		&.btn-lg {
+			padding: 0 @modular-scale-s * 1rem;
+			height: @modular-scale-xxl * 1.333rem;
+			line-height: @modular-scale-xxl * 1.333rem;
+		}
+
+		&:focus,
+		&:hover {
+			color: @fg-color;
+			background: @level-4-bg;
+			transition: all .1s;
+		}
+		&:active {
+			color: @fg-color;
+			background: @level-5-bg;
+		}
+		&.selected {
+			color: @fg-selected;
+			background: @level-2-bg;
+		}
+		&.selected:hover {
+			color: @fg-selected;
+			background: @level-1-bg;
+		}
 	}
 
+	.btn {
+		.btn-mixin(@button-background-color, @base-fg);
+	}
+	.btn-variant(@var) {}
 	.btn.btn-primary {
-		.btn-variant(@bg-info);
+		.btn-mixin(@button-background-color, @fg-highlight);
 	}
 	.btn.btn-info {
-		.btn-variant(@bg-info);
+		.btn-mixin(@bg-info, @base-fg);
 	}
 	.btn.btn-success {
-		.btn-variant(@bg-success);
+		.btn-mixin(@bg-success, @base-fg);
 	}
 	.btn.btn-warning {
-		.btn-variant(@bg-warning);
+		.btn-mixin(@bg-warning, @base-fg);
 	}
 	.btn.btn-error {
-		.btn-variant(@bg-error);
-	}
-	.btn-group > .btn-default {
-		.btn();
+		.btn-mixin(@bg-error, @base-fg);
 	}
 
 	.config-menu {
 		position: relative;
 		background: @level-2-bg;
 		box-shadow: none;
-		border-right: 1px solid @level-5-bg;
+		/* border-right: 1px solid @level-5-bg; */
 
 		// smoothen border with a gradient
 		&:after {
@@ -132,7 +205,7 @@ body .settings-view {
 		}
 		.nav > li.active > a {
 			color: @fg-selected;
-			box-shadow: inset 0 1px 0 @level-5-bg, inset 0 -1px 0 @level-5-bg;
+			/* box-shadow: inset 0 1px 0 @level-5-bg, inset 0 -1px 0 @level-5-bg; */
 			background: @level-3-bg;
 			.package-author {
 				color: @fg-selected;
