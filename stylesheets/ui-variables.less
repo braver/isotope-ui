@@ -28,7 +28,7 @@
 
 // tweaks
 @theme-adjust-saturation: 0%;
-@theme-adjust-contrast:   0%;
+@theme-adjust-contrast:  0%;
 
 // Config
 
@@ -108,7 +108,7 @@
 @button-border-color:              @button-background-color;
 
 @input-border-color:               hsla(0,0%,0%,.2);
-@input-background-color:           hsla(0,0%,0%,.2);
+@input-background-color:           @theme-color;
 @input-background-color-focus:     fadein(@input-background-color, 6%);
 @input-selection-color:            darken(@level-3-bg, 6%);
 @input-selection-color-focus:      @level-3-bg;
@@ -125,8 +125,8 @@
 @scrollbar-color:                  @level-1-bg;
 @scrollbar-background-color:       transparent;
 
-@tree-view-background-color:       @level-2-bg;
-@tree-view-border-color:           @level-2-bg;
+@tree-view-background-color:       @level-3-bg;
+@tree-view-border-color:           @level-3-bg;
 
 // Utilities
 
@@ -147,8 +147,8 @@
 @component-padding:      @modular-scale-l * 1rem;
 @component-icon-padding:  @modular-scale-xs * 1rem;
 @component-icon-size:    16/12 * 1rem;
-@component-line-height:  @modular-scale-xl * 1rem;
-@component-border-radius: 0;
+@component-line-height:  @modular-scale-xxl * 1rem;
+@component-border-radius: 2px;
 
 @tab-height: @modular-scale-xxxl * 1rem;
 

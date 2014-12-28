@@ -1,7 +1,7 @@
 atom-text-editor.mini {
   padding-left: 0;
   border-radius: @component-border-radius;
-  color: @fg-highlight;
+  color: @base-fg;
   border: 1px solid @input-border-color;
   background-color: @input-background-color;
   padding-left: @component-padding/2;
@@ -25,9 +25,6 @@ atom-text-editor.mini {
   }
 }
 
-.editor {
-  border-top-left-radius: @component-border-radius;
-}
 
 ::shadow {
   .gutter {
@@ -38,6 +35,9 @@ atom-text-editor.mini {
   }
   .line-number {
     padding-left: @modular-scale-s * 1rem;
+    .icon-right {
+      padding: 0 @modular-scale-xxs * 1rem;
+    }
   }
   .cursor-line {
     background: fadeout( darken(@theme-color, @ui-contrast + 6%), 42.2%);

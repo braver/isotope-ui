@@ -35,7 +35,7 @@
     color: @fg-highlight;
   }
 
-  .selected {
+  .selected:not(.directory) {
     color: @fg-selected;
 
     &:before {
@@ -49,8 +49,8 @@
     }
   }
 
-  li:not(.list-nested-item).selected,
-  li.list-nested-item.selected > .list-item {
+  li:not(.list-nested-item).selected:not(.directory),
+  li.list-nested-item.selected:not(.directory) > .list-item {
     .text(selected);
     &:before {
       background-color: @level-4-bg;
@@ -111,7 +111,8 @@
     // pad in front of the text where the icon would be We'll pad the non-
     // active items with a 'fake' icon so other classes can pad the item
     // without worrying about the icon padding.
-    li:before {
+    li:before,
+    li.selected:before {
       content: '';
       background-color: transparent;
       position: static;

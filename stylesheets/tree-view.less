@@ -1,55 +1,35 @@
-.tree-view {
-  font-size: @font-size;
-  color: @fg-subtle;
+@import "ui-variables";
 
-  li,
-  li:not(.list-nested-item),
-  li.list-nested-item > .list-item {
-    .selected:not(.project-root) {
-      color: @base-fg;
-      background: @theme-color;
-      &:before {
-        background: @theme-color;
-      }
-    }
+.list-tree.tree-view {
+  padding: 0;
+
+  > li {
+    padding-left: 0;
   }
 
-
-  // align project root with tabs
-  .project-root,
-  .project-root > .header {
-    min-height: @tab-height;
-    line-height: @tab-height;
-    &:not(.list-nested-item),
-    &.list-nested-item > .list-item {
-      min-height: @tab-height;
-      line-height: @tab-height;
-    }
-    &:before {
-      min-height: @tab-height;
-      line-height: @tab-height;
-    }
-  }
-
-}
-
-.focusable-panel:focus {
   .selected,
-  .selected > .name,
-  .selected > .name:before,
-  .selected > .list-item > .name,
-  .selected > .list-item > .name:before {
-    color: @fg-selected;
-    background: @theme-color;
+  li:not(.list-nested-item).selected,
+  li.list-nested-item.selected > .list-item {
+    color: @base-fg;
     &:before {
       background: @theme-color;
     }
+    &.status-modified {
+      .text(warning);
+    }
   }
 }
-
 
 .tree-view-resizer {
   .tree-view-resize-handle {
     width: 8px;
+  }
+}
+
+.focusable-panel {
+  opacity: 1;
+
+  &:focus {
+    color: @fg-selected;
   }
 }
