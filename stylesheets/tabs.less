@@ -1,4 +1,4 @@
-@modified-icon-width: 8px;
+@modified-icon-width: @component-icon-size / 2;
 @tab-top-padding: 0;
 @tab-bottom-border-height: 0;
 @tab-border: 0 solid @level-5-bg;
@@ -6,7 +6,6 @@
 @tab-min-width: 28px;
 
 .tab-bar {
-  /* margin-top: @modular-scale-s * 1rem; */
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
   overflow-x: auto;
   overflow-y: hidden;
@@ -46,10 +45,11 @@
       line-height: @tab-height;
       background: inherit;
       transform: scale(0);
-      transition: transform .1s;
+      transition: transform .2s .1s, border .2s .1s, color .2s .1s;
 
       &:hover {
-        color: inherit;
+        color: @ui-accent;
+        transition: transform .1s, border .1s, color .1s;
       }
 
       &:active {
@@ -74,23 +74,13 @@
       color: @base-fg;
 
       &:hover {
-        color: inherit;
-      }
+        color: @ui-accent;
+        }
     }
 
     & .close-icon {
       color: @base-fg;
       transform: scale(1);
-    }
-
-    // Seamless tab border cover
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      border-bottom: @tab-bottom-border-height solid @level-3-bg;
     }
 
     // Active pane marker
@@ -102,16 +92,19 @@
 
   .tab.modified {
     &:not(:hover) .close-icon {
+      top: (@tab-height / 2) - (@modified-icon-width / 2);
       right: 0;
-      top: @tab-height/2 - @modified-icon-width/2 + 1px;
       width: @modified-icon-width;
       height: @modified-icon-width;
-      border-color: @level-5-bg;
+      border-color: @ui-accent;
       transform: scale(1);
     }
 
+    &:hover .close-icon {
+      color: inherit;
+    }
     &:hover .close-icon:hover {
-      color: @fg-highlight;
+      color: @ui-accent;
     }
   }
 

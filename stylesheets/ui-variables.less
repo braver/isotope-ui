@@ -33,9 +33,10 @@
 // Config
 
 @ui-hue:           hsvhue(@theme-color);
-@ui-saturation:    max(20% + @theme-adjust-saturation, 0%); // limit to > 0%
+@ui-saturation:    max(10% + @theme-adjust-saturation, 0%); // limit to > 0%
 @ui-brightness:    20%;
 @ui-contrast:      @theme-adjust-contrast * 0.1;
+@ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 75% );
 
 // Base color
 
@@ -112,7 +113,7 @@
 @input-selection-color:            darken(@level-3-bg, 6%);
 @input-selection-color-focus:      @level-3-bg;
 
-@tooltip-background-color:         @level-5-bg;
+@tooltip-background-color:         @ui-accent;
 @tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(0,0%,20%), 60 );
 @tooltip-text-key-color:           @tooltip-background-color;
 @tooltip-background-key-color:     @tooltip-text-color;
@@ -146,7 +147,7 @@
 @component-padding:      @modular-scale-l * 1rem;
 @component-icon-padding:  @modular-scale-xs * 1rem;
 @component-icon-size:    16/12 * 1rem;
-@component-line-height:  @modular-scale-xxl * 1rem;
+@component-line-height:  @modular-scale-xl * 1rem;
 @component-border-radius: 0;
 
 @tab-height: @modular-scale-xxxl * 1rem;

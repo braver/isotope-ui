@@ -36,7 +36,7 @@
 // Much learning from:
 // http://css-tricks.com/html5-progress-element/
 
-@progress-height: 8px;
+@progress-height: @modular-scale-m * 1rem;
 @progress-buffer-color: fade(@progress-background-color, 20%);
 
 progress {
@@ -46,9 +46,8 @@ progress {
 
 progress::-webkit-progress-bar {
   height: @progress-height;
-  border-radius: @component-border-radius;
 
-  background-color: @input-background-color;
+  background-color: @ui-accent;
   box-shadow: inset 0 0 0 1px @input-border-color;
 
   background-image:

@@ -18,7 +18,6 @@ atom-text-editor.mini {
 
   &.is-focused,
   &.is-focused::shadow {
-    .focus();
     background-color: @input-background-color-focus;
     .selection .region {
       background-color: @input-selection-color-focus;
@@ -31,10 +30,16 @@ atom-text-editor.mini {
 }
 
 ::shadow {
+  .gutter {
+    background: @theme-color;
+    color: @fg-subtle;
+    border: none;
+    border-right: 1px solid @syntax-wrap-guide-color;
+  }
   .line-number {
     padding-left: @modular-scale-s * 1rem;
   }
   .cursor-line {
-    background: @level-4-bg;
+    background: fadeout( darken(@theme-color, @ui-contrast + 6%), 42.2%);
   }
 }
