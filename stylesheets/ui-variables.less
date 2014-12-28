@@ -1,6 +1,20 @@
+/*
+* This is sortof prepared for adjustable themes.
+* Everything is based of a single color taken from the syntax theme.
+*/
+
+
 @import "syntax-variables";
 
-// all sizes based on a perfect fourth (1.333) scale
+
+
+@font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', sans-serif;
+@font-size: 12px;
+@font-weight: 200;
+
+
+
+// all sizes based on a perfect fourth (1.333) scale, using rem
 @modular-scale-xxs: 0.422;
 @modular-scale-xs: 0.563;
 @modular-scale-s: 0.75;
@@ -11,38 +25,25 @@
 @modular-scale-xxxl: 3.157;
 
 
-// Settings -----------------------------------
-
-/*
-* This is sortof prepared for adjustable themes.
-* Everything is based of a single color taken from the syntax theme.
-* Which can be set.
-* Saturation tweaks derived color saturation.
-* Contrast tweaks overall contrast (e.g. lower contrast at night)
-*/
-
 
 // leading color
 @theme-color: @syntax-background-color;
-/* @theme-color: hsl(212, 56%, 17%); */
 
-// tweaks
+// tweaks, will later be provided by settings
 @theme-adjust-saturation: 0%;
 @theme-adjust-contrast:  0%;
 
 // Config
-
 @ui-hue:           hsvhue(@theme-color);
 @ui-saturation:    max(10% + @theme-adjust-saturation, 0%); // limit to > 0%
 @ui-brightness:    20%;
 @ui-contrast:      @theme-adjust-contrast * 0.1;
 @ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 75% );
 
-// Base color
 
+
+// background
 @base-bg: hsv(@ui-hue, @ui-saturation, @ui-brightness);
-
-// Background Levels
 
 @level-0-bg: lighten(@base-bg, @ui-contrast + 12%);
 @level-1-bg: lighten(@base-bg, @ui-contrast + 6%);
@@ -51,25 +52,20 @@
 @level-4-bg:  darken(@base-bg, @ui-contrast + 6%);
 @level-5-bg:  darken(@base-bg, @ui-contrast + 9%);
 
-// Foreground levels
-
-@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness + @ui-contrast) * 3) );
-@text-color: @base-fg;
-@fg-subtle: fadeout(@base-fg, 40%);
-@text-color-subtle: @fg-subtle;
-@fg-faded: fade(@base-fg, 20%);
-@text-color-faded: @fg-faded;
-@fg-highlight: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 88%);
-@text-color-highlight: @fg-highlight;
-@fg-selected: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 98%);
-@text-color-selected: @fg-selected;
-
-// Var + State Colors
-
 @bg-info:    hsl(208, 100%, 42%);
 @bg-success: hsl(160,  70%, 42%);
 @bg-warning: hsl(32,   60%, 42%);
 @bg-error:   hsl(0,    70%, 42%);
+
+
+
+// foreground
+@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness + @ui-contrast) * 3) );
+
+@fg-subtle: fadeout(@base-fg, 40%);
+@fg-faded: fade(@base-fg, 20%);
+@fg-highlight: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 88%);
+@fg-selected: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 98%);
 
 @fg-info:    hsl(219,  79%, 66%);
 @fg-success: hsl(140,  44%, 62%);
@@ -82,10 +78,32 @@
 @fg-modified: @fg-warning;
 @fg-removed:  @fg-error;
 
+// translate to vars required for other packages
+@text-color: @base-fg;
+@text-color-subtle: @fg-subtle;
+@text-color-faded: @fg-faded;
+@text-color-highlight: @fg-highlight;
+@text-color-selected: @fg-selected;
+@text-color-info:    @fg-info;
+@text-color-success: @fg-success;
+@text-color-warning: @fg-warning;
+@text-color-error:   @fg-error;
 
-// Component Colors
 
+
+// other required vars
+// may or may not be used elsewhere
+@app-background-color:             @level-2-bg;
+@base-background-color:            @app-background-color;
+@base-border-color:                @level-3-bg;
+
+@tab-height:                       @modular-scale-xxxl * 1rem;
 @tab-text-color:                   @fg-subtle;
+@tab-bar-background-color:         transparent;
+@tab-bar-border-color:             @tab-bar-background-color;
+@tab-background-color:             @level-2-bg;
+@tab-background-color-active:      @theme-color;
+@tab-border-color:                 @tab-background-color;
 
 @pane-item-background-color:       @level-3-bg;
 @pane-item-border-color:           @level-5-bg;
@@ -100,18 +118,18 @@
 
 @overlay-background-color:         @level-2-bg;
 @overlay-border-color:             @level-5-bg;
-@overlay-backdrop-color:           hsla(@ui-hue,@ui-saturation,5%,.5);
+@overlay-backdrop-color:           hsla( @ui-hue, @ui-saturation, 5%, .5);
 
 @button-background-color:          @level-1-bg;
 @button-background-color-hover:    @level-4-bg;
-@button-level-3-bg: @level-1-bg;
+@button-background-color-selected: @level-1-bg;
 @button-border-color:              @button-background-color;
 
-@input-border-color:               hsla(0,0%,0%,.2);
-@input-background-color:           @theme-color;
-@input-background-color-focus:     fadein(@input-background-color, 6%);
-@input-selection-color:            darken(@level-3-bg, 6%);
-@input-selection-color-focus:      @level-3-bg;
+@input-border-color:               @level-5-bg;
+@input-background-color:           @level-3-bg;
+@input-background-color-focus:     @theme-color;
+@input-selection-color:            @level-5-bg;
+@input-selection-color-focus:      @level-1-bg;
 
 @tooltip-background-color:         @ui-accent;
 @tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(0,0%,20%), 60 );
@@ -128,38 +146,27 @@
 @tree-view-background-color:       @level-3-bg;
 @tree-view-border-color:           @level-3-bg;
 
-// Utilities
-
-@key-binding-border-color:     transparent;
-@key-binding-background-color: transparent;
-
-
-
+@ui-site-color-1: hsl(208, 100%, 50%); // green
+@ui-site-color-2: hsl(160,  70%, 42%); // blue
+@ui-site-color-3: hsl(32,   60%, 50%); // orange
+@ui-site-color-4: #D831B0;             // pink
+@ui-site-color-5: #EBDD5B;             // yellow
 
 
-// Sizes
 
-@font-size:       12px;
+// sizes
+@component-padding:        @modular-scale-l * 1rem;
+@component-icon-padding:   @modular-scale-xs * 1rem;
+@component-icon-size:      16/12 * 1rem;
+@component-line-height:    @modular-scale-xxl * 1rem;
+@component-border-radius:  2px;
 
-@disclosure-arrow-size: 12px;
-
-@component-padding:      @modular-scale-l * 1rem;
-@component-icon-padding:  @modular-scale-xs * 1rem;
-@component-icon-size:    16/12 * 1rem;
-@component-line-height:  @modular-scale-xxl * 1rem;
-@component-border-radius: 2px;
-
-@tab-height: @modular-scale-xxxl * 1rem;
+@disclosure-arrow-size: 1rem;
 
 
-// Font
 
-@font-family: 'Segoe UI', 'Helvetica Neue', serif;
-
-
-// Settings View
-
-@settings-list-background-color: darken(@level-2-bg, 1.5%);
-@theme-config-box-shadow: inset 0 0 3px hsla(0, 0%, 100%, .4), 0 1px 3px hsla(0, 0%, 0%, .2);
+// settings View
+@settings-list-background-color:   darken(@level-2-bg, 1.5%);
+@theme-config-box-shadow:          inset 0 0 3px hsla(0, 0%, 100%, .4), 0 1px 3px hsla(0, 0%, 0%, .2);
 @theme-config-box-shadow-selected: inset 0 1px 3px hsla(0, 0%, 0%, .1);
-@theme-config-border-selected: hsla(0, 0%, 100%, .75);
+@theme-config-border-selected:     hsla(0, 0%, 100%, .75);

@@ -3,13 +3,13 @@
 @tab-bottom-border-height: 0;
 @tab-border: 0 solid @level-5-bg;
 @tab-max-width: 160px;
-@tab-min-width: 28px;
+@tab-min-width: @tab-height * 2;
 
 .tab-bar {
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
   overflow-x: auto;
   overflow-y: hidden;
-  background-color: transparent;
+  background-color: @tab-bar-background-color;
 
   &::-webkit-scrollbar {
     display: none;
@@ -25,7 +25,7 @@
     padding: 0;
     margin: 0;
     color: @tab-text-color;
-    background: @level-2-bg;
+    background: @tab-background-color;
     border-right: @tab-border;
     font-size: @font-size;
 
@@ -64,14 +64,10 @@
     z-index: 1;
     flex: 2 0 auto;
     padding-right: @modified-icon-width + 2px;
-    background-color: @theme-color;
+    background-color: @tab-background-color-active;
     color: @base-fg;
     opacity: 1;
-
-    &:last-of-type {
-      border-right-color: @level-5-bg;
-    }
-
+    
     &:hover .close-icon {
       color: @base-fg;
 
