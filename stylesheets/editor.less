@@ -1,9 +1,11 @@
 atom-text-editor.mini {
-  padding-left: 0;
-  border-radius: @component-border-radius;
-  color: @base-fg;
-  border: 1px solid @input-border-color;
   background-color: @input-background-color;
+  border-radius: @component-border-radius;
+  border: 1px solid @input-border-color;
+  color: @base-fg;
+  font-family: @font-family;
+  font-size: @font-size;
+  padding-left: 0;
   padding-left: @component-padding/2;
 
   &,
@@ -29,9 +31,9 @@ atom-text-editor.mini {
 ::shadow {
   .gutter {
     background: transparent;
-    color: @fg-subtle;
     border: none;
-    /* border-right: 1px solid @syntax-wrap-guide-color; */
+    border-right: 1px solid fadeout(@syntax-wrap-guide-color, 25%);
+    color: @fg-subtle;
 
     .line-number {
       background-color: transparent;
