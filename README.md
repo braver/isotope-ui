@@ -4,7 +4,7 @@ A clean and low contrast UI theme that lets you focus on code.
 
 Based on the groundwork laid in one-dark-ui. It relies on syntax-variables.less to set a background color, and derives all other colors from that.
 
-![screens](resources/images/screens.gif)
+![screens](https://github.com/braver/isotope-ui/raw/master/resources/images/screens.gif)
 
 ## Future plans
 
