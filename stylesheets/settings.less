@@ -156,7 +156,12 @@ body .settings-view {
 	.btn-group > .btn-default {
 		.btn-mixin(@button-background-color, @base-fg);
 	}
-	.btn-variant(@var) {}
+	.btn-group > .btn {
+		border-left-color: @fg-subtle;
+		border-right-color: @fg-subtle;
+		margin-right: 0px;
+	}
+	
 	.btn.btn-primary {
 		.btn-mixin(@button-background-color, @fg-highlight);
 	}
