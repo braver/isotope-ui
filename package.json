@@ -1,7 +1,7 @@
 {
   "name": "IsotopeUI",
   "theme": "ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A clean UI theme that adjusts to match any syntax theme.",
   "license": "MIT",
   "repository": "https://github.com/braver/isotope-ui",
