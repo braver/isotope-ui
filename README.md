@@ -4,6 +4,10 @@ A clean and low contrast UI theme that lets you focus on code.
 
 Based on the groundwork laid in one-dark-ui. It relies on syntax-variables.less to set a background color, and derives all other colors from that.
 
+![base16](resources/images/base16.png)
+![solarized light](resources/images/solarized-l.png)
+![solarized dark](resources/images/solarized-d.png)
+![monokai](resources/images/monokai.png)
 
 ## Future plans
 
