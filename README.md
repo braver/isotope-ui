@@ -14,4 +14,5 @@ Based on the groundwork laid in one-dark-ui. It relies on syntax-variables.less 
 - Test for and improve support for Windows/Linux (e.g. scrollbars etc.)
 - Refactor and clean up
 - Tweak and improve stuff for packages
+- Deal with syntax themes that rely on the ui theme (e.g. one-dark)
 - Use it every day
