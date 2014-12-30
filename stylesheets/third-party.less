@@ -13,6 +13,14 @@ atom-text-editor::shadow,
       max-width: .6em;
       max-height: .6em;
       border-radius: @component-border-radius;
+
+      &.selected {
+        box-shadow: 0 0 1px 1px @base-fg;
+
+        .selector {
+          display: none;
+        }
+      }
     }
   }
 }
