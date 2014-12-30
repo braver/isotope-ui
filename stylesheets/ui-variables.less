@@ -27,14 +27,14 @@
 
 
 // leading color
-@theme-color: @syntax-background-color;
+@ui-theme-color: @syntax-background-color;
 
 // tweaks, will later be provided by settings
 @theme-adjust-saturation: 0%;
 @theme-adjust-contrast:  0%;
 
 // Config
-@ui-hue:           hsvhue(@theme-color);
+@ui-hue:           hsvhue(@ui-theme-color);
 @ui-saturation:    max(10% + @theme-adjust-saturation, 0%); // limit to > 0%
 @ui-brightness:    20%;
 @ui-contrast:      @theme-adjust-contrast * 0.1;
@@ -102,7 +102,7 @@
 @tab-bar-background-color:         transparent;
 @tab-bar-border-color:             @tab-bar-background-color;
 @tab-background-color:             @level-2-bg;
-@tab-background-color-active:      @theme-color;
+@tab-background-color-active:      @ui-theme-color;
 @tab-border-color:                 @tab-background-color;
 
 @pane-item-background-color:       @level-3-bg;
@@ -128,7 +128,7 @@
 
 @input-border-color:               @level-5-bg;
 @input-background-color:           @level-3-bg;
-@input-background-color-focus:     @theme-color;
+@input-background-color-focus:     @ui-theme-color;
 @input-selection-color:            @level-5-bg;
 @input-selection-color-focus:      @level-1-bg;
 
