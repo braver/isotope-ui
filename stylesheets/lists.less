@@ -35,7 +35,7 @@
     color: @fg-highlight;
   }
 
-  .selected:not(.directory) {
+  .selected {
     color: @fg-selected;
 
     &:before {
@@ -49,14 +49,8 @@
     }
   }
 
-  li:not(.list-nested-item).selected:not(.directory),
-  li.list-nested-item.selected:not(.directory) > .list-item {
-    color: @fg-highlight;
-    &:before {
-      background-color: @level-4-bg;
-    }
-  }
 
+  //not sure what this generate-list stuff is for
   .generate-list-item-text-color(@class) {
     li:not(.list-nested-item).text-@{class},
     li.list-nested-item.text-@{class} > .list-item {
@@ -136,7 +130,7 @@
         color: @fg-success;
         height: @component-line-height;
         line-height: @component-line-height;
-        
+
       }
     }
   }
