@@ -6,13 +6,16 @@ Based on the groundwork laid in one-dark-ui. It relies on syntax-variables.less 
 
 ![screens](https://github.com/braver/isotope-ui/raw/master/resources/images/screens.gif)
 
+## Features
+
+- Styled settings-view
+- Tweaks atom-color-highlight end-of-line color hints
+
 ## Future plans
 
 - Support tweaking saturation and contrast via settings-view
 - A config option for font-size (everything is already rem-based and ready for this)
 - Offer more font choices (currently packages Open Sans)
-- Test for and improve support for Windows/Linux (e.g. scrollbars etc.)
 - Refactor and clean up
 - Tweak and improve stuff for packages
-- Deal with syntax themes that rely on the ui theme (e.g. one-dark)
 - Use it every day
