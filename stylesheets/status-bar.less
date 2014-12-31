@@ -1,0 +1,21 @@
+.status-bar {
+  height: @tab-height;
+  line-height: @tab-height;
+  > * {
+    padding: 0 @modular-scale-s * 1rem;
+  }
+
+  .buffer-modified {
+    color: transparent;
+
+    &:after {
+      .icon();
+      color: @ui-accent;
+      content: "\f052";
+      text-indent: 0;
+      line-height: @tab-height;
+      position: relative;
+      top: 1px;
+    }
+  }
+}

@@ -39,14 +39,6 @@ atom-panel {
   }
 }
 
-.status-bar {
-  height: @tab-height;
-  line-height: @tab-height;
-  > * {
-    padding: 0 @modular-scale-s * 1rem;
-  }
-}
-
 .inset-panel {
   position: relative;
   background-color: @level-1-bg;
@@ -61,14 +53,4 @@ atom-panel {
   color: @base-fg;
   font-weight: bold;
   background-color: @panel-heading-background-color;
-
-/*   .btn {
-  padding: 0 @component-padding;
-
-  @bg: lighten(@button-background-color, 10%);
-  @hover: lighten(@button-background-color-hover, 10%);
-  @selected: lighten(@button-level-3-bg, 10%);
-  @text: lighten(#fff, 10%);
-  .btn-mixin(@bg, @text);
-} */
 }
