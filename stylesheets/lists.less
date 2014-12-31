@@ -1,3 +1,20 @@
+.list-item-selected (@color) {
+  .selected,
+  li:not(.list-nested-item).selected,
+  li.list-nested-item.selected > .list-item {
+    color: @color;
+    &:before {
+      background: @ui-theme-color;
+      border-top-left-radius: @component-border-radius;
+      border-bottom-left-radius: @component-border-radius;
+    }
+    &.status-modified {
+      color: @fg-warning;
+    }
+  }
+}
+
+
 .list-group,
 .list-tree {
   li {
@@ -7,9 +24,13 @@
   }
   li:not(.list-nested-item),
   li.list-nested-item > .list-item {
-    color: @base-fg;
     color: @fg-subtle;
     line-height: @component-line-height;
+  }
+
+  .list-item-selected (@base-fg);
+  &:focus {
+    .list-item-selected (@fg-selected);
   }
 
   .icon {
