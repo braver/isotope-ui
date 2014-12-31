@@ -1,4 +1,4 @@
-.checkbox (@color) {
+.checkbox-mixin (@color) {
   -webkit-appearance: none;
   display: inline-block;
   position: relative;
@@ -43,6 +43,11 @@
   }
 }
 
+.checkbox input[type="checkbox"] {
+  margin-top: 2px;
+  margin-right: 6px;
+}
+
 input[type="checkbox"] {
-  .checkbox( @ui-accent );
+  .checkbox-mixin ( @ui-accent );
 }
