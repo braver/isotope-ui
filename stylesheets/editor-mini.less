@@ -1,0 +1,46 @@
+.mini-editor-mixin() {
+  border-radius: @component-border-radius;
+  border: 1px solid @input-border-color;
+  font-family: @font-family;
+  font-size: @font-size;
+  padding-left: @component-padding/2;
+
+  background: @input-background-color;
+  color: @base-fg;
+
+  &,
+  &::shadow {
+    background: @level-3-bg;
+    color: @base-fg;
+
+    .placeholder-text {
+      color: @fg-subtle;
+    }
+    .selection .region {
+      background: @level-2-bg;
+    }
+    .cursor {
+      border-color: @level-5-bg;
+    }
+  }
+
+  &.is-focused,
+  &.is-focused::shadow {
+    background: @input-background-color;
+    color: @fg-highlight;
+
+    .selection .region {
+      background: @level-2-bg;
+    }
+    .placeholder-text {
+      color: @base-fg;
+    }
+    .cursor {
+      border-color: @level-5-bg;
+    }
+  }
+}
+
+atom-text-editor.mini {
+  .mini-editor-mixin();
+}

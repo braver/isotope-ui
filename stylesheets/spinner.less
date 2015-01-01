@@ -1,0 +1,29 @@
+.loading-spinner(@size) {
+  width: @size;
+  height: @size;
+  display: block;
+
+  background-image: url(images/octocat-spinner-128.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.inline-block {
+    display: inline-block;
+  }
+}
+
+.loading-spinner-large {
+  .loading-spinner(@modular-scale-xxl * 1.333rem);
+}
+
+.loading-spinner-medium {
+  .loading-spinner(@modular-scale-xl * 1.333rem);
+}
+
+.loading-spinner-small {
+  .loading-spinner(@modular-scale-l * 1.333rem);
+}
+
+.loading-spinner-tiny {
+  .loading-spinner(@modular-scale-m * 1.333rem);
+}
