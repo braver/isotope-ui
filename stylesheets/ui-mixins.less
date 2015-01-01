@@ -1,9 +1,82 @@
-.focus() {
-  outline: none;
-  box-shadow: 0 0 0 2px @level-5-bg;
+.list-item-mixin (@color) {
+  li:not(.list-nested-item),
+  li.list-nested-item > .list-item {
+    color: @color;
+    line-height: @component-line-height;
+
+    // search
+    &.path-details {
+      color: @ui-accent;
+    }
+  }
+
+
+
+  li:not(.list-nested-item).text-subtle,
+  li.list-nested-item.text-subtle > .list-item {
+    color: @text-color-subtle;
+  }
+
+  li:not(.list-nested-item).text-info,
+  li.list-nested-item.text-info > .list-item {
+    color: @text-color-info;
+  }
+
+  li:not(.list-nested-item).text-success,
+  li.list-nested-item.text-success > .list-item {
+    color: @text-color-success;
+  }
+
+  li:not(.list-nested-item).text-warning,
+  li.list-nested-item.text-warning > .list-item {
+    color: @text-color-warning;
+  }
+
+  li:not(.list-nested-item).text-error,
+  li.list-nested-item.text-error > .list-item {
+    color: @text-color-error;
+  }
+
+  /*   li:not(.list-nested-item).text-selected,
+  li.list-nested-item.text-selected > .list-item {
+  color: @text-color-selected;
+  } */
+
 }
 
-.icon() {
+.list-item-selected-mixin (@color) {
+  .selected,
+  li:not(.list-nested-item).selected,
+  li.list-nested-item.selected > .list-item {
+
+    //only use @color if it has enough contrast with the background
+    color: contrast(@ui-theme-color, @base-fg, @color);
+
+    //background is in :before so it can cover full width easily
+    &:before {
+      background: @ui-theme-color;
+      border-top-left-radius: @component-border-radius;
+      border-bottom-left-radius: @component-border-radius;
+    }
+    &.status-modified {
+      color: @fg-modified;
+    }
+    &.status-added {
+      color: @fg-added;
+    }
+
+    // search
+    &.path-details {
+      color: @ui-accent;
+    }
+    .line-number {
+      color: @fg-subtle;
+    }
+  }
+}
+
+// there's probably a .octicon mixin we should use...
+.icon () {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-family: 'Octicons Regular';
