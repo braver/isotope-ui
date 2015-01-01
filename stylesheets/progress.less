@@ -1,38 +1,3 @@
-// Spinner
-
-.loading-spinner(@size) {
-  width: @size;
-  height: @size;
-  display: block;
-
-  background-image: url(images/octocat-spinner-128.gif);
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  &.inline-block {
-    display: inline-block;
-  }
-}
-
-.loading-spinner-large {
-  .loading-spinner(@modular-scale-xxl * 1.333rem);
-}
-
-.loading-spinner-medium {
-  .loading-spinner(@modular-scale-xl * 1.333rem);
-}
-
-.loading-spinner-small {
-  .loading-spinner(@modular-scale-l * 1.333rem);
-}
-
-.loading-spinner-tiny {
-  .loading-spinner(@modular-scale-m * 1.333rem);
-}
-
-
-// Progress Bar
-
 // Much learning from:
 // http://css-tricks.com/html5-progress-element/
 
@@ -47,25 +12,27 @@ progress {
 progress::-webkit-progress-bar {
   height: @progress-height;
 
-  background-color: @ui-accent;
-  box-shadow: inset 0 0 0 1px @input-border-color;
+  background-color: @level-5-bg;
+  box-shadow: inset 0 0 0 1px @level-5-bg;
 
   background-image:
-	   linear-gradient(-45deg, transparent 33%, @progress-buffer-color 33%,
-	                           @progress-buffer-color 66%, transparent 66%);
+     linear-gradient(-45deg, transparent 33%, @progress-buffer-color 33%,
+                             @progress-buffer-color 66%, transparent 66%);
   background-size: 25px @progress-height, 100% 100%, 100% 100%;
   -webkit-animation: animate-stripes 5s linear infinite;
           animation: animate-stripes 5s linear infinite;
 }
 
 progress::-webkit-progress-value {
-  border-radius: @component-border-radius;
+  border-radius: 0;
   background-color: @progress-background-color;
+  box-shadow: inset 0 0 0 1px @level-5-bg;
 }
 
 progress[value]::-webkit-progress-bar {
   background-image: none;
   animation: none;
+  box-shadow: inset 0 0 0 1px @level-5-bg;
 }
 
 @-webkit-keyframes animate-stripes {
