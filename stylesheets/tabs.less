@@ -28,10 +28,15 @@
     background: @tab-background-color;
     border-right: @tab-border;
     font-size: @font-size;
+/*     transition: color .2s .1s;
 
-    &:hover .close-icon {
-      transform: scale(1);
-    }
+    &:hover {
+  color: @fg-highlight;
+  transition: color .1s;
+  .close-icon {
+    transform: scale(1);
+  }
+} */
 
     .title {
       position: relative;
@@ -94,7 +99,6 @@
   .tab.modified {
     &:not(:hover) .close-icon {
       top: (@tab-height / 2) - (@modified-icon-width / 2);
-      margin-top: 1px;  
       right: 0;
       width: @modified-icon-width;
       height: @modified-icon-width;
