@@ -1,56 +1,38 @@
-h1,
-h2,
-h3 {
-  line-height: 1em;
-  margin-bottom: 15px
-}
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.2em; }
-
-p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: normal;
-}
-
-pre {
-  box-shadow: none;
-  color: @base-fg;
-  background: @level-1-bg;
-  border-radius: @component-border-radius;
-  border: none;
-  margin: 0;
-}
-
-code {
+.selected {
   color: @fg-highlight;
-  background: @level-2-bg;
-  border-radius: @component-border-radius;
 }
 
-.selected { color: @fg-highlight; }
+.text-smaller {
+  font-size: @modular-scale-s * 1rem;
+}
 
-.text-smaller { font-size: 0.9em; }
+.text-subtle {
+  color: @fg-subtle;
+}
+.text-highlight {
+  color: @fg-highlight;
+}
 
-.text-subtle { color: @fg-subtle; }
-.text-highlight { color: @fg-highlight; }
-
-.text-error { color: @fg-error; }
+.text-error {
+  color: @fg-error;
+}
 .text-info {
   color: @fg-info;
-  &:hover { color: @fg-info; }
+  &:hover {
+    color: @fg-info;
+  }
 }
 .text-warning {
   color: @fg-warning;
-  &:hover { color: @fg-warning; }
+  &:hover {
+    color: @fg-warning;
+  }
 }
 .text-success {
   color: @fg-success;
-  &:hover { color: @fg-success; }
+  &:hover {
+    color: @fg-success;
+  }
 }
 
 .highlight-mixin {
@@ -59,23 +41,17 @@ code {
   border-radius: @component-border-radius;
   color: @fg-highlight;
 }
-
 .highlight {
   .highlight-mixin();
   background-color: @level-2-bg;
 }
-
-.highlight-color(@name, @color, @base-fg) {
+.highlight-color-mixin(@name, @color, @base-fg) {
   .highlight-@{name} {
     .highlight-mixin();
     background-color: fadeout(@color, 50%);
   }
 }
-.highlight-color(info, @bg-info, @fg-info);
-.highlight-color(warning, @bg-warning, @fg-warning);
-.highlight-color(error, @bg-error, @fg-error);
-.highlight-color(success, @bg-success, @fg-success);
-
-.results-view .path-details.list-item {
-  color: darken(@fg-highlight, 18%);
-}
+.highlight-color-mixin(info, @bg-info, @fg-info);
+.highlight-color-mixin(warning, @bg-warning, @fg-warning);
+.highlight-color-mixin(error, @bg-error, @fg-error);
+.highlight-color-mixin(success, @bg-success, @fg-success);
