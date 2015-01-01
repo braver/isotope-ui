@@ -43,49 +43,15 @@ body .settings-view {
 	}
 
 	select.form-control {
-		.btn();
+		background: @input-background-color;
+		color: @base-fg;
+		border-radius: @component-border-radius;
+		border: 1px solid @input-border-color;
 		box-shadow: none;
 	}
 
-	atom-text-editor.mini.mini.mini {
-		color: @fg-highlight;
-		background-color: @input-background-color;
-		border: 1px solid @input-border-color;
-		border-radius: @component-border-radius;
-		padding-left: @component-padding/2;
-
-		&,
-		&::shadow {
-			.placeholder-text {
-				color: @fg-subtle;
-			}
-			.text {
-				color: @fg-highlight;
-			}
-			.selection .region {
-				background-color: lighten(@input-background-color, 10%);
-			}
-			.cursor {
-				border-color: @level-5-bg;
-			}
-		}
-
-		&.is-focused,
-		&.is-focused::shadow {
-
-			background-color: @input-background-color-focus;
-
-			.placeholder-text {
-				color: @fg-subtle;
-			}
-			.selection .region {
-				background-color: @level-3-bg;
-			}
-			.cursor {
-				border-color: @level-5-bg;
-			}
-		}
-
+	atom-text-editor.mini.mini.mini { //wut?
+		.mini-editor-mixin();
 	}
 
 	.text, .text-subtle {
@@ -219,7 +185,7 @@ body .settings-view {
 
 	.table > tbody > tr > td,
 	.table > thead > tr > th {
-		border-color: @level-5-bg;
+		border-color: @level-2-bg;
 	}
 
 	.table > tbody > .success > td {
@@ -332,5 +298,4 @@ body .settings-view {
 	.alert-info    { .alert( @fg-info ); }
 	.alert-warning { .alert( @fg-warning ); }
 	.alert-danger  { .alert( @fg-error ); }
-
 }

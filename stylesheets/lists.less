@@ -1,20 +1,3 @@
-.list-item-selected (@color) {
-  .selected,
-  li:not(.list-nested-item).selected,
-  li.list-nested-item.selected > .list-item {
-    color: @color;
-    &:before {
-      background: @ui-theme-color;
-      border-top-left-radius: @component-border-radius;
-      border-bottom-left-radius: @component-border-radius;
-    }
-    &.status-modified {
-      color: @fg-warning;
-    }
-  }
-}
-
-
 .list-group,
 .list-tree {
   li {
@@ -22,15 +5,28 @@
     line-height: @component-line-height;
     padding-left: @modular-scale-s * 1rem;
   }
-  li:not(.list-nested-item),
-  li.list-nested-item > .list-item {
-    color: @fg-subtle;
-    line-height: @component-line-height;
+
+  .list-item-mixin (@fg-subtle);
+
+  .list-item-selected-mixin (@base-fg);
+  &:focus {
+    .list-item-selected-mixin (@fg-selected);
   }
 
-  .list-item-selected (@base-fg);
-  &:focus {
-    .list-item-selected (@fg-selected);
+  // search
+  &.results-view {
+    .list-item-mixin (@base-fg);
+  }
+
+  // only border-radius in tree-view
+  &:not(.tree-view) {
+    .selected,
+    li:not(.list-nested-item).selected,
+    li.list-nested-item.selected > .list-item {
+      &:before {
+        border-radius: 0;
+      }
+    }
   }
 
   .icon {
@@ -70,20 +66,6 @@
     }
   }
 
-
-  //not sure what this generate-list stuff is for
-  .generate-list-item-text-color(@class) {
-    li:not(.list-nested-item).text-@{class},
-    li.list-nested-item.text-@{class} > .list-item {
-      /* .color(@class) */;
-    }
-  }
-  .generate-list-item-text-color(subtle);
-  .generate-list-item-text-color(info);
-  .generate-list-item-text-color(success);
-  .generate-list-item-text-color(warning);
-  .generate-list-item-text-color(error);
-  .generate-list-item-text-color(selected);
 
   .generate-list-item-status-color(@color, @status) {
     li:not(.list-nested-item).status-@{status},
