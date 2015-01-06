@@ -3,11 +3,28 @@
   li.list-nested-item > .list-item {
     color: @color;
     line-height: @component-line-height;
+    transition: color .2s .1s;
+
+    &:hover {
+      color: @base-fg;
+      transition: color .1s;
+    }
 
     // search
     &.path-details {
       color: @ui-accent;
     }
+  }
+
+
+  li:not(.list-nested-item).status-modified:hover,
+  li.list-nested-item.status-modified > .list-item:hover {
+    color: lighten(@fg-modified, 12%);
+  }
+
+  li:not(.list-nested-item).status-added:hover,
+  li.list-nested-item.status-added > .list-item:hover {
+    color: lighten(@fg-added, 12%);
   }
 
 
