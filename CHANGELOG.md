@@ -10,3 +10,6 @@
 * Modified indicators
 * Tweaks atom-color-highlight package
 * Improved settings-view
+
+## 0.2.2 - Color highlight
+* Update atom-color-highlight support
