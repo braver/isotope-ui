@@ -1,0 +1,35 @@
+//config variables (defined in isotope-ui.coffee) are passed on in attributes
+//this stylesheet does the css interpretation
+
+//font family
+[isotope-ui-font='Clear Sans'] {
+  font-family: 'Clear Sans', @font-family;
+}
+[isotope-ui-font='Open Sans'] {
+  font-family: 'Open Sans', @font-family;
+}
+[isotope-ui-font='Source Sans Pro'] {
+  font-family: 'Source Sans Pro', @font-family;
+}
+
+//font weight
+[isotope-ui-fontweight='200'] {
+  font-weight: 200;
+}
+[isotope-ui-fontweight='300'] {
+  font-weight: 300;
+}
+[isotope-ui-fontweight='400'] {
+  font-weight: 400;
+}
+
+//font-size config (max 36)
+/* config not functional, see https://github.com/atom/settings-view/issues/307
+.loop-fontsize(@counter) when (@counter > 0) {
+  .loop-fontsize((@counter - 1));    // next iteration
+  [isotope-ui-fontsize='@{counter}'] {
+    font-size: @counter * 1px;
+  }
+}
+.loop-fontsize(36);
+*/

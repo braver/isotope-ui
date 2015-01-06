@@ -1,5 +1,6 @@
 {
   "name": "isotope-ui",
+  "main": "lib/isotope-ui",
   "theme": "ui",
   "version": "0.2.2",
   "description": "A clean UI theme that adjusts to match any syntax theme.",

@@ -12,11 +12,20 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 
 - Styled settings-view
 - Tweaks atom-color-highlight end-of-line color hints
+- Configurable!
 
-## Future plans
+## Configuration
+- You can choose from a number of fonts included in this theme
+- You can change font-sizes for the entire UI using your own stylesheet, everything will scale to fit
+
+```
+html, body { font-size: 9px;}
+```
+
+## Plans
 
 - Support tweaking saturation and contrast via settings-view (waiting for settings-view here)
-- A config option for font-size (everything is already rem-based and ready for this)
-- Offer more font choices (currently packages Open Sans)
+s- Offer more font choices (currently packages Open Sans)
 - Tweak and improve stuff for packages
 - Use it every day
+- Make it better almost every day
