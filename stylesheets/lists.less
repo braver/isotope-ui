@@ -48,8 +48,8 @@
   .secondary-line {
     display: inline-block;
   }
-  .primary-line {
-    color: @fg-highlight;
+  .secondary-line {
+    color: @fg-faded;
   }
 
   .selected {
@@ -59,10 +59,6 @@
       line-height: @component-line-height;
       min-height: @component-line-height;
       background-color: @level-4-bg;
-    }
-
-    .primary-line {
-      color: @fg-selected;
     }
   }
 
@@ -87,11 +83,7 @@
 
   li.two-lines {
     height: @component-line-height;
-    .secondary-line {
-      color: @fg-subtle;
-    }
     &.selected .secondary-line {
-      color: fade(@fg-highlight, 50%);
       text-shadow: none;
     }
   }
