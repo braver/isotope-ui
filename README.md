@@ -2,7 +2,7 @@
 
 A clean and low contrast UI theme that lets you focus on code.
 
-Based on the groundwork laid in one-dark-ui. It relies on syntax-variables.less to set a background color, and derives all other colors from that.
+Isotope relies on syntax-variables.less to set a background color, and derives all other colors from that. It's intended to provide an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast. The colors adjust to the syntax theme, but tends towards dark-ish. As soon as Isotope reaches a proper level of polish and elegance I plan to add controls for you to customize such variables as dark-ness and fonts.
 
 ![screens](https://github.com/braver/isotope-ui/raw/master/resources/images/screens.gif)
 
@@ -13,9 +13,8 @@ Based on the groundwork laid in one-dark-ui. It relies on syntax-variables.less 
 
 ## Future plans
 
-- Support tweaking saturation and contrast via settings-view
+- Support tweaking saturation and contrast via settings-view (waiting for settings-view here)
 - A config option for font-size (everything is already rem-based and ready for this)
 - Offer more font choices (currently packages Open Sans)
-- Refactor and clean up
 - Tweak and improve stuff for packages
 - Use it every day
