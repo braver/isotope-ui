@@ -14,15 +14,18 @@
 
 
 
-// all sizes based on a perfect fourth (1.333) scale, using rem
-@modular-scale-xxs: 0.422;
-@modular-scale-xs: 0.563;
-@modular-scale-s: 0.75;
+// a modular scale maintains relations across all sizes and spaces
+// http://type-scale.com
+@modular-scale: 1.33;
+
+@modular-scale-xxs: pow(@modular-scale, -3);
+@modular-scale-xs: pow(@modular-scale, -2);
+@modular-scale-s: pow(@modular-scale, -1);
 @modular-scale-m: 1;
-@modular-scale-l: 1.333;
-@modular-scale-xl: 1.777;
-@modular-scale-xxl: 2.369;
-@modular-scale-xxxl: 3.157;
+@modular-scale-l: pow(@modular-scale, 1);
+@modular-scale-xl: pow(@modular-scale, 2);
+@modular-scale-xxl: pow(@modular-scale, 3);
+@modular-scale-xxxl: pow(@modular-scale, 4);
 
 
 
