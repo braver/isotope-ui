@@ -25,7 +25,7 @@ module.exports =
         'Regular'
       ]
     compactLayout:
-      description: 'Make the UI chrome less spacious so it takes less space vertically (e.g. on small screens).'
+      description: 'Make UI chrome take up less space vertically (useful on small screens).'
       type: 'boolean'
       default: false
 
