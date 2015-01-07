@@ -10,6 +10,7 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 
 ![light](https://github.com/braver/isotope-ui/raw/master/resources/images/6.png)
 
+[More examples](https://github.com/braver/isotope-ui/blob/master/resources/images/examples.md)
 
 ## Features
 
