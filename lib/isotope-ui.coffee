@@ -2,7 +2,7 @@ module.exports =
 
   config:
     fontFamily:
-      description: 'Use one of the fonts available in this package.'
+      description: 'Use one of the fonts available in this package. View the README for descriptions of each.'
       type: 'string'
       default: 'Open Sans'
       enum: [
@@ -37,8 +37,8 @@ module.exports =
       applyFont(atom.config.get('isotope-ui.fontFamily'))
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
 
-    atom.config.observe 'isotope-ui.fontFamily', =>
+    atom.config.observe 'isotope-ui.fontFamily', ->
       applyFont(atom.config.get('isotope-ui.fontFamily'))
 
-    atom.config.observe 'isotope-ui.fontWeight', =>
+    atom.config.observe 'isotope-ui.fontWeight', ->
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
