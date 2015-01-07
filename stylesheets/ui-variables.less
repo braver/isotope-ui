@@ -18,13 +18,13 @@
 // http://type-scale.com
 @modular-scale: 1.33;
 
-@modular-scale-xxs: pow(@modular-scale, -3);
-@modular-scale-xs: pow(@modular-scale, -2);
-@modular-scale-s: pow(@modular-scale, -1);
-@modular-scale-m: 1;
-@modular-scale-l: pow(@modular-scale, 1);
-@modular-scale-xl: pow(@modular-scale, 2);
-@modular-scale-xxl: pow(@modular-scale, 3);
+@modular-scale-xxs:  pow(@modular-scale, -3);
+@modular-scale-xs:   pow(@modular-scale, -2);
+@modular-scale-s:    pow(@modular-scale, -1);
+@modular-scale-m:    1;
+@modular-scale-l:    pow(@modular-scale, 1);
+@modular-scale-xl:   pow(@modular-scale, 2);
+@modular-scale-xxl:  pow(@modular-scale, 3);
 @modular-scale-xxxl: pow(@modular-scale, 4);
 
 
@@ -34,7 +34,7 @@
 
 // tweaks, will later be provided by settings
 @theme-adjust-saturation: 0%;
-@theme-adjust-contrast:  0%;
+@theme-adjust-contrast:   0%;
 
 // Config
 @ui-hue:           hsvhue(@ui-theme-color);
@@ -95,7 +95,7 @@
 
 
 // other required vars
-// may or may not be used elsewhere
+// may or may not be used elsewhere in this package
 @app-background-color:             @level-3-bg;
 @base-background-color:            @app-background-color;
 @base-border-color:                @level-4-bg;
@@ -129,7 +129,6 @@
 @button-background-color-selected: @level-1-bg;
 @button-border-color:              @button-background-color;
 
-//required
 @input-border-color:               @level-5-bg;
 @input-background-color:           @level-0-bg;
 
@@ -148,25 +147,19 @@
 @tree-view-background-color:       @level-3-bg;
 @tree-view-border-color:           @level-3-bg;
 
-
-
-//for compatibity only, not used:
 @ui-site-color-1: hsl(208, 100%, 50%); // green
 @ui-site-color-2: hsl(160,  70%, 42%); // blue
 @ui-site-color-3: hsl(32,   60%, 50%); // orange
 @ui-site-color-4: #D831B0;             // pink
 @ui-site-color-5: #EBDD5B;             // yellow
 
-
-
-// sizes
 @component-padding:        @modular-scale-l * 1rem;
 @component-icon-padding:   @modular-scale-xs * 1rem;
 @component-icon-size:      16/12 * 1rem;
 @component-line-height:    @modular-scale-xxl * 1rem;
 @component-border-radius:  2px;
 
-@disclosure-arrow-size: 1rem;
+@disclosure-arrow-size:    1rem;
 
 
 
