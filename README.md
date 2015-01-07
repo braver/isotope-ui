@@ -1,6 +1,6 @@
 # Isotope UI theme
 
-A clean and low contrast UI theme that lets you focus on code.
+A clean and low contrast UI theme that adapts to your favourite syntax theme.
 
 Isotope relies on syntax-variables.less to set a background color, and derives all other colors from that. It's intended to provide an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast. The colors adjust to the syntax theme, but tends towards dark-ish. As soon as Isotope reaches a proper level of polish and elegance I plan to add controls for you to customize such variables as dark-ness and fonts.
 
@@ -16,7 +16,6 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 
 - Automatically adapts to your favourite syntax theme
 - Styled settings-view
-- Tweaks atom-color-highlight end-of-line color hints
 - Configurable!
 
 
@@ -32,7 +31,7 @@ html, body { font-size: 9px; }
 
 
 ## Fonts
-I'm packaging a number of fonts that were designed especially for user interfaces with this theme. You can pick and choose without having to find and install anything:
+This package includes a number of fonts that were designed especially for user interfaces. You can pick and choose without having to find and install anything:
 
 - Cantarell - the system font for GNOME 3 (by Dave Crossland)
 - Clear Sans - Intel's new font (by Daniel Ratighan)
