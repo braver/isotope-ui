@@ -13,3 +13,7 @@
 
 ## 0.2.2 - Color highlight
 * Update atom-color-highlight support
+
+## 0.3.0 - Configurable
+* You can now configure font family and weight!
+* Tweaks minimap package
