@@ -8,19 +8,36 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 
 ![screens](https://github.com/braver/isotope-ui/raw/master/resources/images/screens.gif)
 
+
 ## Features
 
 - Styled settings-view
 - Tweaks atom-color-highlight end-of-line color hints
 - Configurable!
 
+
 ## Configuration
+
 - You can choose from a number of fonts included in this theme
+- You can select hip thin fonts, or more regular weights
 - You can change font-sizes for the entire UI using your own stylesheet, everything will scale to fit
 
 ```
 html, body { font-size: 9px;}
 ```
+
+
+## Fonts
+I'm packaging a number of fonts that were designed especially for user interfaces with this theme so you can pick and choose without having to find and install anything:
+
+- Cantarell - the default font for GNOME 3 (by Dave Crossland)
+- Clear Sans - Intel's new font (by Daniel Ratighan)
+- Fira Sans - the default font for Firefox OS (by Carrois and Edenspiekermann)
+- Oxygen - the default font for KDE (by Vernon Adams)
+- Roboto - the new default font for Android (by Christian Robertson)
+- Source Sans Pro - Adobe's UI font also used in Brackets (by Paul D. Hunt)
+- Ubuntu - Ubuntu's default font (by Dalton Maag)
+- Open Sans - because we &heart; Open Sans (by Steve Matteson for Google)
 
 ## Plans
 

@@ -5,12 +5,25 @@ module.exports =
       description: 'Use one of the fonts available in this package.'
       type: 'string'
       default: 'Open Sans'
-      enum: ['Clear Sans', 'Open Sans', 'Source Sans Pro']
+      enum: [
+        'Cantarell',
+        'Clear Sans',
+        'Fira Sans',
+        'Open Sans',
+        'Oxygen',
+        'Roboto',
+        'Source Sans Pro',
+        'Ubuntu'
+      ]
     fontWeight:
-      description: '200 is "light", 400 is "regular" (Open Sans doesn\'t support 200)'
-      type: 'integer'
-      default: 200
-      enum: [200, 300, 400]
+      description: 'Not all fonts come in all weights: Canterell and Oxygen only have regular, Ubuntu and Open Sans don\'t have thin.'
+      type: 'string'
+      default: 'Extra light / Thin'
+      enum: [
+        'Extra light / Thin',
+        'Light',
+        'Regular'
+      ]
 
   activate: (state) ->
 
@@ -19,7 +32,6 @@ module.exports =
 
     applyFontWeight = (weight) ->
       atom.workspaceView.attr('isotope-ui-fontweight', weight)
-      console.log('boikl')
 
     atom.workspaceView.ready ->
       applyFont(atom.config.get('isotope-ui.fontFamily'))
