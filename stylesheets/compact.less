@@ -2,13 +2,15 @@
 
   .list-group,
   .list-tree {
+
     li,
     li:not(.list-nested-item),
     li.list-nested-item > .list-item {
       min-height: @component-line-height / @modular-scale;
       line-height: @component-line-height / @modular-scale;
     }
-    .selected:before,
+
+    li.selected:before,
     li:not(.list-nested-item).selected:before,
     li.list-nested-item.selected > .list-item:before {
       height: @component-line-height / @modular-scale;

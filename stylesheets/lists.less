@@ -1,32 +1,55 @@
-.list-group,
-.list-tree {
+//a mixin for creating a number of color variations
+.li-variation-mixin (@class, @color, @hover) {
   li {
-    min-height: @component-line-height;
-    line-height: @component-line-height;
-    padding-left: @modular-scale-s * 1rem;
-  }
-
-  .list-item-mixin (@fg-subtle);
-
-  .list-item-selected-mixin (@base-fg);
-  &:focus {
-    .list-item-selected-mixin (@fg-selected);
-  }
-
-  // search
-  &.results-view {
-    .list-item-mixin (@base-fg);
-  }
-
-  // only border-radius in tree-view
-  &:not(.tree-view) {
-    .selected,
-    li:not(.list-nested-item).selected,
-    li.list-nested-item.selected > .list-item {
-      &:before {
-        border-radius: 0;
+    &.@{class},
+    &:not(.list-nested-item).@{class},
+    &.list-nested-item.@{class} > .list-item {
+      color: @color;
+      &:hover {
+        color: @hover;
       }
     }
+  }
+}
+
+.li-mixin (@color) {
+  li {
+    &,
+    &:not(.list-nested-item),
+    &.list-nested-item > .list-item {
+      min-height: @component-line-height;
+      line-height: @component-line-height;
+      color: @color;
+      transition: color .2s .1s;
+
+      &:hover {
+        color: lighten(@color, 12%);
+        transition: color .1s;
+      }
+
+      &.path-details { // search
+        color: @ui-accent;
+      }
+    }
+  }
+
+  .li-variation-mixin ( status-modified, @fg-modified, lighten(@fg-modified, 12%) );
+  .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
+  .li-variation-mixin ( text-subtle,     @fg-subtle,   lighten(@fg-subtle, 12%) );
+  .li-variation-mixin ( text-info,       @fg-info,     lighten(@fg-info, 12%) );
+  .li-variation-mixin ( text-success,    @fg-success,  lighten(@fg-success, 12%) );
+  .li-variation-mixin ( text-warning,    @fg-warning,  lighten(@fg-warning, 12%) );
+  .li-variation-mixin ( text-error,      @fg-error,    lighten(@fg-error, 12%) );
+}
+
+
+.list-group,
+.list-tree {
+
+  .li-mixin (@base-fg);
+
+  li {
+    padding-left: @modular-scale-s * 1rem;
   }
 
   .icon {
@@ -49,7 +72,7 @@
     display: inline-block;
   }
   .secondary-line {
-    color: @fg-faded;
+    color: @fg-subtle;
   }
 
   .selected {
@@ -61,39 +84,30 @@
       background-color: @level-4-bg;
     }
   }
-
-
-  .generate-list-item-status-color(@color, @status) {
-    li:not(.list-nested-item).status-@{status},
-    li.list-nested-item.status-@{status} > .list-item {
-      color: @color;
-    }
-  }
-  .generate-list-item-status-color(@fg-subtle, ignored);
-  .generate-list-item-status-color(@fg-added, added);
-  .generate-list-item-status-color(@fg-renamed, renamed);
-  .generate-list-item-status-color(@fg-modified, modified);
-  .generate-list-item-status-color(@fg-removed, removed);
-
 }
 
-.select-list ol.list-group,
-&.select-list ol.list-group {
+.select-list ol.list-group {
   margin: 0;
 
-  li.two-lines {
-    height: @component-line-height;
-    &.selected .secondary-line {
-      text-shadow: none;
+  li {
+    &.two-lines {
+      height: @component-line-height;
+      &.selected .secondary-line {
+        text-shadow: none;
+      }
     }
-  }
 
-  // We want to highlight the background of the list items because we dont
-  // know their size.
-  li.selected {
-    background-color: @level-3-bg;
-    color: @fg-selected;
-    &:before{ display: none; }
+    &:hover {
+      color: lighten(@base-fg, 12%);
+    }
+
+    &.selected {
+      color: @fg-selected;
+      background-color: @level-4-bg;
+      &:before{
+        display: none;
+      }
+    }
   }
 
   &.mark-active {

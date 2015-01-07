@@ -1,32 +1,44 @@
 .tree-view {
   &.list-tree {
+    .li-mixin (@fg-subtle);
+
+    //necesary to make the selected item background color work for tree-view only
+    li {
+      &.selected,
+      &:not(.list-nested-item).selected,
+      &.list-nested-item.selected > .list-item {
+        &:before {
+          background: @ui-theme-color;
+        }
+
+        //only use @color if it has enough contrast with the background
+        color: contrast(@ui-theme-color, @base-fg, @fg-selected);
+        &:hover {
+          color: contrast(@ui-theme-color, @base-fg, @fg-selected);
+        }
+      }
+
+      //add these variations in here as well for specicifty
+      .li-variation-mixin ( status-modified, @fg-modified, @fg-modified );
+      .li-variation-mixin ( status-added,    @fg-added,    @fg-added );
+    }
+
+
     padding: 0;
     margin-top: @modular-scale-xxs * 1rem; // align with tabs
 
-    > li {
-      padding-left: 0;
-    }
-
-    .project-root {
-      padding-left: @modular-scale-s * 1rem;
-    }
-
-    .list-item-selected-mixin (@base-fg);
-
-    &:focus {
-      .list-item-selected-mixin (@fg-selected);
-
-      .selected,
-      li:not(.list-nested-item).selected,
-      li.list-nested-item.selected > .list-item {
-        &.status-modified,
-        &.status-added {
-          color: @fg-selected;
-        }
+    li.selected,
+    li.selected:not(.list-nested-item),
+    li.selected.list-nested-item > .list-item {
+      &:before {
+        border-top-left-radius: @component-border-radius;
+        border-bottom-left-radius: @component-border-radius;
       }
     }
   }
 
+
+  // hide pointer icons in treeview
   &.list-tree.has-collapsable-children {
     .list-nested-item > .list-item:before {
       display: none;
