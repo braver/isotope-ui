@@ -53,12 +53,6 @@
   li.list-nested-item.text-error > .list-item {
     color: @text-color-error;
   }
-
-  /*   li:not(.list-nested-item).text-selected,
-  li.list-nested-item.text-selected > .list-item {
-  color: @text-color-selected;
-  } */
-
 }
 
 .list-item-selected-mixin (@color) {
@@ -75,6 +69,7 @@
       border-top-left-radius: @component-border-radius;
       border-bottom-left-radius: @component-border-radius;
     }
+
     &.status-modified {
       color: @fg-modified;
     }

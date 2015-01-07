@@ -10,6 +10,15 @@
 
   &:focus {
     .list-item-selected-mixin (@fg-selected);
+
+    .selected,
+    li:not(.list-nested-item).selected,
+    li.list-nested-item.selected > .list-item {
+      &.status-modified,
+      &.status-added {
+        color: @fg-selected;
+      }
+    }  
   }
 }
 
