@@ -1,26 +1,43 @@
-.list-tree.tree-view {
-  padding: 0;
-  margin-top: @modular-scale-xxs * 1rem; // align with tabs
+.tree-view {
+  &.list-tree {
+    padding: 0;
+    margin-top: @modular-scale-xxs * 1rem; // align with tabs
 
-  > li {
-    padding-left: 0;
+    > li {
+      padding-left: 0;
+    }
+
+    .project-root {
+      padding-left: @modular-scale-s * 1rem;
+    }
+
+    .list-item-selected-mixin (@base-fg);
+
+    &:focus {
+      .list-item-selected-mixin (@fg-selected);
+
+      .selected,
+      li:not(.list-nested-item).selected,
+      li.list-nested-item.selected > .list-item {
+        &.status-modified,
+        &.status-added {
+          color: @fg-selected;
+        }
+      }
+    }
   }
 
-  .list-item-selected-mixin (@base-fg);
-
-  &:focus {
-    .list-item-selected-mixin (@fg-selected);
-
-    .selected,
-    li:not(.list-nested-item).selected,
-    li.list-nested-item.selected > .list-item {
-      &.status-modified,
-      &.status-added {
-        color: @fg-selected;
-      }
-    }  
+  &.list-tree.has-collapsable-children {
+    .list-nested-item > .list-item:before {
+      display: none;
+    }
+    .list-nested-item > .list-tree > li,
+    .list-nested-item > .list-group > li {
+      margin-left: 0;
+    }
   }
 }
+
 
 .tree-view-resizer {
   .tree-view-resize-handle {
