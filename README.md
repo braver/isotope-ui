@@ -6,11 +6,14 @@ Isotope relies on syntax-variables.less to set a background color, and derives a
 
 Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-ui](https://github.com/atom/one-dark-ui) theme that Isotope was forked from.
 
-![screens](https://github.com/braver/isotope-ui/raw/master/resources/images/screens.gif)
+![dark](https://github.com/braver/isotope-ui/raw/master/resources/images/1.png)
+
+![light](https://github.com/braver/isotope-ui/raw/master/resources/images/6.png)
 
 
 ## Features
 
+- Automatically adapts to your favourite syntax theme
 - Styled settings-view
 - Tweaks atom-color-highlight end-of-line color hints
 - Configurable!
@@ -19,16 +22,16 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 ## Configuration
 
 - You can choose from a number of fonts included in this theme
-- You can select hip thin fonts, or more regular weights
+- You can select hip 'thin' fonts, or trusty old 'regular'
 - You can change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
 
 ```
-html, body { font-size: 9px;}
+html, body { font-size: 9px; }
 ```
 
 
 ## Fonts
-I'm packaging a number of fonts that were designed especially for user interfaces with this theme so you can pick and choose without having to find and install anything:
+I'm packaging a number of fonts that were designed especially for user interfaces with this theme. You can pick and choose without having to find and install anything:
 
 - Cantarell - the system font for GNOME 3 (by Dave Crossland)
 - Clear Sans - Intel's new font (by Daniel Ratighan)
