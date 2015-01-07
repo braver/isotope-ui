@@ -17,3 +17,6 @@
 ## 0.3.0 - Configurable
 * You can now configure font family and weight!
 * Tweaks minimap package
+
+## 0.3.2 - Compact mode
+* A compact layout option
