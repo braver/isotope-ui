@@ -21,9 +21,10 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 
 ## Configuration
 
-- You can choose from a number of fonts included in this theme
-- You can select hip 'thin' fonts, or trusty old 'regular'
-- You can change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
+- Choose from a number of fonts included in this theme
+- Select hip 'thin' fonts, or trusty old 'regular'
+- Make the layout take up less vertical space (e.g. for small screens)
+- Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
 
 ```
 html, body { font-size: 9px; }

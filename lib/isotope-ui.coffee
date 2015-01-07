@@ -24,6 +24,10 @@ module.exports =
         'Light',
         'Regular'
       ]
+    compactLayout:
+      description: 'Make the UI chrome less spacious so it takes less space vertically (e.g. on small screens).'
+      type: 'boolean'
+      default: false
 
   activate: (state) ->
 
@@ -33,12 +37,22 @@ module.exports =
     applyFontWeight = (weight) ->
       atom.workspaceView.attr('isotope-ui-fontweight', weight)
 
+    applyCompactness = () ->
+      if atom.config.get('isotope-ui.compactLayout')
+        atom.workspaceView.addClass('isotope-ui-compact')
+      else
+        atom.workspaceView.removeClass('isotope-ui-compact')
+
     atom.workspaceView.ready ->
       applyFont(atom.config.get('isotope-ui.fontFamily'))
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
+      applyCompactness()
 
     atom.config.observe 'isotope-ui.fontFamily', ->
       applyFont(atom.config.get('isotope-ui.fontFamily'))
 
     atom.config.observe 'isotope-ui.fontWeight', ->
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
+
+    atom.config.observe 'isotope-ui.compactLayout', ->
+      applyCompactness()
