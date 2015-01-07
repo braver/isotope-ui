@@ -20,3 +20,6 @@
 
 ## 0.3.2 - Compact mode
 * A compact layout option
+
+## 0.3.3 - Better lists
+* Refactored lists and tree-view to handle states and statusses better
