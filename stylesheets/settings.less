@@ -1,4 +1,4 @@
-body .settings-view {
+body .settings-view-old {
 	.panels {
 		background: @level-3-bg;
 		color: @base-fg;
@@ -298,4 +298,60 @@ body .settings-view {
 	.alert-info    { .alert( @fg-info ); }
 	.alert-warning { .alert( @fg-warning ); }
 	.alert-danger  { .alert( @fg-error ); }
+}
+
+
+.settings-view {
+
+	.config-menu {
+		background: @level-4-bg;
+		border: none;
+		.nav > li {
+			a,
+			a:hover {
+				background-color: transparent;
+			}
+		}
+		.nav > li.active {
+			a {
+				color: @fg-selected;
+				background-color: @level-3-bg;
+			}
+		}
+	}
+
+	.link {
+		color: @fg-highlight;
+		text-decoration: underline;
+		&:hover {
+			color: @fg-highlight;
+			text-decoration: underline;
+		}
+	}
+
+	.alert-mixin (@color) {
+		@faded-color: fade(mix(@color, @level-1-bg), 20%);
+		color: @color;
+		border-color: @faded-color;
+		background-color: @faded-color;
+	}
+	.alert         { .alert-mixin( @base-fg ); }
+	.alert-success { .alert-mixin( @fg-success ); }
+	.alert-info    { .alert-mixin( @fg-info ); }
+	.alert-warning { .alert-mixin( @fg-warning ); }
+	.alert-danger  { .alert-mixin( @fg-error ); }
+
+	section .section-heading,
+	.section .section-heading {
+		font-size: @modular-scale-l * 1rem;
+	}
+	.available-package-view .card-name {
+		font-size: @modular-scale-l * 1rem;
+		//line-height: @modular-scale-xl * 1rem;
+		margin-bottom: @modular-scale-s * 1rem;;
+	}
+	.available-package-view .package-description {
+		line-height: @modular-scale-l * 1rem;
+	}
+
 }
