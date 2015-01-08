@@ -31,6 +31,10 @@ module.exports =
         (useful on small screens).'
       type: 'boolean'
       default: false
+    colorTreeSelection:
+      description: 'Make the selected file stand out in tree-view.'
+      type: 'boolean'
+      default: true
 
 
   activate: (state) ->
@@ -47,6 +51,12 @@ module.exports =
       else
         atom.workspaceView.removeClass('isotope-ui-compact')
 
+    applyTreeColor = () ->
+      if atom.config.get('isotope-ui.colorTreeSelection')
+        atom.workspaceView.addClass('isotope-ui-treecolor')
+      else
+        atom.workspaceView.removeClass('isotope-ui-treecolor')
+
     atom.workspaceView.ready ->
       applyFont(atom.config.get('isotope-ui.fontFamily'))
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
@@ -60,3 +70,6 @@ module.exports =
 
     atom.config.observe 'isotope-ui.compactLayout', ->
       applyCompactness()
+
+    atom.config.observe 'isotope-ui.colorTreeSelection', ->
+      applyTreeColor()

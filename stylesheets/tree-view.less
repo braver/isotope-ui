@@ -1,38 +1,35 @@
-.tree-view {
-  &.list-tree {
-    .li-mixin (@fg-subtle);
+.tree-view.list-tree {
+  .li-mixin (@fg-subtle);
 
-    //necesary to make the selected item background color work for tree-view only
-    li {
-      &.selected,
-      &:not(.list-nested-item).selected,
-      &.list-nested-item.selected > .list-item {
-        &:before {
-          background: @ui-theme-color;
-          border-top-left-radius: @component-border-radius;
-          border-bottom-left-radius: @component-border-radius;
-        }
+  padding: 0;
+  margin-top: @modular-scale-xxs * 1rem; // align with tabs
 
-        //only use @color if it has enough contrast with the background
-        color: @base-fg;
-        &:hover {
-          color: @base-fg;
-        }
+
+  //necesary to make the selected item background color work for tree-view only
+  li {
+    &.selected,
+    &:not(.list-nested-item).selected,
+    &.list-nested-item.selected > .list-item {
+      &:before {
+        //background: @ui-theme-color;
+        border-top-left-radius: @component-border-radius;
+        border-bottom-left-radius: @component-border-radius;
       }
 
-      //add these variations in here as well for specicifty
-      .li-variation-mixin ( status-modified, @fg-modified, @fg-modified );
-      .li-variation-mixin ( status-added,    @fg-added,    @fg-added );
+      //only use @color if it has enough contrast with the background
+      color: @base-fg;
+      &:hover {
+        //color: lighten(@base-fg, 12%);
+      }
     }
 
-
-    padding: 0;
-    margin-top: @modular-scale-xxs * 1rem; // align with tabs
+    //add these variations in here as well for specicifty
+    .li-variation-mixin ( status-modified, @fg-modified, lighten(@fg-modified, 12%) );
+    .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
   }
 
-
   // hide pointer icons in treeview
-  &.list-tree.has-collapsable-children {
+  &.has-collapsable-children {
     .list-nested-item > .list-item:before {
       display: none;
     }
@@ -43,6 +40,20 @@
   }
 }
 
+// optional color tree-view selected item just like tabs
+.isotope-ui-treecolor {
+  .tree-view.list-tree {
+    li {
+      &.selected,
+      &:not(.list-nested-item).selected,
+      &.list-nested-item.selected > .list-item {
+        &:before {
+          background: @ui-theme-color;
+        }
+      }
+    }
+  }
+}
 
 .tree-view-resizer {
   .tree-view-resize-handle {

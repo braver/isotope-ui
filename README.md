@@ -24,6 +24,7 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 - Choose from a number of fonts included in this theme
 - Select hip 'thin' fonts, or trusty old 'regular'
 - Make the layout take up less vertical space (e.g. for small screens)
+- Choose tree-view selected item highlight color
 - Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
 
 ```
