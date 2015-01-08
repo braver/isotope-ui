@@ -17,7 +17,6 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 ## Features
 
 - Automatically adapts to your favourite syntax theme
-- Styled settings-view
 - Configurable!
 
 
