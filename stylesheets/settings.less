@@ -1,334 +1,88 @@
-body .settings-view-old {
-	.panels {
-		background: @level-3-bg;
-		color: @base-fg;
-	}
-
-	.settings-panel {
-		label {
-			color: @base-fg;
-		}
-		.section-body {
-			padding: 0;
-		}
-	}
-
-	.section .section-heading:first-child,
-	section .section-heading:first-child {
-		color: @base-fg;
-		border-color: @level-5-bg;
-		padding: 0 0 @modular-scale-xl * 1rem 0;
-		margin: 0 0 @modular-scale-m * 1rem 0;
-		font-size: @modular-scale-xl * 1rem;
-		line-height: @modular-scale-xxl * 1rem;
-	}
-
-	.thumbnail {
-		background: @level-2-bg;
-		border: none;
-		box-shadow: 0 0 2px rgba(0,0,0,.2);
-
-		.caption {
-			color: @base-fg;
-		}
-	}
-
-	.link {
-		color: @fg-highlight;
-		text-decoration: none;
-		&:hover {
-			color: @fg-highlight;
-			text-decoration: underline;
-		}
-	}
-
-	select.form-control {
-		background: @input-background-color;
-		color: @base-fg;
-		border-radius: @component-border-radius;
-		border: 1px solid @input-border-color;
-		box-shadow: none;
-	}
-
-	atom-text-editor.mini.mini.mini { //wut?
-		.mini-editor-mixin();
-	}
-
-	.text, .text-subtle {
-		color: @base-fg;
-	}
-
-	.btn-mixin (@bg-color, @fg-color) {
-
-		@level-0-bg: lighten(@bg-color, @ui-contrast + 12%);
-		@level-1-bg: lighten(@bg-color, @ui-contrast + 6%);
-		@level-2-bg:  darken(@bg-color, @ui-contrast);
-		@level-3-bg:  darken(@bg-color, @ui-contrast + 3%);
-		@level-4-bg:  darken(@bg-color, @ui-contrast + 6%);
-		@level-5-bg:  darken(@bg-color, @ui-contrast + 9%);
-
-		color: @fg-color;
-		background: @level-2-bg;
-		border-radius: @component-border-radius;
-		border: none;
-		box-shadow: 0 0 2px rgba(0,0,0,.2);
-		transition: all .2s .1s;
-
-		padding: 0 @modular-scale-s * 1rem;
-
-		margin: 0 @modular-scale-xxs * 1rem @modular-scale-xxs * 1rem 0;
-
-		height: @modular-scale-xxl * 1rem;
-		line-height: @modular-scale-xxl * 1rem;
-
-		&.btn-xs {
-			padding: 0 @modular-scale-s * 1rem;
-			height: @modular-scale-l * 1rem;
-			line-height: @modular-scale-l * 1rem;
-		}
-		&.btn-sm {
-			padding: 0 @modular-scale-s * 1rem;
-			height: @modular-scale-xl * 1rem;
-			line-height: @modular-scale-xl * 1rem;
-		}
-		&.btn-lg {
-			padding: 0 @modular-scale-s * 1rem;
-			height: @modular-scale-xxl * 1.333rem;
-			line-height: @modular-scale-xxl * 1.333rem;
-		}
-
-		&:focus,
-		&:hover {
-			color: @fg-color;
-			background: @level-4-bg;
-			transition: all .1s;
-		}
-		&:active {
-			color: @fg-color;
-			background: @level-5-bg;
-		}
-		&.selected {
-			color: @fg-selected;
-			background: @level-2-bg;
-		}
-		&.selected:hover {
-			color: @fg-selected;
-			background: @level-1-bg;
-		}
-	}
-
-	.btn,
-	.btn-default,
-	.btn-group > .btn-default {
-		.btn-mixin(@button-background-color, @base-fg);
-	}
-	.btn-group > .btn {
-		border-left-color: @fg-subtle;
-		border-right-color: @fg-subtle;
-		margin-right: 0px;
-	}
-
-	.btn.btn-primary {
-		.btn-mixin(@button-background-color, @fg-highlight);
-	}
-	.btn.btn-info {
-		.btn-mixin(@bg-info, @base-fg);
-	}
-	.btn.btn-success {
-		.btn-mixin(@bg-success, @base-fg);
-	}
-	.btn.btn-warning {
-		.btn-mixin(@bg-warning, @base-fg);
-	}
-	.btn.btn-error {
-		.btn-mixin(@bg-error, @base-fg);
-	}
-
-	.config-menu {
-		position: relative;
-		background: @level-2-bg;
-		box-shadow: none;
-		/* border-right: 1px solid @level-5-bg; */
-
-		// smoothen border with a gradient
-		&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: -1px;
-			width: 1px;
-			height: 100px;
-			background: linear-gradient(@level-2-bg 10%, @level-5-bg);
-		}
-
-		.nav-stacked > li + li {
-			margin-top: 0;
-		}
-
-		.nav > li > a {
-			color: @base-fg;
-		}
-		.nav > li > a:hover {
-			background: @level-2-bg;
-			color: @base-fg;
-			box-shadow: none;
-		}
-		.nav > li.active > a {
-			color: @fg-selected;
-			/* box-shadow: inset 0 1px 0 @level-5-bg, inset 0 -1px 0 @level-5-bg; */
-			background: @level-3-bg;
-			.package-author {
-				color: @fg-selected;
-			}
-		}
-	}
-
-	.table > tbody > tr > td,
-	.table > thead > tr > th {
-		border-color: @level-2-bg;
-	}
-
-	.table > tbody > .success > td {
-		background: @level-2-bg;
-	}
-
-	.config-menu .panels-menu .panel-menu-separator {
-		border: none;
-	}
-
-	.config-menu .panels-packages {
-		background: @settings-list-background-color;
-		border-top: 1px solid @level-5-bg;
-		border-bottom: 1px solid @level-5-bg;
-
-		li {
-			a {
-				border-radius: 0 !important;
-				box-shadow: none !important;
-				border-bottom: 1px solid @level-5-bg;
-			}
-			a:hover {
-				box-shadow: none !important;
-			}
-			&.active {
-				a, a:hover {
-					box-shadow: none !important;
-				}
-			}
-			&:first-child {
-				margin-top: 0;
-			}
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-
-		.package-title {
-			color: @fg-highlight;
-		}
-
-		.package-version {
-			color: @base-fg !important;
-		}
-
-		.package-author {
-			color: @base-fg !important;
-		}
-	}
-
-	.packages .available-package-view {
-		.package-name {
-			color: @fg-highlight;
-			line-height: @modular-scale-xxl * 1rem;
-			margin: 0 0 @modular-scale-m * 1rem 0;
-		}
-		.downloads {
-			color: @base-fg;
-		}
-		.description {
-			color: @base-fg;
-		}
-	}
-
-	.packages {
-
-		.theme-chooser {
-			.col-md-4 {
-				min-width: 300px; // temporarly prevent wrapping
-			}
-		}
-
-		.theme-base-color,
-		.theme-saturation {
-			box-shadow: @theme-config-box-shadow;
-		}
-
-		.theme-base-color-selected,
-		.theme-saturation-selected,
-		.theme-contrast-selected {
-			border-color: @theme-config-border-selected;
-			box-shadow: @theme-config-box-shadow-selected;
-		}
-
-		.theme-contrast {
-			background-color: transparent;
-		}
-	}
-
-	.error-message .error-details {
-		background: @level-1-bg;
-		border: @inset-panel-border-color;
-		color: @base-fg;
-	}
-
-	.setting-description {
-		color: @fg-subtle;
-	}
-
-
-	.alert (@color) {
-		@faded-color: fade(mix(@color, @level-1-bg), 20%);
-		color: @color;
-		border-color: @faded-color;
-		background-color: @faded-color;
-	}
-
-	.alert         { .alert( @base-fg ); }
-	.alert-success { .alert( @fg-success ); }
-	.alert-info    { .alert( @fg-info ); }
-	.alert-warning { .alert( @fg-warning ); }
-	.alert-danger  { .alert( @fg-error ); }
-}
-
-
 .settings-view {
 
 	.config-menu {
 		background: @level-4-bg;
 		border: none;
+
 		.nav > li {
 			a,
 			a:hover {
 				background-color: transparent;
+				font-size: 1rem;
 			}
-		}
-		.nav > li.active {
-			a {
-				color: @fg-selected;
-				background-color: @level-3-bg;
+
+			&.active {
+				a {
+					color: @fg-selected;
+					background-color: @level-3-bg;
+				}
 			}
 		}
 	}
 
 	.link {
-		color: @fg-highlight;
-		text-decoration: underline;
+		&,
 		&:hover {
 			color: @fg-highlight;
-			text-decoration: underline;
 		}
 	}
 
+	.section-container {
+		max-width: 56rem;
+	}
+
+	.settings-panel label,
+	.breadcrumb {
+		font-size: 1rem;
+	}
+	section .section-heading,
+	.section .section-heading {
+		font-size: @modular-scale-xl * 1rem;
+
+		&.icon:before {
+			font-size: 24px;
+			height: 24px;
+			width: 24px;
+		}
+	}
+	.sub-section-heading {
+		font-size: @modular-scale-l * 1rem;
+	}
+	.section-heading-count {
+		font-size: @modular-scale-s * 1em;
+	}
+	.packages .themes-label {
+		font-size: @modular-scale-l * 1rem;
+	}
+
+	.setting-description {
+		font-size: @modular-scale-s * 1rem;
+	}
+
+	.available-package-view {
+		font-size: 1rem;
+
+		.card-name {
+			font-size: @modular-scale-l * 1rem;
+			margin-bottom: @modular-scale-s * 1rem;;
+		}
+		.package-name,
+		.package-description {
+			line-height: @modular-scale-l * 1rem;
+		}
+		.meta-user .avatar {
+			height: @modular-scale-xxl * 1rem;
+			width: @modular-scale-xxl * 1rem;
+		}
+
+		.description,
+		.downloads {
+
+		}
+	}
+
+
+	//alerts like "checking for updates"
 	.alert-mixin (@color) {
 		@faded-color: fade(mix(@color, @level-1-bg), 20%);
 		color: @color;
@@ -340,18 +94,4 @@ body .settings-view-old {
 	.alert-info    { .alert-mixin( @fg-info ); }
 	.alert-warning { .alert-mixin( @fg-warning ); }
 	.alert-danger  { .alert-mixin( @fg-error ); }
-
-	section .section-heading,
-	.section .section-heading {
-		font-size: @modular-scale-l * 1rem;
-	}
-	.available-package-view .card-name {
-		font-size: @modular-scale-l * 1rem;
-		//line-height: @modular-scale-xl * 1rem;
-		margin-bottom: @modular-scale-s * 1rem;;
-	}
-	.available-package-view .package-description {
-		line-height: @modular-scale-l * 1rem;
-	}
-
 }
