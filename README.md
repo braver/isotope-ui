@@ -37,11 +37,11 @@ This package includes a number of fonts that were designed especially for user i
 - Cantarell - the system font for GNOME 3 (by Dave Crossland)
 - Clear Sans - Intel's new font (by Daniel Ratighan)
 - Fira Sans - the system font for Firefox OS (by Carrois and Edenspiekermann)
+- Open Sans - because we ♥ Open Sans (by Steve Matteson)
 - Oxygen - the system font for KDE (by Vernon Adams)
 - Roboto - the new font for Android (by Christian Robertson)
 - Source Sans Pro - Adobe's UI font also used in Brackets (by Paul D. Hunt)
 - Ubuntu - Ubuntu's system font (by Dalton Maag)
-- Open Sans - because we ♥ Open Sans (by Steve Matteson)
 
 ## Plans
 

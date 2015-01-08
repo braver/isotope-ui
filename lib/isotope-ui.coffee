@@ -2,7 +2,8 @@ module.exports =
 
   config:
     fontFamily:
-      description: 'Use one of the fonts available in this package. View the README for descriptions of each.'
+      description: 'Use one of the fonts available in this package.
+        View the README for descriptions of each.'
       type: 'string'
       default: 'Open Sans'
       enum: [
@@ -16,7 +17,8 @@ module.exports =
         'Ubuntu'
       ]
     fontWeight:
-      description: 'Not all fonts come in all weights: Canterell and Oxygen only have regular, Ubuntu and Open Sans don\'t have thin.'
+      description: 'Not all fonts come in all weights: Canterell and Oxygen
+        only have regular, Ubuntu and Open Sans don\'t have thin.'
       type: 'string'
       default: 'Extra light / Thin'
       enum: [
@@ -25,9 +27,11 @@ module.exports =
         'Regular'
       ]
     compactLayout:
-      description: 'Make UI chrome take up less space vertically (useful on small screens).'
+      description: 'Make UI chrome take up less space vertically
+        (useful on small screens).'
       type: 'boolean'
       default: false
+
 
   activate: (state) ->
 
