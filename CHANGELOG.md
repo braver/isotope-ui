@@ -23,4 +23,5 @@
 
 ## 0.3.3 - Better lists and Zen
 * Refactored lists and tree-view to handle states and statusses better
+* Configurable tree-view selected highlight
 * Improve support for zen mode
