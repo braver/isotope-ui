@@ -21,5 +21,6 @@
 ## 0.3.2 - Compact mode
 * A compact layout option
 
-## 0.3.3 - Better lists
+## 0.3.3 - Better lists and Zen
 * Refactored lists and tree-view to handle states and statusses better
+* Improve support for zen mode
