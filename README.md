@@ -49,7 +49,7 @@ This package includes a number of fonts that were designed especially for user i
 ## Plans
 
 - Support tweaking saturation and contrast via settings-view (waiting for settings-view here)
-s- Offer more font choices (currently packages Open Sans)
+- Offer more font choices (currently packages Open Sans)
 - Tweak and improve stuff for packages
 - Add more configuration options
 - Use it every day
