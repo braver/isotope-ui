@@ -2,10 +2,20 @@
 * tweaks to non-core packages
 */
 
+// zen
+.zen {
+  border: none;
+  .panes atom-pane {
+    background: @ui-theme-color !important; //overrule an inline style
+  }
+}
+
+
 atom-text-editor,
 atom-text-editor::shadow {
 
-  // tweak the color-highlight package
+
+  // atom-color-highlight
   atom-color-highlight {
     dot-color-marker {
       margin-top: .4em;
@@ -23,7 +33,8 @@ atom-text-editor::shadow {
     }
   }
 
-  // tweak the minimap
+
+  // minimap
   atom-text-editor-minimap::shadow .minimap-visible-area {
     background-color: @level-0-bg;
     opacity: .24;
