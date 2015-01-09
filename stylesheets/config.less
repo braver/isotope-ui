@@ -73,11 +73,41 @@ atom-workspace:not(.zen) { // maintain zen
     background-image: url(atom://isotope-ui/resources/images/hubble.jpg);
 
     .status-bar,
-    .tree-view,
+    .tree-view.list-tree, // sadly loses status-indication
     .tab-bar .tab:not(.active) {
       & * {
+        // make text stand out against any background
         color: #fff;
         text-shadow: 1px 0 4px rgba(0,0,0,.66);
+      }
+    }
+    .tree-view.list-tree li {
+      &.selected *,
+      &:not(.list-nested-item).selected *,
+      &.list-nested-item.selected > .list-item * {
+        // only use @color if it has enough contrast with the background
+        color: @base-fg;
+        text-shadow: none;
+      }
+
+      // replace status indication because we don't have colors anymore
+      &.status-modified,
+      &:not(.list-nested-item).status-modified,
+      &.list-nested-item.status-modified > .list-item {
+        > .name:after {
+          .icon();
+          content: '\f06d';
+          padding-left: 1em;
+        }
+      }
+      &.status-added,
+      &:not(.list-nested-item).status-added,
+      &.list-nested-item.status-added > .list-item {
+        > .name:after {
+          .icon();
+          content: '\f06b';
+          padding-left: 1em;
+        }
       }
     }
   }
