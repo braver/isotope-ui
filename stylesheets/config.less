@@ -1,5 +1,5 @@
 //config variables (defined in isotope-ui.coffee) are passed on in attributes
-//this stylesheet does the css interpretation for typography
+//this stylesheet does the css interpretation
 
 //font family
 [isotope-ui-font='Cantarell'] {
@@ -38,13 +38,31 @@
   font-weight: 400;
 }
 
-//font-size config (max 36)
-/* config not functional, see https://github.com/atom/settings-view/issues/307
-.loop-fontsize(@counter) when (@counter > 0) {
-  .loop-fontsize((@counter - 1));    // next iteration
-  [isotope-ui-fontsize='@{counter}'] {
-    font-size: @counter * 1px;
+
+atom-workspace {
+  &.isotope-ui-bg-gradient {
+    border: none;
+    padding-left: @modular-scale-xxs * 1rem;
+    padding-right: @modular-scale-xxs * 1rem;
+    background-image: linear-gradient(lighten(spin(@app-background-color, 66%), 12%) 0%, @app-background-color 100%);
+  }
+
+  &.isotope-ui-bg-image {
+    border: none;
+    padding-left: @modular-scale-xxs * 1rem;
+    padding-right: @modular-scale-xxs * 1rem;
+    background-image: url(https://ununsplash.imgix.net/photo-1416854905195-f4c96ea8f949?fit=crop&fm=jpg&q=75&w=1050);
+
+    .tab-bar .tab:not(.active) {
+      background-color: transparent;
+    }
+    .status-bar,
+    .tree-view,
+    .tab-bar .tab:not(.active) {
+      & * {
+        color: #fff;
+        text-shadow: 1px 0 4px rgba(0,0,0,.66);
+      }
+    }
   }
 }
-.loop-fontsize(36);
-*/

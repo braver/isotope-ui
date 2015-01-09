@@ -35,6 +35,14 @@ module.exports =
       description: 'Make the selected file stand out in tree-view.'
       type: 'boolean'
       default: true
+    backgroundGradient:
+      description: 'Experimental: apply a subtle gradient to the background.'
+      type: 'boolean'
+      default: false
+    backgroundImage:
+      description: 'Experimental: use an image (e.g. from unsplash.com) as a background.'
+      type: 'boolean'
+      default: false
 
 
   activate: (state) ->
@@ -57,6 +65,18 @@ module.exports =
       else
         atom.workspaceView.removeClass('isotope-ui-treecolor')
 
+    applyBackgroundGradient = () ->
+      if atom.config.get('isotope-ui.backgroundGradient')
+        atom.workspaceView.addClass('isotope-ui-bg-gradient')
+      else
+        atom.workspaceView.removeClass('isotope-ui-bg-gradient')
+
+    applyBackgroundImage = () ->
+      if atom.config.get('isotope-ui.backgroundImage')
+        atom.workspaceView.addClass('isotope-ui-bg-image')
+      else
+        atom.workspaceView.removeClass('isotope-ui-bg-image')
+
     atom.workspaceView.ready ->
       applyFont(atom.config.get('isotope-ui.fontFamily'))
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
@@ -73,3 +93,9 @@ module.exports =
 
     atom.config.observe 'isotope-ui.colorTreeSelection', ->
       applyTreeColor()
+
+    atom.config.observe 'isotope-ui.backgroundGradient', ->
+      applyBackgroundGradient()
+
+    atom.config.observe 'isotope-ui.backgroundImage', ->
+      applyBackgroundImage()
