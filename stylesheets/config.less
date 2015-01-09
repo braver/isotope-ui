@@ -60,7 +60,7 @@ atom-workspace:not(.zen) { // maintain zen
     // make status-bar transparent
     .status-bar,
     .tool-panel.tool-panel.panel-bottom:last-child {
-      background-color: transparent !important;
+      background-color: transparent !important; //also overrule an inline style
     }
   }
 
@@ -115,9 +115,9 @@ atom-workspace:not(.zen) { // maintain zen
 
     // restore tree-view selected item color
     .tree-view.list-tree li {
-      &.selected *,
-      &:not(.list-nested-item).selected *,
-      &.list-nested-item.selected > .list-item * {
+      &.selected > span,
+      &:not(.list-nested-item).selected > span,
+      &.list-nested-item.selected > .list-item > span {
         // only use @color if it has enough contrast with the background
         color: @base-fg;
         text-shadow: none;
