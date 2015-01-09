@@ -49,6 +49,7 @@ atom-workspace:not(.zen) { // maintain zen
     /*
     These selectors aren't reliable, but I haven't found out
     how to target these UI elements reliably
+    and it seems to work just fine
     */
 
     // make tree-view transparent
@@ -81,6 +82,12 @@ atom-workspace:not(.zen) { // maintain zen
         text-shadow: 1px 0 4px rgba(0,0,0,.66);
       }
     }
+    // hide custom status indicator
+    .status-bar .buffer-modified:after {
+      display: none;
+    }
+
+    // restore tree-view selected item color
     .tree-view.list-tree li {
       &.selected *,
       &:not(.list-nested-item).selected *,
@@ -90,7 +97,7 @@ atom-workspace:not(.zen) { // maintain zen
         text-shadow: none;
       }
 
-      // replace status indication because we don't have colors anymore
+      // replace status indication because we don't have different colors anymore
       &.status-modified,
       &:not(.list-nested-item).status-modified,
       &.list-nested-item.status-modified > .list-item {
