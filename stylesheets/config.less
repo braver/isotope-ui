@@ -102,18 +102,14 @@ atom-workspace:not(.zen) { // maintain zen
       &:not(.list-nested-item).status-modified,
       &.list-nested-item.status-modified > .list-item {
         > .name:after {
-          .icon();
-          content: '\f06d';
-          padding-left: 1em;
+          content: ' *';
         }
       }
       &.status-added,
       &:not(.list-nested-item).status-added,
       &.list-nested-item.status-added > .list-item {
         > .name:after {
-          .icon();
-          content: '\f06b';
-          padding-left: 1em;
+          content: ' +';
         }
       }
     }
