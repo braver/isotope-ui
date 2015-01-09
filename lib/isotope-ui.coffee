@@ -47,6 +47,11 @@ module.exports =
       description: 'Experimental: the url for an image from te internets.'
       type: 'string'
       default: 'atom://isotope-ui/resources/images/hubble.jpg'
+    backgroundGrain:
+      description: 'A bit of noise in the background.
+        Usually makes gradients look better. Not applied to images.'
+      type: 'boolean'
+      default: true
 
 
   activate: (state) ->

@@ -44,8 +44,14 @@ module.exports =
           ''
         )
 
+    applyBackgroundGrain = () ->
+      if atom.config.get('isotope-ui.backgroundGrain')
+        atom.workspaceView.addClass('isotope-ui-bg-grain')
+      else
+        atom.workspaceView.removeClass('isotope-ui-bg-grain')
+
     # run when atom is ready
-    
+
     atom.workspaceView.ready ->
       applyFont(atom.config.get('isotope-ui.fontFamily'))
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
@@ -53,6 +59,7 @@ module.exports =
       applyTreeColor()
       applyBackgroundGradient()
       applyBackgroundImage()
+      applyBackgroundGrain()
 
 
     # run when configs change
@@ -77,3 +84,6 @@ module.exports =
 
     atom.config.onDidChange 'isotope-ui.backgroundImageUrl', ->
       applyBackgroundImage()
+
+    atom.config.onDidChange 'isotope-ui.backgroundGrain', ->
+      applyBackgroundGrain()
