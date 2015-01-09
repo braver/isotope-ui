@@ -26,5 +26,5 @@
 * Configurable tree-view selected highlight
 * Improve support for zen mode
 
-## 0.3.5 - Settings-view
-* Patched up settings-view support
+## 0.3.6 - Settings-view
+* Improved settings-view support
