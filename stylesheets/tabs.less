@@ -9,7 +9,9 @@
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
   overflow-x: auto;
   overflow-y: hidden;
-  background-color: @tab-bar-background-color;
+  background: @tab-bar-background-color;
+
+  margin-top: @modular-scale-xxs * 1rem; // create a small space above tabs
 
   &::-webkit-scrollbar {
     display: none;
@@ -26,7 +28,7 @@
     padding: 0;
     margin: 0;
     color: @tab-text-color;
-    background: @tab-background-color;
+    background: transparent;
     border-right: @tab-border;
     border-top-left-radius: @component-border-radius;
     border-top-right-radius: @component-border-radius;

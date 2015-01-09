@@ -1,10 +1,10 @@
 # Isotope UI theme
 
-A clean and low contrast UI theme that adapts to your favourite syntax theme.
+A clean and configurable UI theme that adapts to your taste.
 
 Isotope relies on syntax-variables.less to set a background color, and derives all other colors from that. It's intended to provide an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast.
 
-You can configure typography and a number of other options to your liking.
+You can configure typography, the editor's background and a number of other options to your liking.
 
 Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-ui](https://github.com/atom/one-dark-ui) theme that Isotope was forked from.
 
@@ -24,6 +24,8 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 
 - Choose from a number of fonts included in this theme
 - Select hip 'thin' fonts, or trusty old 'regular'
+- Choose between a flat or gradient background
+- Or even use any image on the web as background (e.g. from [unsplash](http://unsplash.com).com)
 - Make the layout take up less vertical space (e.g. for small screens)
 - Choose tree-view selected item highlight color
 - Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:

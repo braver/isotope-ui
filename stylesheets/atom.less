@@ -8,9 +8,14 @@ body {
 }
 
 atom-workspace {
-	border-top: @modular-scale-xxs * 1rem solid @level-2-bg;
-	border-left: @modular-scale-xxs * 1rem solid @level-2-bg;
-	border-right: @modular-scale-xxs * 1rem solid @level-2-bg;
+	background-color: @app-background-color;
+
+	border-style: solid;
+	border-color: @app-background-color;
+	border-left-width: @modular-scale-xxs * 1rem;
+	border-right-width: @modular-scale-xxs * 1rem;
+	border-top-width: 0; // managed by a margin on tab-bar
+	border-bottom-width: 0; // none needed here
 }
 
 h1,
