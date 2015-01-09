@@ -95,24 +95,27 @@ module.exports =
       applyFont(atom.config.get('isotope-ui.fontFamily'))
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
       applyCompactness()
-
-    atom.config.observe 'isotope-ui.fontFamily', ->
-      applyFont(atom.config.get('isotope-ui.fontFamily'))
-
-    atom.config.observe 'isotope-ui.fontWeight', ->
-      applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
-
-    atom.config.observe 'isotope-ui.compactLayout', ->
-      applyCompactness()
-
-    atom.config.observe 'isotope-ui.colorTreeSelection', ->
       applyTreeColor()
-
-    atom.config.observe 'isotope-ui.backgroundGradient', ->
       applyBackgroundGradient()
-
-    atom.config.observe 'isotope-ui.backgroundImage', ->
       applyBackgroundImage()
 
-    atom.config.observe 'isotope-ui.backgroundImageUrl', ->
+    atom.config.onDidChange 'isotope-ui.fontFamily', ->
+      applyFont(atom.config.get('isotope-ui.fontFamily'))
+
+    atom.config.onDidChange 'isotope-ui.fontWeight', ->
+      applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
+
+    atom.config.onDidChange 'isotope-ui.compactLayout', ->
+      applyCompactness()
+
+    atom.config.onDidChange 'isotope-ui.colorTreeSelection', ->
+      applyTreeColor()
+
+    atom.config.onDidChange 'isotope-ui.backgroundGradient', ->
+      applyBackgroundGradient()
+
+    atom.config.onDidChange 'isotope-ui.backgroundImage', ->
+      applyBackgroundImage()
+
+    atom.config.onDidChange 'isotope-ui.backgroundImageUrl', ->
       applyBackgroundImage()
