@@ -40,9 +40,13 @@ module.exports =
       type: 'boolean'
       default: false
     backgroundImage:
-      description: 'Experimental: use an image (e.g. from unsplash.com) as a background.'
+      description: 'Experimental: use an image as a background.'
       type: 'boolean'
       default: false
+    backgroundImageUrl:
+      description: 'Experimental: the url for an image from te internets.'
+      type: 'string'
+      default: 'atom://isotope-ui/resources/images/hubble.jpg'
 
 
   activate: (state) ->
@@ -68,14 +72,24 @@ module.exports =
     applyBackgroundGradient = () ->
       if atom.config.get('isotope-ui.backgroundGradient')
         atom.workspaceView.addClass('isotope-ui-bg-gradient')
+        atom.config.set('isotope-ui.backgroundImage', 'false')
       else
         atom.workspaceView.removeClass('isotope-ui-bg-gradient')
 
     applyBackgroundImage = () ->
       if atom.config.get('isotope-ui.backgroundImage')
         atom.workspaceView.addClass('isotope-ui-bg-image')
+        atom.config.set('isotope-ui.backgroundGradient', 'false')
+        atom.workspaceView.css(
+          'backgroundImage',
+          'url(' + atom.config.get('isotope-ui.backgroundImageUrl') + ')'
+        )
       else
         atom.workspaceView.removeClass('isotope-ui-bg-image')
+        atom.workspaceView.css(
+          'backgroundImage',
+          ''
+        )
 
     atom.workspaceView.ready ->
       applyFont(atom.config.get('isotope-ui.fontFamily'))
@@ -98,4 +112,7 @@ module.exports =
       applyBackgroundGradient()
 
     atom.config.observe 'isotope-ui.backgroundImage', ->
+      applyBackgroundImage()
+
+    atom.config.observe 'isotope-ui.backgroundImageUrl', ->
       applyBackgroundImage()

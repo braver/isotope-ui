@@ -2,7 +2,7 @@
   .li-mixin (@fg-subtle);
 
   padding: 0;
-  margin-top: @modular-scale-xxs * 1rem; // align with tabs
+  margin-top: @modular-scale-xxs * 1rem + .5rem; // align with tabs
 
 
   //necesary to make the selected item background color work for tree-view only
@@ -59,9 +59,4 @@
   .tree-view-resize-handle {
     width: 8px;
   }
-}
-
-
-.tool-panel.tool-panel:first-child {
-  background-color: transparent;
 }

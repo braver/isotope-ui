@@ -39,23 +39,39 @@
 }
 
 
-atom-workspace {
-  &.isotope-ui-bg-gradient {
-    border: none;
-    padding-left: @modular-scale-xxs * 1rem;
-    padding-right: @modular-scale-xxs * 1rem;
-    background-image: linear-gradient(lighten(spin(@app-background-color, 66%), 12%) 0%, @app-background-color 100%);
-  }
-
+atom-workspace:not(.zen) { // maintain zen
+  &.isotope-ui-bg-gradient,
   &.isotope-ui-bg-image {
     border: none;
     padding-left: @modular-scale-xxs * 1rem;
     padding-right: @modular-scale-xxs * 1rem;
-    background-image: url(https://ununsplash.imgix.net/photo-1416854905195-f4c96ea8f949?fit=crop&fm=jpg&q=75&w=1050);
 
-    .tab-bar .tab:not(.active) {
-      background-color: transparent;
+    /*
+    These selectors aren't reliable, but I haven't found out
+    how to target these UI elements reliably
+    */
+
+    // make tree-view transparent
+    .tool-panel.tool-panel:first-child:not(.panel-bottom),
+    // make tab-bar transparent
+    .panes atom-pane,
+    .tab-bar,
+    // make status-bar transparent
+    .status-bar,
+    .tool-panel.tool-panel.panel-bottom:last-child {
+      background-color: transparent !important;
     }
+  }
+
+  &.isotope-ui-bg-gradient {
+    background-image: linear-gradient(lighten(spin(@app-background-color, 66%), 12%) 0%, @app-background-color 100%);
+  }
+
+  &.isotope-ui-bg-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(atom://isotope-ui/resources/images/hubble.jpg);
+
     .status-bar,
     .tree-view,
     .tab-bar .tab:not(.active) {
