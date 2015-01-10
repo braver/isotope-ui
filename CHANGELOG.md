@@ -33,3 +33,6 @@
 * All features in and tested
 * Configurable background gradients and images
 * Contrast and typography improvements
+
+## 1.0.1 - Custom background color
+* Set your own background color (experimental)
