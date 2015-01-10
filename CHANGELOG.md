@@ -28,3 +28,8 @@
 
 ## 0.3.6 - Settings-view
 * Improved settings-view support
+
+## 1.0.0 - First major
+* All features in and tested
+* Configurable background gradients and images
+* Contrast and typography improvements

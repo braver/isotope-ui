@@ -1,22 +1,25 @@
 # Isotope UI theme
 
-A clean and configurable UI theme that adapts to your taste.
+A clean and configurable UI theme that adapts to your taste, offering endless possibilities. One Atom, many Isotopes ;)
 
 Isotope relies on syntax-variables.less to set a background color, and derives all other colors from that. It's intended to provide an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast.
 
-You can configure typography, the editor's background and a number of other options to your liking.
+It's also flexible: you can configure typography, background (images even) and a number of other options to your liking.
 
 Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-ui](https://github.com/atom/one-dark-ui) theme that Isotope was forked from.
 
-![dark](https://github.com/braver/isotope-ui/raw/master/resources/images/1.png)
+![flat background](https://github.com/braver/isotope-ui/raw/master/resources/images/flat.png)
 
-![light](https://github.com/braver/isotope-ui/raw/master/resources/images/6.png)
+![gradient background](https://github.com/braver/isotope-ui/raw/master/resources/images/gradient.png)
+
+![image background](https://github.com/braver/isotope-ui/raw/master/resources/images/image.png)
 
 [More examples](https://github.com/braver/isotope-ui/blob/master/resources/images/examples.md)
 
 ## Features
 
 - Automatically adapts to your favourite syntax theme
+- Tweaks [minimap](https://atom.io/packages/minimap), [zen](https://atom.io/packages/zen), [color-highlight](https://atom.io/packages/atom-color-highlight) (more to come)
 - Configurable!
 
 
@@ -25,7 +28,7 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 - Choose from a number of fonts included in this theme
 - Select hip 'thin' fonts, or trusty old 'regular'
 - Choose between a flat or gradient background
-- Or even use any image as background (e.g. from your computer or [hubble](http://hubblesite.org))
+- Or even use any image as background (from your computer or [the internets](http://hubblesite.org))
 - Make the layout take up less vertical space (e.g. for small screens)
 - Choose tree-view selected item highlight color
 - Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
@@ -49,9 +52,8 @@ This package includes a number of fonts that were designed especially for user i
 
 ## Plans
 
-- Support tweaking saturation and contrast via settings-view (waiting for settings-view here)
-- Offer more font choices
-- Tweak and improve stuff for packages
+- Add config for brightness and contrast
+- Tweak and improve stuff for specific packages
 - Add more configuration options
 - Use it every day
 - Make it better almost every day
