@@ -43,9 +43,9 @@ module.exports =
       description: 'Experimental: use an image as a background.'
       type: 'boolean'
       default: false
-    backgroundImageUrl:
-      description: 'Experimental: the url for an image from te internets
-        (e.g. hubblesite.org or unsplash.com).'
+    backgroundImagePath:
+      description: 'Experimental: the path to an image from your computer or
+       the internets (e.g. hubblesite.org or unsplash.com).'
       type: 'string'
       default: 'atom://isotope-ui/resources/images/hubble.jpg'
     backgroundGrain:

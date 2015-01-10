@@ -35,7 +35,7 @@ module.exports =
         atom.config.set('isotope-ui.backgroundGradient', 'false')
         atom.workspaceView.css(
           'backgroundImage',
-          'url(' + atom.config.get('isotope-ui.backgroundImageUrl') + ')'
+          'url(' + atom.config.get('isotope-ui.backgroundImagePath') + ')'
         )
       else
         atom.workspaceView.removeClass('isotope-ui-bg-image')
@@ -82,7 +82,7 @@ module.exports =
     atom.config.onDidChange 'isotope-ui.backgroundImage', ->
       applyBackgroundImage()
 
-    atom.config.onDidChange 'isotope-ui.backgroundImageUrl', ->
+    atom.config.onDidChange 'isotope-ui.backgroundImagePath', ->
       applyBackgroundImage()
 
     atom.config.onDidChange 'isotope-ui.backgroundGrain', ->
