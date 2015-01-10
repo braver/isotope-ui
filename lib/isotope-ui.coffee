@@ -20,7 +20,7 @@ module.exports =
       description: 'Not all fonts come in all weights: Canterell and Oxygen
         only have regular, Ubuntu and Open Sans don\'t have thin.'
       type: 'string'
-      default: 'Extra light / Thin'
+      default: 'Light'
       enum: [
         'Extra light / Thin',
         'Light',
