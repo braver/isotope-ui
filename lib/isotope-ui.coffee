@@ -35,6 +35,10 @@ module.exports =
       description: 'Make the selected file stand out in tree-view.'
       type: 'boolean'
       default: true
+    backgroundColor:
+      description: 'Experimental: Choose a custom background color (#rgb).'
+      type: 'string'
+      default: ''
     backgroundGradient:
       description: 'Experimental: apply a subtle gradient to the background.'
       type: 'boolean'

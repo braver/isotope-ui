@@ -2,7 +2,21 @@ module.exports =
 
   apply: () ->
 
-    #functions
+    # functions
+
+    # calculate lighter/darker color
+    # http://stackoverflow.com/questions/5560248
+    shadeColor = (color, percent) ->
+      num = parseInt(color.slice(1), 16)
+      amt = Math.round(2.55 * percent)
+      R = (num >> 16) + amt
+      G = (num >> 8 & 0x00ff) + amt
+      B = (num & 0x0000ff) + amt
+      "#" + (0x1000000 +
+        ((if R < 255 then (if R < 1 then 0 else R) else 255)) * 0x10000 +
+        ((if G < 255 then (if G < 1 then 0 else G) else 255)) * 0x100 +
+        ((if B < 255 then (if B < 1 then 0 else B) else 255))
+        ).toString(16).slice(1)
 
     applyFont = (font) ->
       atom.workspaceView.attr('isotope-ui-font', font)
@@ -22,12 +36,49 @@ module.exports =
       else
         atom.workspaceView.removeClass('isotope-ui-treecolor')
 
+    applyBackgroundColor = () ->
+      color = atom.config.get('isotope-ui.backgroundColor')
+      if atom.config.get('isotope-ui.backgroundGradient')
+        if color isnt ''
+          color1 = shadeColor(color, 12)
+          color2 = shadeColor(color, -12)
+          gradient = 'linear-gradient(' + color1 + ' 0%, ' + color2 + ' 100%)'
+          atom.workspaceView.addClass('isotope-ui-bg-color')
+          atom.workspaceView.css(
+            'backgroundImage',
+            gradient
+          )
+        else
+          atom.workspaceView.removeClass('isotope-ui-bg-color')
+          atom.workspaceView.css(
+            'backgroundImage',
+            ''
+          )
+      else
+        atom.workspaceView.css(
+          'backgroundImage',
+          ''
+        )
+        if color isnt ''
+          atom.workspaceView.addClass('isotope-ui-bg-color')
+          atom.workspaceView.css(
+            'backgroundColor',
+            color
+          )
+        else
+          atom.workspaceView.removeClass('isotope-ui-bg-color')
+          atom.workspaceView.css(
+            'backgroundColor',
+            ''
+          )
+
     applyBackgroundGradient = () ->
       if atom.config.get('isotope-ui.backgroundGradient')
         atom.workspaceView.addClass('isotope-ui-bg-gradient')
         atom.config.set('isotope-ui.backgroundImage', 'false')
       else
         atom.workspaceView.removeClass('isotope-ui-bg-gradient')
+      applyBackgroundColor()
 
     applyBackgroundImage = () ->
       if atom.config.get('isotope-ui.backgroundImage')
@@ -60,6 +111,7 @@ module.exports =
       applyBackgroundGradient()
       applyBackgroundImage()
       applyBackgroundGrain()
+      applyBackgroundColor()
 
 
     # run when configs change
@@ -75,6 +127,9 @@ module.exports =
 
     atom.config.onDidChange 'isotope-ui.colorTreeSelection', ->
       applyTreeColor()
+
+    atom.config.onDidChange 'isotope-ui.backgroundColor', ->
+      applyBackgroundColor()
 
     atom.config.onDidChange 'isotope-ui.backgroundGradient', ->
       applyBackgroundGradient()
