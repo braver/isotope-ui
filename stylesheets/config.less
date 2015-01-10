@@ -71,6 +71,14 @@ atom-workspace:not(.zen) { // maintain zen
   }
 
   &.isotope-ui-bg-grain {
+
+    // the grain overlay makes the gradient brighter, so we compensate
+    &.isotope-ui-bg-gradient {
+      background-image: linear-gradient(
+        lighten( spin(@app-background-color, 66%), 5%) 0%,
+        darken(@app-background-color, 8%) 100%);
+    }
+
     &:before {
       content: '';
       display: block;
