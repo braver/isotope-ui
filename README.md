@@ -54,6 +54,5 @@ This package includes a number of fonts that were designed especially for user i
 
 - Add config for brightness and contrast
 - Tweak and improve stuff for specific packages
-- Add more configuration options
 - Use it every day
 - Make it better almost every day
