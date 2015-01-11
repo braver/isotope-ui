@@ -32,7 +32,8 @@ module.exports =
       type: 'boolean'
       default: false
     colorTreeSelection:
-      description: 'Make the selected file stand out in tree-view.'
+      description: 'Make the selected file stand out in tree-view.
+        Looks better off when scrollbars always visible (e.g. on Linux)'
       type: 'boolean'
       default: true
     backgroundColor:
