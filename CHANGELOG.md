@@ -36,3 +36,7 @@
 
 ## 1.0.1 - Custom background color
 * Set your own background color (experimental)
+
+## 1.0.3 - Tree-view scrollbars
+* Improve looks when scrollbar always visible
+* Correct border-radius when tree-view at right
