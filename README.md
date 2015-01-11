@@ -45,7 +45,7 @@ This package includes a number of fonts that were designed especially for user i
 - Clear Sans - Intel's new font (by Daniel Ratighan)
 - Fira Sans - the system font for Firefox OS (by Carrois and Edenspiekermann)
 - Open Sans - because we ♥ Open Sans (by Steve Matteson)
-- Oxygen - the system font for KDE (by Vernon Adams)
+- Oxygen - the system font for KDE (by Vernon Adams)
 - Roboto - the new font for Android (by Christian Robertson)
 - Source Sans Pro - Adobe's UI font also used in Brackets (by Paul D. Hunt)
 - Ubuntu - Ubuntu's system font (by Dalton Maag)
@@ -55,4 +55,4 @@ This package includes a number of fonts that were designed especially for user i
 - Add config for brightness and contrast
 - Tweak and improve stuff for specific packages
 - Use it every day
-- Make it better almost every day
+- [Make it better almost every day](https://github.com/braver/isotope-ui/issues/2)
