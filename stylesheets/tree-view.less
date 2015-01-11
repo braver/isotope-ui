@@ -10,16 +10,10 @@
     &.selected,
     &:not(.list-nested-item).selected,
     &.list-nested-item.selected > .list-item {
+      color: @base-fg;
       &:before {
-        //background: @ui-theme-color;
         border-top-left-radius: @component-border-radius;
         border-bottom-left-radius: @component-border-radius;
-      }
-
-      //only use @color if it has enough contrast with the background
-      color: @base-fg;
-      &:hover {
-        //color: lighten(@base-fg, 12%);
       }
     }
 
@@ -36,6 +30,36 @@
     .list-nested-item > .list-tree > li,
     .list-nested-item > .list-group > li {
       margin-left: 0;
+    }
+  }
+}
+
+.scrollbars-visible-always {
+  .tree-view.list-tree {
+    li {
+      &.selected,
+      &:not(.list-nested-item).selected,
+      &.list-nested-item.selected > .list-item {
+        &:before {
+          border-radius: @component-border-radius;
+        }
+      }
+    }
+  }
+}
+.right {
+  .tree-view.list-tree {
+    li {
+      &.selected,
+      &:not(.list-nested-item).selected,
+      &.list-nested-item.selected > .list-item {
+        &:before {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border-top-right-radius: @component-border-radius;
+          border-bottom-right-radius: @component-border-radius;
+        }
+      }
     }
   }
 }
