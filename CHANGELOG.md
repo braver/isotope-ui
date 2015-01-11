@@ -41,5 +41,6 @@
 * Improve looks when scrollbar always visible
 * Correct border-radius when tree-view at right
 
-## 1.0.4 - Tree-view overflow
+## 1.0.4 - Tree-view overflow and contrast
 * Fix a margin on tree-view that causes it to always overflow (#3)
+* Improve text constrast
