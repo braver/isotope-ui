@@ -31,7 +31,16 @@
       margin-left: 0;
     }
   }
+
+  // correct git icon size
+  .icon-file-directory[data-name=".git"] {
+    &:before {
+      top: 2px;
+      font-size: medium;
+    }
+  }
 }
+
 .right {
   .tree-view.list-tree {
     li {

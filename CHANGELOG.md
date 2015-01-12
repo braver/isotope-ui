@@ -44,3 +44,8 @@
 ## 1.0.4 - Tree-view overflow and contrast
 * Fix a margin on tree-view that causes it to always overflow (#3)
 * Improve text constrast
+
+## 1.0.5 - The devil in the details
+* Color ignored items in tree-view
+* Optionally revert gutter styling to syntax theme
+* Fix an issue with key bindings in lists
