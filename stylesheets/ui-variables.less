@@ -68,6 +68,7 @@
 
 @fg-subtle: fadeout(@base-fg, 18%);
 @fg-faded: fade(@base-fg, 24%);
+@fg-ignored:  fade(@base-fg, 48%);
 @fg-highlight: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 88%);
 @fg-selected: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 98%);
 
@@ -76,7 +77,6 @@
 @fg-warning: hsl( 36,  60%/1.33, 72%/1.33);
 @fg-error:   hsl(  9, 100%/1.33, 64%/1.33);
 
-@fg-ignored:  @fg-subtle;
 @fg-added:    @fg-success;
 @fg-renamed:  @fg-info;
 @fg-modified: @fg-warning;
