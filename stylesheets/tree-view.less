@@ -13,8 +13,6 @@
       &:before {
         border-top-left-radius: @component-border-radius;
         border-bottom-left-radius: @component-border-radius;
-        border-radius: @component-border-radius;
-        margin-right: @modular-scale-xxs * 1rem + .5rem;
       }
     }
 
@@ -33,21 +31,16 @@
       margin-left: 0;
     }
   }
-}
 
-.scrollbars-visible-always {
-  .tree-view.list-tree {
-    li {
-      &.selected,
-      &:not(.list-nested-item).selected,
-      &.list-nested-item.selected > .list-item {
-        &:before {
-          border-radius: @component-border-radius;
-        }
-      }
+  // correct git icon size
+  .icon-file-directory[data-name=".git"] {
+    &:before {
+      top: 2px;
+      font-size: medium;
     }
   }
 }
+
 .right {
   .tree-view.list-tree {
     li {
