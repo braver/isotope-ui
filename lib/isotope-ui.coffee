@@ -52,9 +52,8 @@ module.exports =
        the internets (e.g. hubblesite.org or unsplash.com).'
       type: 'string'
       default: 'atom://isotope-ui/resources/images/hubble.jpg'
-    backgroundGrain:
-      description: 'A bit of noise in the background.
-        Usually makes gradients look better. Not applied to images.'
+    gutterStyle:
+      description: 'Turn off to relegate gutter styling to syntax theme.'
       type: 'boolean'
       default: true
 

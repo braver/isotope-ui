@@ -66,13 +66,6 @@ atom-workspace:not(.zen) { // maintain zen
   }
 
   &.isotope-ui-bg-gradient {
-    background-image: linear-gradient(
-      lighten( spin(@app-background-color, 66%), 6%) 0%,
-      darken(@app-background-color, 6%) 100%);
-  }
-
-  &.isotope-ui-bg-grain {
-
     // the grain overlay makes the gradient brighter, so we compensate
     &.isotope-ui-bg-gradient {
       background-image: linear-gradient(
@@ -98,12 +91,6 @@ atom-workspace:not(.zen) { // maintain zen
     background-repeat: no-repeat;
     background-image: url(atom://isotope-ui/resources/images/hubble.jpg);
 
-    // don't apply grain to images
-    &.isotope-ui-bg-grain {
-      &:before {
-        display: none;
-      }
-    }
     // make text stand out against any background
     .status-bar,
     .tree-view.list-tree, // sadly loses status-indication

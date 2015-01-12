@@ -95,11 +95,11 @@ module.exports =
           ''
         )
 
-    applyBackgroundGrain = () ->
-      if atom.config.get('isotope-ui.backgroundGrain')
-        atom.workspaceView.addClass('isotope-ui-bg-grain')
+    applyGutterStyle = () ->
+      if atom.config.get('isotope-ui.gutterStyle')
+        atom.workspaceView.addClass('isotope-ui-gutter-style')
       else
-        atom.workspaceView.removeClass('isotope-ui-bg-grain')
+        atom.workspaceView.removeClass('isotope-ui-gutter-style')
 
     # run when atom is ready
 
@@ -110,7 +110,7 @@ module.exports =
       applyTreeColor()
       applyBackgroundGradient()
       applyBackgroundImage()
-      applyBackgroundGrain()
+      applyGutterStyle()
       applyBackgroundColor()
 
 
@@ -140,5 +140,5 @@ module.exports =
     atom.config.onDidChange 'isotope-ui.backgroundImagePath', ->
       applyBackgroundImage()
 
-    atom.config.onDidChange 'isotope-ui.backgroundGrain', ->
-      applyBackgroundGrain()
+    atom.config.onDidChange 'isotope-ui.gutterStyle', ->
+      applyGutterStyle()
