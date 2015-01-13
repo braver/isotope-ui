@@ -101,6 +101,15 @@ module.exports =
       else
         atom.workspaceView.removeClass('isotope-ui-gutter-style')
 
+    applyTooltipContrast = () ->
+      body = document.querySelector('body')
+      if atom.config.get('isotope-ui.lowContrastTooltip')
+        body.className =
+          body.className + " " + 'isotope-ui-tooltip-lowcontrast'
+      else
+        body.className =
+          body.className.replace(/\sisotope-ui-tooltip-lowcontrast/, '')
+
     # run when atom is ready
 
     atom.workspaceView.ready ->
@@ -111,6 +120,7 @@ module.exports =
       applyBackgroundGradient()
       applyBackgroundImage()
       applyGutterStyle()
+      applyTooltipContrast()
       applyBackgroundColor()
 
 
@@ -142,3 +152,6 @@ module.exports =
 
     atom.config.onDidChange 'isotope-ui.gutterStyle', ->
       applyGutterStyle()
+
+    atom.config.onDidChange 'isotope-ui.lowContrastTooltip', ->
+      applyTooltipContrast()
