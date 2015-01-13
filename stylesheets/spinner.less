@@ -1,29 +1,60 @@
-.loading-spinner(@size) {
-  width: @size;
-  height: @size;
-  display: block;
+/*
+Thanks to: http://stephanwagner.me/only-css-loading-spinner
+*/
 
-  background-image: url(images/octocat-spinner-128.gif);
-  background-repeat: no-repeat;
-  background-size: cover;
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes spinner {
+  to {-webkit-transform: rotate(360deg);}
+}
+
+.loading-spinner(@size) {
+  min-width: @size;
+  min-height: @size;
+  display: block;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: @size;
+    height: @size;
+    margin-top: @size / -2;
+    margin-left: @size / -2;
+    border-radius: 50%;
+    border: 2px solid @base-fg;
+    border-top-color: @fg-highlight;
+    animation: spinner .7s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+    -webkit-animation: spinner .7s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+  }
 
   &.inline-block {
     display: inline-block;
   }
 }
 
+
+// rounded values to ensure circles
 .loading-spinner-large {
-  .loading-spinner(@modular-scale-xxl * 1.333rem);
+  @large: round(@modular-scale-xl * 24);
+  .loading-spinner(@large * 1px);
 }
 
 .loading-spinner-medium {
-  .loading-spinner(@modular-scale-xl * 1.333rem);
+  @medium: round(@modular-scale-l * 24);
+  .loading-spinner(@medium * 1px);
 }
 
 .loading-spinner-small {
-  .loading-spinner(@modular-scale-l * 1.333rem);
+  @small: round(@modular-scale-m * 24);
+  .loading-spinner(@small * 1px);
 }
 
 .loading-spinner-tiny {
-  .loading-spinner(@modular-scale-m * 1.333rem);
+  @tiny: round(@modular-scale-s * 24);
+  .loading-spinner(@tiny * 1px);
 }
