@@ -45,7 +45,12 @@
 * Fix a margin on tree-view that causes it to always overflow (#3)
 * Improve text constrast
 
-## 1.0.5 - The devil in the details
-* Color ignored items in tree-view
-* Optionally revert gutter styling to syntax theme
+## 1.1.0 - The devil in the details
+* Fix color of ignored items in tree-view
 * Fix an issue with key bindings in lists
+* Fix fonts applied to tooltips
+* Implement CSS-only "loading spinners"
+* Option added: revert gutter styling to syntax theme
+* Option added: low contrast tooltips
+* Font option added: system default
+* Minor tweaks

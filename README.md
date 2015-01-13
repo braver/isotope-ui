@@ -32,6 +32,7 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 - Make the layout take up less vertical space (e.g. for small screens)
 - Choose tree-view highlight color
 - Style the gutter, or not
+- Choose low contrast tooltips (or fancy colorful ones)
 - Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
 
 ```
