@@ -19,7 +19,7 @@ module.exports =
         ).toString(16).slice(1)
 
     applyFont = (font) ->
-      atom.workspaceView.attr('isotope-ui-font', font)
+      document.querySelector('body').setAttribute('isotope-ui-font', font)
 
     applyFontWeight = (weight) ->
       atom.workspaceView.attr('isotope-ui-fontweight', weight)

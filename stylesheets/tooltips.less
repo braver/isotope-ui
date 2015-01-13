@@ -1,8 +1,10 @@
 .tooltip {
   white-space: nowrap;
+  font-size: @modular-scale-m * 1rem;
 
   .tooltip-inner {
-    line-height: 19px;
+    line-height: @modular-scale-m * 1rem;
+    padding: @modular-scale-xs * 1rem;
     border-radius: @component-border-radius;
     background-color: @tooltip-background-color;
     color: @tooltip-text-color;
@@ -12,7 +14,7 @@
 
   .keystroke {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: @modular-scale-s * 1rem;;
     padding: 1px 3px;
     margin: 0 -4px 0 3px;
     border-radius: max(2px, @component-border-radius / 2);
