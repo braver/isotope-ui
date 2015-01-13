@@ -14,7 +14,8 @@ module.exports =
         'Oxygen',
         'Roboto',
         'Source Sans Pro',
-        'Ubuntu'
+        'Ubuntu',
+        'System Default'
       ]
     fontWeight:
       description: 'Not all fonts come in all weights: Canterell and Oxygen
