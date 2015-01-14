@@ -54,3 +54,7 @@
 * Option added: low contrast tooltips
 * Font option added: system default
 * Minor tweaks
+
+## 1.1.1 - List tweaks
+* Fix two-item list spacing (e.g. snippets)
+* Minor tweaks
