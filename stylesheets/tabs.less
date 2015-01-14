@@ -47,15 +47,26 @@
     }
 
     .close-icon {
-      right: 0;
-      z-index: 3;
-      margin-right: @component-padding;
-      margin-top: -1px; // make it sit in the middle of x-height
-      text-align: right;
+      background: @tab-background-color-active;
+      border-radius: @component-border-radius;
+      height: 14px;
       line-height: @tab-height;
-      background: inherit;
+      margin-right: @component-padding;
+      margin-top: -7px;
+      right: 0;
+      text-align: right;
+      top: 50%;
       transform: scale(0);
       transition: transform .2s .1s, border .2s .1s, color .2s .1s;
+      width: 14px;
+      z-index: 3;
+
+      &:before {
+        position: relative;
+        display: block;
+        top: 1px;
+        left: -1px;
+      }
 
       &:hover {
         color: @ui-accent;
@@ -110,7 +121,6 @@
 
       &:before {
         content: "\f052";
-        /* color: @ui-accent; */
         display: inline-block;
       }
     }
