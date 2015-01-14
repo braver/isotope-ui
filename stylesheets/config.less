@@ -164,6 +164,10 @@ atom-workspace:not(.zen) { // maintain zen
           content: ' +';
         }
       }
+      &:not(.list-nested-item).status-ignored,
+      &.list-nested-item.status-ignored > .list-item {
+        opacity: 0.66;
+      }
     }
   }
 }
