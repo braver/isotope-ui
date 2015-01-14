@@ -1,106 +1,106 @@
 .settings-view {
 
-	.config-menu {
-		background: @level-4-bg;
-		border: none;
+  .config-menu {
+    background: @level-4-bg;
+    border: none;
 
-		.nav > li {
-			a,
-			a:hover {
-				background-color: transparent;
-				font-size: 1rem;
-			}
+    .nav > li {
+      a,
+      a:hover {
+        background-color: transparent;
+        font-size: 1rem;
+      }
 
-			&.active {
-				a {
-					color: @fg-selected;
-					background-color: @level-3-bg;
-				}
-			}
-		}
-	}
+      &.active {
+        a {
+          color: @fg-selected;
+          background-color: @level-3-bg;
+        }
+      }
+    }
+  }
 
-	.link {
-		&,
-		&:hover {
-			color: @fg-highlight;
-		}
-	}
+  .link {
+    &,
+    &:hover {
+      color: @fg-highlight;
+    }
+  }
 
-	.section-container {
-		max-width: 60rem;
-	}
+  .section-container {
+    max-width: 60rem;
+  }
 
-	.settings-panel label,
-	.breadcrumb {
-		font-size: 1rem;
-	}
-	section .section-heading,
-	.section .section-heading {
-		font-size: @modular-scale-xl * 1rem;
+  .settings-panel label,
+  .breadcrumb {
+    font-size: 1rem;
+  }
+  section .section-heading,
+  .section .section-heading {
+    font-size: @modular-scale-xl * 1rem;
 
-		&.icon:before {
-			font-size: 24px;
-			height: 24px;
-			width: 24px;
-		}
-	}
-	.sub-section-heading {
-		font-size: @modular-scale-l * 1rem;
-	}
-	.section-heading-count {
-		font-size: @modular-scale-ms * 1em;
-	}
-	.packages .themes-label {
-		font-size: @modular-scale-l * 1rem;
-	}
+    &.icon:before {
+      font-size: 24px;
+      height: 24px;
+      width: 24px;
+    }
+  }
+  .sub-section-heading {
+    font-size: @modular-scale-l * 1rem;
+  }
+  .section-heading-count {
+    font-size: @modular-scale-ms * 1em;
+  }
+  .packages .themes-label {
+    font-size: @modular-scale-l * 1rem;
+  }
 
-	.setting-description {
-		font-size: @modular-scale-ms * 1rem;
-	}
+  .setting-description {
+    font-size: @modular-scale-ms * 1rem;
+  }
 
-	.available-package-view {
-		font-size: 1rem;
+  .available-package-view {
+    font-size: 1rem;
 
-		.card-name {
-			font-size: @modular-scale-l * 1rem;
-			margin-bottom: @modular-scale-s * 1rem;;
-		}
-		.package-name,
-		.package-description {
-			line-height: @modular-scale-l * 1rem;
-		}
-		.meta-user .avatar {
-			height: @modular-scale-xxl * 1rem;
-			width: @modular-scale-xxl * 1rem;
-		}
+    .card-name {
+      font-size: @modular-scale-l * 1rem;
+      margin-bottom: @modular-scale-s * 1rem;;
+    }
+    .package-name,
+    .package-description {
+      line-height: @modular-scale-l * 1rem;
+    }
+    .meta-user .avatar {
+      height: @modular-scale-xxl * 1rem;
+      width: @modular-scale-xxl * 1rem;
+    }
 
-		.description,
-		.downloads {
+    .description,
+    .downloads {
 
-		}
-	}
+    }
+  }
 
 
-	//alerts like "checking for updates"
-	.alert-mixin (@color) {
-		@faded-color: fade(mix(@color, @level-1-bg), 20%);
-		color: @color;
-		border-color: @faded-color;
-		background-color: @faded-color;
-	}
-	.alert         { .alert-mixin( @base-fg ); }
-	.alert-success { .alert-mixin( @fg-success ); }
-	.alert-info    { .alert-mixin( @fg-info ); }
-	.alert-warning { .alert-mixin( @fg-warning ); }
-	.alert-danger  { .alert-mixin( @fg-error ); }
+  //alerts like "checking for updates"
+  .alert-mixin (@color) {
+    @faded-color: fade(mix(@color, @level-1-bg), 20%);
+    color: @color;
+    border-color: @faded-color;
+    background-color: @faded-color;
+  }
+  .alert         { .alert-mixin( @base-fg ); }
+  .alert-success { .alert-mixin( @fg-success ); }
+  .alert-info    { .alert-mixin( @fg-info ); }
+  .alert-warning { .alert-mixin( @fg-warning ); }
+  .alert-danger  { .alert-mixin( @fg-error ); }
 
-	.checkbox {
-		font-size: 1rem;
-		padding-left: 2rem;
+  .checkbox {
+    font-size: 1rem;
+    padding-left: 2rem;
 
-		input[type="checkbox"] {
-			margin-left: -2rem;
-		}
-	}
+    input[type="checkbox"] {
+      margin-left: -2rem;
+    }
+  }
 }
