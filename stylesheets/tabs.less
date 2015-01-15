@@ -43,11 +43,11 @@
     .title {
       position: relative;
       z-index: 1;
-      padding: 0  @component-padding;
+      padding: 0  @modular-scale * @component-padding 0  @component-padding;
     }
 
     .close-icon {
-      right: 0;
+      right: -2px;
       z-index: 3;
       margin-right: @component-padding;
       margin-top: -1px; // make it sit in the middle of x-height
@@ -78,17 +78,17 @@
     background-color: @tab-background-color-active;
     color: @base-fg;
 
+    & .close-icon {
+      color: @base-fg;
+      transform: scale(1);
+    }
+
     &:hover .close-icon {
       color: @base-fg;
 
       &:hover {
         color: @ui-accent;
         }
-    }
-
-    & .close-icon {
-      color: @base-fg;
-      transform: scale(1);
     }
 
     // Active pane marker
