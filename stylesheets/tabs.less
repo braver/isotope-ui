@@ -43,17 +43,14 @@
     .title {
       position: relative;
       z-index: 1;
-      padding: 0  @component-padding;
+      padding: 0  @modular-scale * @component-padding 0  @component-padding;
     }
 
     .close-icon {
-      background: @tab-background-color-active;
-      border-radius: @component-border-radius;
-      height: 14px;
-      line-height: @tab-height;
-      margin-right: @component-padding;
+      right: -12px;
+      z-index: 3;
+      margin-right: @modular-scale * @component-padding;
       margin-top: -7px;
-      right: 0;
       text-align: right;
       top: 50%;
       transform: scale(0);
@@ -89,17 +86,17 @@
     background-color: @tab-background-color-active;
     color: @base-fg;
 
+    & .close-icon {
+      color: @base-fg;
+      transform: scale(1);
+    }
+
     &:hover .close-icon {
       color: @base-fg;
 
       &:hover {
         color: @ui-accent;
         }
-    }
-
-    & .close-icon {
-      color: @base-fg;
-      transform: scale(1);
     }
 
     // Active pane marker
