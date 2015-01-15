@@ -5,6 +5,36 @@
 @tab-max-width: 160px;
 @tab-min-width: @tab-height * 2;
 
+.close-icon-mixin() {
+  right: -12px;
+  margin-right: @modular-scale * @component-padding;
+  margin-top: -7px;
+  text-align: right;
+  top: 50%;
+  transform: scale(0);
+  transition: transform .2s .1s, border .2s .1s, color .2s .1s;
+  width: 14px;
+  height: 14px;
+  z-index: 3;
+  border: none;
+
+  &:before {
+    position: relative;
+    display: block;
+    top: 1px;
+    left: -1px;
+  }
+
+  &:hover {
+    color: @ui-accent;
+    transition: transform .1s, border .1s, color .1s;
+  }
+
+  &:active {
+    opacity: .3;
+  }
+}
+
 .tab-bar {
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
   overflow-x: auto;
@@ -47,32 +77,7 @@
     }
 
     .close-icon {
-      right: -12px;
-      z-index: 3;
-      margin-right: @modular-scale * @component-padding;
-      margin-top: -7px;
-      text-align: right;
-      top: 50%;
-      transform: scale(0);
-      transition: transform .2s .1s, border .2s .1s, color .2s .1s;
-      width: 14px;
-      z-index: 3;
-
-      &:before {
-        position: relative;
-        display: block;
-        top: 1px;
-        left: -1px;
-      }
-
-      &:hover {
-        color: @ui-accent;
-        transition: transform .1s, border .1s, color .1s;
-      }
-
-      &:active {
-        opacity: .3;
-      }
+      .close-icon-mixin();
     }
     &:hover .close-icon {
       transform: scale(1);
@@ -108,17 +113,10 @@
 
   .tab.modified {
     &:not(:hover) .close-icon {
-      top: 1px;
-      right: 0;
-      width: auto;
-      height: auto;
-      border: 0;
-      border-radius: 0;
+      .close-icon-mixin();
       transform: scale(1);
-
       &:before {
         content: "\f052";
-        display: inline-block;
       }
     }
 
@@ -131,9 +129,6 @@
     }
     &:hover .close-icon:hover {
       color: @ui-accent;
-      &:before {
-        content: "\f052";
-      }
     }
   }
 

@@ -58,3 +58,6 @@
 ## 1.1.1 - List tweaks
 * Fix two-item list spacing (e.g. snippets)
 * Minor tweaks
+
+## 1.1.2 - Close icons
+* Fix tab-bar close-icon visibility 
