@@ -68,11 +68,11 @@
   font-weight: 400;
 }
 
-
-atom-workspace:not(.zen) { // maintain zen
-  &.isotope-ui-bg-color,
-  &.isotope-ui-bg-gradient,
-  &.isotope-ui-bg-image {
+// todo maintain zen
+[isotope-ui-bg-color='true'],
+[isotope-ui-bg-gradient='true'],
+[isotope-ui-bg-image='true'] {
+  atom-workspace {
     border: none;
     padding-left: @modular-scale-xxs * 1rem;
     padding-right: @modular-scale-xxs * 1rem;
@@ -86,7 +86,7 @@ atom-workspace:not(.zen) { // maintain zen
     // make tree-view transparent
     .tool-panel.tool-panel:first-child:not(.panel-bottom),
     // make tab-bar transparent
-    .panes atom-pane,
+    atom-pane-container atom-pane,
     .tab-bar,
     // make status-bar transparent
     .status-bar,
@@ -94,15 +94,14 @@ atom-workspace:not(.zen) { // maintain zen
       background-color: transparent !important; //also overrule an inline style
     }
   }
+}
 
-  &.isotope-ui-bg-gradient {
+[isotope-ui-bg-gradient='true']{
+  atom-workspace {
     // the grain overlay makes the gradient brighter, so we compensate
-    &.isotope-ui-bg-gradient {
-      background-image: linear-gradient(
-        lighten( spin(@app-background-color, 66%), 5%) 0%,
-        darken(@app-background-color, 8%) 100%);
-    }
-
+    background-image: linear-gradient(
+      lighten( spin(@app-background-color, 66%), 5%) 0%,
+      darken(@app-background-color, 8%) 100%);
     &:before {
       content: '';
       display: block;
@@ -115,12 +114,14 @@ atom-workspace:not(.zen) { // maintain zen
       opacity: .20;
     }
   }
+}
 
-  &.isotope-ui-bg-image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url(atom://isotope-ui/resources/images/hubble.jpg);
-
+[isotope-ui-bg-image='true'] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(atom://isotope-ui/resources/images/hubble.jpg);
+  atom-workspace {
+    background: transparent;
     // make text stand out against any background
     .status-bar,
     .tree-view.list-tree, // sadly loses status-indication
@@ -169,5 +170,11 @@ atom-workspace:not(.zen) { // maintain zen
         opacity: 0.66;
       }
     }
+  }
+}
+
+[isotope-ui-bg-image='true'] {
+  atom-workspace {
+    background: transparent;
   }
 }

@@ -4,6 +4,8 @@ module.exports =
 
     # functions
 
+    body = document.querySelector('body')
+
     # calculate lighter/darker color
     # http://stackoverflow.com/questions/5560248
     shadeColor = (color, percent) ->
@@ -19,22 +21,22 @@ module.exports =
         ).toString(16).slice(1)
 
     applyFont = (font) ->
-      document.querySelector('body').setAttribute('isotope-ui-font', font)
+      body.setAttribute('isotope-ui-font', font)
 
     applyFontWeight = (weight) ->
-      atom.workspaceView.attr('isotope-ui-fontweight', weight)
+      body.setAttribute('isotope-ui-fontweight', weight)
 
     applyCompactness = () ->
       if atom.config.get('isotope-ui.compactLayout')
-        atom.workspaceView.addClass('isotope-ui-compact')
+        body.setAttribute('isotope-ui-compact', 'true')
       else
-        atom.workspaceView.removeClass('isotope-ui-compact')
+        body.setAttribute('isotope-ui-compact', 'false')
 
     applyTreeColor = () ->
       if atom.config.get('isotope-ui.colorTreeSelection')
-        atom.workspaceView.addClass('isotope-ui-treecolor')
+        body.setAttribute('isotope-ui-treecolor', 'true')
       else
-        atom.workspaceView.removeClass('isotope-ui-treecolor')
+        body.setAttribute('isotope-ui-treecolor', 'false')
 
     applyBackgroundColor = () ->
       color = atom.config.get('isotope-ui.backgroundColor')
@@ -43,72 +45,51 @@ module.exports =
           color1 = shadeColor(color, 12)
           color2 = shadeColor(color, -12)
           gradient = 'linear-gradient(' + color1 + ' 0%, ' + color2 + ' 100%)'
-          atom.workspaceView.addClass('isotope-ui-bg-color')
-          atom.workspaceView.css(
-            'backgroundImage',
-            gradient
-          )
+          body.setAttribute('isotope-ui-bg-color', 'true')
+          body.style.backgroundImage = gradient
         else
-          atom.workspaceView.removeClass('isotope-ui-bg-color')
-          atom.workspaceView.css(
-            'backgroundImage',
-            ''
-          )
+          body.setAttribute('isotope-ui-bg-color', 'false')
+          body.style.backgroundImage = ''
       else
-        atom.workspaceView.css(
-          'backgroundImage',
-          ''
-        )
+        body.style.backgroundImage = ''
         if color isnt ''
-          atom.workspaceView.addClass('isotope-ui-bg-color')
-          atom.workspaceView.css(
-            'backgroundColor',
-            color
-          )
+          body.setAttribute('isotope-ui-bg-color', 'true')
+          body.style.backgroundColor = color
         else
-          atom.workspaceView.removeClass('isotope-ui-bg-color')
-          atom.workspaceView.css(
-            'backgroundColor',
-            ''
-          )
+          body.setAttribute('isotope-ui-bg-color', 'false')
+          body.style.backgroundColor = ''
 
     applyBackgroundGradient = () ->
       if atom.config.get('isotope-ui.backgroundGradient')
-        atom.workspaceView.addClass('isotope-ui-bg-gradient')
+        body.setAttribute('isotope-ui-bg-gradient', 'true')
         atom.config.set('isotope-ui.backgroundImage', 'false')
       else
-        atom.workspaceView.removeClass('isotope-ui-bg-gradient')
+        body.setAttribute('isotope-ui-bg-gradient', 'false')
       applyBackgroundColor()
 
     applyBackgroundImage = () ->
       if atom.config.get('isotope-ui.backgroundImage')
-        atom.workspaceView.addClass('isotope-ui-bg-image')
         atom.config.set('isotope-ui.backgroundGradient', 'false')
-        atom.workspaceView.css(
-          'backgroundImage',
+        body.setAttribute('isotope-ui-bg-image', 'true')
+        body.style.backgroundImage =
           'url(' + atom.config.get('isotope-ui.backgroundImagePath') + ')'
-        )
       else
-        atom.workspaceView.removeClass('isotope-ui-bg-image')
-        atom.workspaceView.css(
-          'backgroundImage',
-          ''
-        )
+        body.setAttribute('isotope-ui-bg-image', 'false')
+        body.style.backgroundImage = ''
 
     applyGutterStyle = () ->
       if atom.config.get('isotope-ui.gutterStyle')
-        atom.workspaceView.addClass('isotope-ui-gutter-style')
+        body.setAttribute('isotope-ui-gutter-style', 'true')
       else
-        atom.workspaceView.removeClass('isotope-ui-gutter-style')
+        body.setAttribute('isotope-ui-gutter-style', 'false')
 
     applyTooltipContrast = () ->
-      body = document.querySelector('body')
       if atom.config.get('isotope-ui.lowContrastTooltip')
         body.className =
-          body.className + " " + 'isotope-ui-tooltip-lowcontrast'
+          body.setAttribute('isotope-ui-tooltip-lowcontrast', 'true')
       else
         body.className =
-          body.className.replace(/\sisotope-ui-tooltip-lowcontrast/, '')
+          body.setAttribute('isotope-ui-tooltip-lowcontrast', 'false')
 
     # run when atom is ready
 

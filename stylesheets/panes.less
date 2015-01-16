@@ -3,18 +3,18 @@ atom-pane-container atom-pane .item-views .pane-item {
   color: @base-fg;
 }
 
-.panes {
+atom-pane-container {
   atom-pane {
     position: relative;
     background-color: @level-2-bg !important; //overrule an inline style
   }
 
-  .pane-row > * {
+  atom-pane-axis.horizontal > * {
     border-right: 1px solid @pane-item-border-color;
     &:last-child { border-right: none; }
   }
 
-  .pane-column > * {
+  atom-pane-axis.vertical > * {
     border-bottom: 1px solid @pane-item-border-color;
     &:last-child { border-bottom: none; }
   }
