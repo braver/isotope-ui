@@ -82,10 +82,15 @@
 @fg-modified: @fg-warning;
 @fg-removed:  @fg-error;
 
+
+
+
+// other required vars
+// may or may not be used elsewhere in this package
+// https://atom.io/docs/v0.174.0/theme-variables
 // translate to vars required for other packages
 @text-color: @base-fg;
 @text-color-subtle: @fg-subtle;
-@text-color-faded: @fg-faded;
 @text-color-highlight: @fg-highlight;
 @text-color-selected: @fg-selected;
 @text-color-info:    @fg-info;
@@ -93,27 +98,22 @@
 @text-color-warning: @fg-warning;
 @text-color-error:   @fg-error;
 
+@background-color-info: @bg-info;
+@background-color-success: @bg-success;
+@background-color-warning: @bg-warning;
+@background-color-error: @bg-error;
+@background-color-highlight: @ui-theme-color;
+@background-color-selected: @level-2-bg;
 
-
-// other required vars
-// may or may not be used elsewhere in this package
 @app-background-color:             @level-2-bg;
 @base-background-color:            @app-background-color;
 @base-border-color:                @level-4-bg;
 
-@tab-height:                       @modular-scale-xxxl * 1rem;
-@tab-text-color:                   @fg-subtle;
-@tab-bar-background-color:         @app-background-color;
-@tab-bar-border-color:             @tab-bar-background-color;
-@tab-background-color:             @level-2-bg;
-@tab-background-color-active:      @ui-theme-color;
-@tab-border-color:                 @tab-background-color;
-
 @pane-item-background-color:       @level-3-bg;
 @pane-item-border-color:           @level-5-bg;
 
-@panel-heading-background-color:   @level-3-bg;
-@panel-heading-border-color:       @level-5-bg;
+@input-background-color:           @level-0-bg;
+@input-border-color:               @level-5-bg;
 
 @tool-panel-background-color:      @level-2-bg;
 @tool-panel-border-color:          @level-5-bg;
@@ -121,29 +121,22 @@
 @inset-panel-background-color:     @level-5-bg;
 @inset-panel-border-color:         @level-5-bg;
 
+@panel-heading-background-color:   @level-3-bg;
+@panel-heading-border-color:       @level-5-bg;
+
 @overlay-background-color:         @level-2-bg;
 @overlay-border-color:             @level-5-bg;
-@overlay-backdrop-color:           hsla( @ui-hue, @ui-saturation, 5%, .5);
 
 @button-background-color:          @level-1-bg;
 @button-background-color-hover:    @level-4-bg;
 @button-background-color-selected: @level-1-bg;
 @button-border-color:              @button-background-color;
 
-@input-border-color:               @level-5-bg;
-@input-background-color:           @level-0-bg;
-
-@tooltip-background-color:         @ui-accent;
-@tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(0,0%,20%), 60 );
-@tooltip-text-key-color:           @tooltip-background-color;
-@tooltip-background-key-color:     @tooltip-text-color;
-
-@progress-background-color:        @ui-accent;
-
-@checkbox-background-color:        @level-1-bg;
-
-@scrollbar-color:                  @level-1-bg;
-@scrollbar-background-color:       transparent;
+@tab-bar-background-color:         @app-background-color;
+@tab-bar-border-color:             @tab-bar-background-color;
+@tab-background-color:             @level-2-bg;
+@tab-background-color-active:      @ui-theme-color;
+@tab-border-color:                 @tab-background-color;
 
 @tree-view-background-color:       @level-3-bg;
 @tree-view-border-color:           @level-3-bg;
@@ -154,19 +147,13 @@
 @ui-site-color-4: #D831B0;             // pink
 @ui-site-color-5: #EBDD5B;             // yellow
 
+
+@disclosure-arrow-size:    1rem;
+
 @component-padding:        @modular-scale-l * 1rem;
-@component-padding:        @modular-scale-l * 12px;
 @component-icon-padding:   @modular-scale-xs * 1rem;
 @component-icon-size:      16/12 * 1rem;
 @component-line-height:    @modular-scale-xxl * 1rem;
 @component-border-radius:  2px;
 
-@disclosure-arrow-size:    1rem;
-
-
-
-// settings View
-@settings-list-background-color:   @level-3-bg;
-@theme-config-box-shadow:          inset 0 0 3px hsla(0, 0%, 100%, .4), 0 1px 3px hsla(0, 0%, 0%, .2);
-@theme-config-box-shadow-selected: inset 0 1px 3px hsla(0, 0%, 0%, .1);
-@theme-config-border-selected:     hsla(0, 0%, 100%, .75);
+@tab-height:                       @modular-scale-xxxl * 1rem;
