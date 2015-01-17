@@ -64,3 +64,7 @@
 
 ## 1.1.3 - Spinner aligment
 * Fix spinner alignment
+
+## 1.1.4 - Minor fixes
+* Contrast tweak
+* Patch a minor issue with autocomplete-plus
