@@ -60,4 +60,7 @@
 * Minor tweaks
 
 ## 1.1.2 - Close icons
-* Fix tab-bar close-icon visibility 
+* Fix tab-bar close-icon visibility
+
+## 1.1.3 - Spinner aligment
+* Fix spinner alignment
