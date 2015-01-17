@@ -39,9 +39,11 @@ module.exports =
         body.setAttribute('isotope-ui-treecolor', 'false')
 
     applyBackgroundColor = () ->
-      color = atom.config.get('isotope-ui.backgroundColor')
+      color =
+        atom.config.get('isotope-ui.customBackgroundColorPicker').toHexString()
       if atom.config.get('isotope-ui.backgroundGradient')
-        if color isnt ''
+        if atom.config.get('isotope-ui.customBackgroundColor')
+          atom.config.set('isotope-ui.backgroundImage', 'false')
           color1 = shadeColor(color, 12)
           color2 = shadeColor(color, -12)
           gradient = 'linear-gradient(' + color1 + ' 0%, ' + color2 + ' 100%)'
@@ -52,7 +54,8 @@ module.exports =
           body.style.backgroundImage = ''
       else
         body.style.backgroundImage = ''
-        if color isnt ''
+        if atom.config.get('isotope-ui.customBackgroundColor')
+          atom.config.set('isotope-ui.backgroundImage', 'false')
           body.setAttribute('isotope-ui-bg-color', 'true')
           body.style.backgroundColor = color
         else
@@ -65,10 +68,12 @@ module.exports =
         atom.config.set('isotope-ui.backgroundImage', 'false')
       else
         body.setAttribute('isotope-ui-bg-gradient', 'false')
+        applyBackgroundImage()
       applyBackgroundColor()
 
     applyBackgroundImage = () ->
       if atom.config.get('isotope-ui.backgroundImage')
+        atom.config.set('isotope-ui.customBackgroundColor', 'false')
         atom.config.set('isotope-ui.backgroundGradient', 'false')
         body.setAttribute('isotope-ui-bg-image', 'true')
         body.style.backgroundImage =
@@ -91,18 +96,18 @@ module.exports =
         body.className =
           body.setAttribute('isotope-ui-tooltip-lowcontrast', 'false')
 
+
     # run when atom is ready
 
-    atom.workspaceView.ready ->
-      applyFont(atom.config.get('isotope-ui.fontFamily'))
-      applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
-      applyCompactness()
-      applyTreeColor()
-      applyBackgroundGradient()
-      applyBackgroundImage()
-      applyGutterStyle()
-      applyTooltipContrast()
-      applyBackgroundColor()
+    applyFont(atom.config.get('isotope-ui.fontFamily'))
+    applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
+    applyCompactness()
+    applyTreeColor()
+    applyGutterStyle()
+    applyTooltipContrast()
+    applyBackgroundGradient()
+    applyBackgroundImage()
+    applyBackgroundColor()
 
 
     # run when configs change
@@ -119,7 +124,10 @@ module.exports =
     atom.config.onDidChange 'isotope-ui.colorTreeSelection', ->
       applyTreeColor()
 
-    atom.config.onDidChange 'isotope-ui.backgroundColor', ->
+    atom.config.onDidChange 'isotope-ui.customBackgroundColor', ->
+      applyBackgroundColor()
+
+    atom.config.onDidChange 'isotope-ui.customBackgroundColorPicker', ->
       applyBackgroundColor()
 
     atom.config.onDidChange 'isotope-ui.backgroundGradient', ->
