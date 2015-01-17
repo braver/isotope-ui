@@ -5,6 +5,9 @@
     border: none;
 
     .nav > li {
+      a {
+        color: @base-fg;
+      }
       a,
       a:hover {
         background-color: transparent;
@@ -64,7 +67,10 @@
 
     .card-name {
       font-size: @modular-scale-l * 1rem;
-      margin-bottom: @modular-scale-s * 1rem;;
+      margin-bottom: @modular-scale-s * 1rem;
+      a {
+        color: @fg-highlight;
+      }
     }
     .package-name,
     .package-description {
