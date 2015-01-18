@@ -42,18 +42,18 @@ module.exports =
       type: 'string'
       default: ''
     backgroundGradient:
-      description: 'Experimental: apply a subtle gradient to the background.'
+      description: 'Apply a subtle gradient to the background.'
       type: 'boolean'
       default: false
     backgroundImage:
-      description: 'Experimental: use an image as a background.'
+      description: 'Use an image as a background.'
       type: 'boolean'
       default: false
     backgroundImagePath:
-      description: 'Experimental: the path to an image from your computer or
+      description: 'The path to an image from your computer or
        the internets (e.g. hubblesite.org or unsplash.com).'
       type: 'string'
-      default: 'atom://isotope-ui/resources/images/hubble.jpg'
+      default: 'atom://isotope-ui/resources/images/raket.jpg'
     gutterStyle:
       description: 'Turn off to relegate gutter styling to syntax theme.'
       type: 'boolean'
