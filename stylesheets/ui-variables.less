@@ -37,9 +37,15 @@
 @theme-adjust-saturation: 0%;
 @theme-adjust-contrast:   0%;
 
-// Config
-@ui-hue:           hsvhue(@ui-theme-color);
-@ui-saturation:    max(10% + @theme-adjust-saturation, 0%); // limit to > 0%
+// Tend towards blue instead of red when base color is white
+.ui-hue() when (hsvhue(@ui-theme-color) = 0) and (hsvsaturation(@ui-theme-color) = 0%) {
+  @ui-hue: 180;
+}
+.ui-hue() when (hsvhue(@ui-theme-color) > 0), (hsvsaturation(@ui-theme-color) > 0%) {
+  @ui-hue: hsvhue(@ui-theme-color);
+}
+.ui-hue();
+@ui-saturation:    max(7.5% + @theme-adjust-saturation, 0%); // limit to > 0%
 @ui-brightness:    24%;
 @ui-contrast:      @theme-adjust-contrast * 0.12;
 @ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 66% );
