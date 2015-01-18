@@ -75,3 +75,6 @@
 * Fix an issue where background images would not be applied
 * Background images and gradients no longer labeled experimental
 * Improve [merge-conflicts](https://atom.io/packages/merge-conflicts) compatibility
+
+## 1.1.6 - Hue tweak
+* Now defaults to a blue-ish hue for themes with a white (#fff) background
