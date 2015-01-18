@@ -117,11 +117,11 @@ module.exports =
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
       applyCompactness()
       applyTreeColor()
+      applyBackgroundColor()
       applyBackgroundGradient()
       applyBackgroundImage()
       applyGutterStyle()
       applyTooltipContrast()
-      applyBackgroundColor()
 
 
     # run when configs change
