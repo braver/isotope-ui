@@ -67,4 +67,5 @@
 
 ## 1.1.4 - Minor fixes
 * Contrast tweak
+* Tweak footer text alignment
 * Patch a minor issue with autocomplete-plus
