@@ -69,3 +69,8 @@
 * Contrast tweak
 * Tweak footer text alignment
 * Patch a minor issue with autocomplete-plus
+
+## 1.1.5 - Backgrounds
+* New default background images
+* Fix an issue where background images would not be applied
+* Improve [merge-conflicts](https://atom.io/packages/merge-conflicts) compatibility
