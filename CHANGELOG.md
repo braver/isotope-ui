@@ -78,3 +78,6 @@
 
 ## 1.1.6 - Hue tweak
 * Now defaults to a blue-ish hue for themes with a white (#fff) background
+
+## 1.1.7 - Hue tweak
+* Project root folder now sticks to the top
