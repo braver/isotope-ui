@@ -1,21 +1,17 @@
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	font-weight: @font-weight;
+  font-weight: @font-weight;
 }
 
 atom-workspace {
-	background-color: @app-background-color;
+  background-color: @app-background-color;
 
-	border-style: solid;
-	border-color: @app-background-color;
-	border-left-width: @modular-scale-xxs * 1rem;
-	border-right-width: @modular-scale-xxs * 1rem;
-	border-top-width: 0; // managed by a margin on tab-bar
-	border-bottom-width: 0; // none needed here
+  padding-left: @modular-scale-xxs * 1rem;
+  padding-right: @modular-scale-xxs * 1rem;
 }
 
 h1,
@@ -24,44 +20,44 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: 1;
-	margin-bottom: @modular-scale-l * 1rem;
+  line-height: 1;
+  margin-bottom: @modular-scale-l * 1rem;
 }
 h1 {
-	font-size: @modular-scale-xxl * 1rem;
+  font-size: @modular-scale-xxl * 1rem;
 }
 h2 {
-	font-size: @modular-scale-xl * 1rem;
+  font-size: @modular-scale-xl * 1rem;
 }
 h3 {
-	font-size: @modular-scale-l * 1rem;
+  font-size: @modular-scale-l * 1rem;
 }
 h4,
 h5,
 h6 {
-	font-size: @modular-scale-m * 1rem;
+  font-size: @modular-scale-m * 1rem;
 }
 
 p {
-	line-height: @modular-scale-l * 1rem;
-	margin-bottom: @modular-scale-l * 1rem;
+  line-height: @modular-scale-l * 1rem;
+  margin-bottom: @modular-scale-l * 1rem;
 }
 
 label {
-	font-weight: normal;
+  font-weight: normal;
 }
 
 pre {
-	box-shadow: none;
-	color: @base-fg;
-	background: @level-1-bg;
-	border-radius: @component-border-radius;
-	border: none;
-	margin: 0;
+  box-shadow: none;
+  color: @base-fg;
+  background: @level-1-bg;
+  border-radius: @component-border-radius;
+  border: none;
+  margin: 0;
 }
 
 code {
-	color: @fg-highlight;
-	background: @level-2-bg;
-	border-radius: @component-border-radius;
+  color: @fg-highlight;
+  background: @level-2-bg;
+  border-radius: @component-border-radius;
 }
