@@ -83,3 +83,7 @@
 * Project root folder now sticks to the top
 * Improvements to tooltips
 * Minor corrections
+
+## 1.2.0 - Atom API update
+* Solve deprecations
+* Minor tweaks
