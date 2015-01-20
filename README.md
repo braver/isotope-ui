@@ -25,6 +25,8 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 
 ## Configuration
 
+**You may need to reload atom before settings become available ([settings-view #347](https://github.com/atom/settings-view/issues/347))**
+
 - Choose from a number of fonts included in this theme
 - Select hip 'thin' fonts, or trusty old 'regular'
 - Choose between a flat or gradient background
