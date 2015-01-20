@@ -38,7 +38,7 @@ module.exports =
       type: 'boolean'
       default: true
     customBackgroundColor:
-      description: 'Experimental: Choose a custom background color.'
+      description: 'Choose a custom background color.'
       type: 'boolean'
       default: false
     customBackgroundColorPicker:
@@ -70,6 +70,6 @@ module.exports =
 
   activate: (state) ->
     # code in separate file so deferral keeps activation time down
-    atom.packages.onDidActivateInitialPackages ->
+    atom.themes.onDidChangeActiveThemes ->
       Config = require './config'
       Config.apply()
