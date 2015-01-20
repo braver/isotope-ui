@@ -64,3 +64,22 @@
 
 ## 1.1.3 - Spinner aligment
 * Fix spinner alignment
+
+## 1.1.4 - Minor fixes
+* Contrast tweak
+* Tweak footer text alignment
+* Patch a minor issue with autocomplete-plus
+
+## 1.1.5 - Backgrounds
+* New default background images
+* Fix an issue where background images would not be applied
+* Background images and gradients no longer labeled experimental
+* Improve [merge-conflicts](https://atom.io/packages/merge-conflicts) compatibility
+
+## 1.1.6 - Hue tweak
+* Now defaults to a blue-ish hue for themes with a white (#fff) background
+
+## 1.1.7 - Tree-view root folder
+* Project root folder now sticks to the top
+* Improvements to tooltips
+* Minor corrections

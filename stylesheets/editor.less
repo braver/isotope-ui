@@ -23,10 +23,47 @@ atom-text-editor::shadow {
   .cursor-line {
     background: fadeout( darken(@ui-theme-color, @ui-contrast + 3%), 60%);
   }
-  .scroll-view {
-    padding-left: 0;
-  }
   .bracket-matcher .region {
     border-bottom: 1px solid @base-fg;
+  }
+  .scroll-view {
+    padding-left: @modular-scale-xxs * 1rem;
+    box-sizing: border-box;
+  }
+  .gutter + .scroll-view {
+    padding-left: 0;
+  }
+
+
+
+  .ui-site-1 {
+    background: @ui-site-color-1;
+    .text-subtle {
+      color: fade(@fg-highlight, 60%);
+    }
+  }
+  .ui-site-2 {
+    background: @ui-site-color-2;
+    .text-subtle {
+      color: fade(@fg-highlight, 60%);
+    }
+  }
+  .ui-site-3 {
+    background: @ui-site-color-3;
+    .text-subtle {
+      color: fade(@fg-highlight, 60%);
+    }
+  }
+  .ui-site-4 {
+    background: @ui-site-color-4;
+    .text-subtle {
+      color: fade(@fg-highlight, 60%);
+    }
+  }
+  .ui-site-5 {
+    background: @ui-site-color-5;
+    .text-subtle {
+      color: fade(@fg-highlight, 60%);
+    }
   }
 }

@@ -99,15 +99,16 @@ module.exports =
 
     # run when atom is ready
 
+
     applyFont(atom.config.get('isotope-ui.fontFamily'))
     applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
     applyCompactness()
     applyTreeColor()
-    applyGutterStyle()
-    applyTooltipContrast()
+    applyBackgroundColor()
     applyBackgroundGradient()
     applyBackgroundImage()
-    applyBackgroundColor()
+    applyGutterStyle()
+    applyTooltipContrast()
 
 
     # run when configs change

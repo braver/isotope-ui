@@ -37,9 +37,15 @@
 @theme-adjust-saturation: 0%;
 @theme-adjust-contrast:   0%;
 
-// Config
-@ui-hue:           hsvhue(@ui-theme-color);
-@ui-saturation:    max(10% + @theme-adjust-saturation, 0%); // limit to > 0%
+// Tend towards blue instead of red when base color is white
+.ui-hue() when (hsvhue(@ui-theme-color) = 0) and (hsvsaturation(@ui-theme-color) = 0%) {
+  @ui-hue: 180;
+}
+.ui-hue() when (hsvhue(@ui-theme-color) > 0), (hsvsaturation(@ui-theme-color) > 0%) {
+  @ui-hue: hsvhue(@ui-theme-color);
+}
+.ui-hue();
+@ui-saturation:    max(7.5% + @theme-adjust-saturation, 0%); // limit to > 0%
 @ui-brightness:    24%;
 @ui-contrast:      @theme-adjust-contrast * 0.12;
 @ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 66% );
@@ -141,11 +147,11 @@
 @tree-view-background-color:       @level-3-bg;
 @tree-view-border-color:           @level-3-bg;
 
-@ui-site-color-1: hsl(208, 100%, 50%); // green
-@ui-site-color-2: hsl(160,  70%, 42%); // blue
-@ui-site-color-3: hsl(32,   60%, 50%); // orange
-@ui-site-color-4: #D831B0;             // pink
-@ui-site-color-5: #EBDD5B;             // yellow
+@ui-site-color-1: @bg-success;             // green
+@ui-site-color-2: spin(@bg-success, 60);   // blue
+@ui-site-color-3: spin(@bg-success, -120); // orange
+@ui-site-color-4: spin(@bg-success, -210); // pink
+@ui-site-color-5: spin(@bg-success, -100); // yellow
 
 
 @disclosure-arrow-size:    1rem;
