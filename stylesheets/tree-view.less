@@ -72,6 +72,26 @@
     }
   }
 }
+[isotope-ui-compact='true'] .tree-view-resizer {
+
+  padding-top: @tab-height / @modular-scale + @modular-scale-xxs * 1rem;
+
+  .tree-view.list-tree {
+    .project-root {
+
+      > .header {
+        height: @tab-height / @modular-scale;
+        line-height: @tab-height /@modular-scale;
+
+        .name {
+          height: @tab-height / @modular-scale;
+          line-height: @tab-height / @modular-scale;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
 
 .right {
   .tree-view.list-tree {
