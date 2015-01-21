@@ -87,3 +87,6 @@
 ## 1.2.0 - Atom API update
 * Solve deprecations
 * Minor tweaks
+
+## 1.2.2 - Key bindings
+* Patches a problem where key-bindings might stop working
