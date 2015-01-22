@@ -90,3 +90,7 @@
 
 ## 1.2.2 - Key bindings
 * Patches a problem where key-bindings might stop working
+
+## 1.2.3 - Fixes
+* Rolls back fixed project root folder introduced in 1.1.7 because it causes several layout issues
+* Restores low contrast tooltip option

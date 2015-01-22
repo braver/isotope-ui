@@ -1,7 +1,7 @@
 .tree-view.list-tree {
   .li-mixin (@fg-subtle);
 
-  padding: 0;
+  padding: (@component-line-height/2 - @modular-scale-xxs * 1rem) 0 0 0;
 
   //necesary to make the selected item background color work for tree-view only
   li {
@@ -40,59 +40,6 @@
   }
 }
 
-// fixate project-root at top
-.tree-view-resizer {
-
-  // tree items shouldn't scroll behind project-root
-  padding-top: @tab-height + @modular-scale-xxs * 1rem;
-
-  .tree-view.list-tree {
-    .project-root {
-
-      // showing selected state for project root looks weird
-      &.selected:before {
-        display: none;
-      }
-
-      // make same dimensions as tabs
-      > .header {
-        margin-top: @modular-scale-xxs * 1rem; // align with tabs
-        height: @tab-height;
-        line-height: @tab-height;
-        position: fixed;
-        top: 0;
-
-        // make name fill up the entire space
-        .name {
-          display: block;
-          height: @tab-height;
-          line-height: @tab-height;
-        }
-      }
-    }
-  }
-}
-[isotope-ui-compact='true'] .tree-view-resizer {
-
-  padding-top: @tab-height / @modular-scale + @modular-scale-xxs * 1rem;
-
-  .tree-view.list-tree {
-    .project-root {
-
-      > .header {
-        height: @tab-height / @modular-scale;
-        line-height: @tab-height /@modular-scale;
-
-        .name {
-          height: @tab-height / @modular-scale;
-          line-height: @tab-height / @modular-scale;
-          white-space: nowrap;
-        }
-      }
-    }
-  }
-}
-
 .right {
   .tree-view.list-tree {
     li {
@@ -126,7 +73,6 @@
 }
 
 .tree-view-resizer {
-  z-index: 0; // force it to stay behind tabs
   .tree-view-resize-handle {
     width: 8px;
   }
