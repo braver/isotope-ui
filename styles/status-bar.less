@@ -1,15 +1,22 @@
 .status-bar {
-  height: @tab-height;
-  line-height: @tab-height;
+  height: round(@tab-height);
+  line-height: round(@tab-height);
   background: @tool-panel-background-color;
-
   font-size: @modular-scale-m * 1rem;
 
   > * {
     padding: 0 @modular-scale-s * 1rem;
   }
-  .inline-block {
-    height: @tab-height;
-    line-height: @tab-height;
+
+  .status-bar-left > *,
+  .status-bar-right > * {
+    vertical-align: top;
+  }
+}
+
+[isotope-ui-compact='true'] {
+  .status-bar {
+    height: @tab-height / @modular-scale;
+    line-height: @tab-height / @modular-scale;
   }
 }
