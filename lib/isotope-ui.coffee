@@ -66,6 +66,10 @@ module.exports =
       description: 'Make tooltips low contrast and not so colorful.'
       type: 'boolean'
       default: false
+    matchEditorFont:
+      description: 'Match the font family you set for the editor (only works if you set a custom value).'
+      type: 'boolean'
+      default: false
 
 
   activate: (state) ->

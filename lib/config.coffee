@@ -94,6 +94,12 @@ module.exports =
       else
         body.setAttribute('isotope-ui-tooltip-lowcontrast', 'false')
 
+    applyEditorFont = () ->
+      if atom.config.get('isotope-ui.matchEditorFont')
+        body.style.fontFamily = atom.config.get('editor.fontFamily')
+      else
+        body.style.fontFamily = ''
+
 
     # run when atom is ready
 
@@ -106,6 +112,7 @@ module.exports =
     applyBackgroundImage()
     applyGutterStyle()
     applyTooltipContrast()
+    applyEditorFont()
 
 
     # run when configs change
@@ -142,3 +149,9 @@ module.exports =
 
     atom.config.onDidChange 'isotope-ui.lowContrastTooltip', ->
       applyTooltipContrast()
+
+    atom.config.onDidChange 'isotope-ui.matchEditorFont', ->
+      applyEditorFont()
+
+    atom.config.onDidChange 'editor.fontFamily', ->
+      applyEditorFont()
