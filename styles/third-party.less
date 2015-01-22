@@ -4,12 +4,12 @@
 
 // zen
 .zen {
-  border: none;
   background: @ui-theme-color;
   atom-pane-container atom-pane {
     background: @ui-theme-color !important; //overrule an inline style
   }
-  atom-text-editor:not(.mini) {
+  atom-text-editor:not([mini]),
+  .editor:not(.zen) {
     margin-top: @modular-scale-l * 1rem;
     margin-bottom: @modular-scale-l * 1rem;
   }
