@@ -27,14 +27,14 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 
 **You may need to reload atom before settings become available ([settings-view #347](https://github.com/atom/settings-view/issues/347))**
 
-- Choose from a number of fonts included in this theme
-- Select hip 'thin' fonts, or trusty old 'regular'
-- Choose between a flat or gradient background
-- Or even use any image as background (from your computer or [the internets](http://hubblesite.org))
-- Make the layout take up less vertical space (e.g. for small screens)
-- Choose tree-view highlight color
-- Style the gutter, or not
-- Choose low contrast tooltips (or fancy colorful ones)
+- Choose from a number of fonts included in this theme, or match the editor's font.
+- Select hip 'thin' fonts, or trusty old 'regular'.
+- Choose between a flat or gradient background.
+- Or even use any image as background (from your computer or [the internets](http://hubblesite.org)).
+- Make the layout take up less vertical space (e.g. for small screens).
+- Choose tree-view highlight color.
+- Style the gutter, or not.
+- Choose low contrast tooltips (or fancy colorful ones).
 - Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
 
 ```
