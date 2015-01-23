@@ -96,7 +96,10 @@ module.exports =
 
     applyEditorFont = () ->
       if atom.config.get('isotope-ui.matchEditorFont')
-        body.style.fontFamily = atom.config.get('editor.fontFamily')
+        if atom.config.get('editor.fontFamily') is ''
+          body.style.fontFamily = 'Inconsolata, Monaco, Consolas, "Courier New", Courier'
+        else
+          body.style.fontFamily = atom.config.get('editor.fontFamily')
       else
         body.style.fontFamily = ''
 

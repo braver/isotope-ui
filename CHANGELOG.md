@@ -97,3 +97,7 @@
 
 # 1.2.4 - Zen
 * Fix [zen](https://atom.io/packages/zen) support
+
+# 1.2.4 - Editor font
+* Use the editor's font for the UI
+* Minor improvements

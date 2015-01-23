@@ -67,7 +67,7 @@ module.exports =
       type: 'boolean'
       default: false
     matchEditorFont:
-      description: 'Match the font family you set for the editor (only works if you set a custom value).'
+      description: 'Match the font family you set for the editor.'
       type: 'boolean'
       default: false
 
