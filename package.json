@@ -2,7 +2,7 @@
   "name": "isotope-ui",
   "main": "lib/isotope-ui",
   "theme": "ui",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "A clean UI theme, adapts to any syntax theme.",
   "license": "MIT",
   "repository": "https://github.com/braver/isotope-ui",
