@@ -8,17 +8,17 @@ module.exports =
 
     # calculate lighter/darker color
     # http://stackoverflow.com/questions/5560248
-    shadeColor = (color, percent) ->
-      num = parseInt(color.slice(1), 16)
-      amt = Math.round(2.55 * percent)
-      R = (num >> 16) + amt
-      G = (num >> 8 & 0x00ff) + amt
-      B = (num & 0x0000ff) + amt
-      "#" + (0x1000000 +
-        ((if R < 255 then (if R < 1 then 0 else R) else 255)) * 0x10000 +
-        ((if G < 255 then (if G < 1 then 0 else G) else 255)) * 0x100 +
-        ((if B < 255 then (if B < 1 then 0 else B) else 255))
-        ).toString(16).slice(1)
+    # shadeColor = (color, percent) ->
+    #   num = parseInt(color.slice(1), 16)
+    #   amt = Math.round(2.55 * percent)
+    #   R = (num >> 16) + amt
+    #   G = (num >> 8 & 0x00ff) + amt
+    #   B = (num & 0x0000ff) + amt
+    #   "#" + (0x1000000 +
+    #     ((if R < 255 then (if R < 1 then 0 else R) else 255)) * 0x10000 +
+    #     ((if G < 255 then (if G < 1 then 0 else G) else 255)) * 0x100 +
+    #     ((if B < 255 then (if B < 1 then 0 else B) else 255))
+    #     ).toString(16).slice(1)
 
     applyFont = (font) ->
       body.setAttribute('isotope-ui-font', font)
@@ -38,29 +38,29 @@ module.exports =
       else
         body.setAttribute('isotope-ui-treecolor', 'false')
 
-    applyBackgroundColor = () ->
-      color =
-        atom.config.get('isotope-ui.customBackgroundColorPicker').toHexString()
-      if atom.config.get('isotope-ui.backgroundGradient')
-        if atom.config.get('isotope-ui.customBackgroundColor')
-          atom.config.set('isotope-ui.backgroundImage', 'false')
-          color1 = shadeColor(color, 12)
-          color2 = shadeColor(color, -12)
-          gradient = 'linear-gradient(' + color1 + ' 0%, ' + color2 + ' 100%)'
-          body.setAttribute('isotope-ui-bg-color', 'true')
-          body.style.backgroundImage = gradient
-        else
-          body.setAttribute('isotope-ui-bg-color', 'false')
-          body.style.backgroundImage = ''
-      else
-        body.style.backgroundImage = ''
-        if atom.config.get('isotope-ui.customBackgroundColor')
-          atom.config.set('isotope-ui.backgroundImage', 'false')
-          body.setAttribute('isotope-ui-bg-color', 'true')
-          body.style.backgroundColor = color
-        else
-          body.setAttribute('isotope-ui-bg-color', 'false')
-          body.style.backgroundColor = ''
+    # applyBackgroundColor = () ->
+    #   color =
+    #     atom.config.get('isotope-ui.customBackgroundColorPicker').toHexString()
+    #   if atom.config.get('isotope-ui.backgroundGradient')
+    #     if atom.config.get('isotope-ui.customBackgroundColor')
+    #       atom.config.set('isotope-ui.backgroundImage', 'false')
+    #       color1 = shadeColor(color, 12)
+    #       color2 = shadeColor(color, -12)
+    #       gradient = 'linear-gradient(' + color1 + ' 0%, ' + color2 + ' 100%)'
+    #       body.setAttribute('isotope-ui-bg-color', 'true')
+    #       body.style.backgroundImage = gradient
+    #     else
+    #       body.setAttribute('isotope-ui-bg-color', 'false')
+    #       body.style.backgroundImage = ''
+    #   else
+    #     body.style.backgroundImage = ''
+    #     if atom.config.get('isotope-ui.customBackgroundColor')
+    #       atom.config.set('isotope-ui.backgroundImage', 'false')
+    #       body.setAttribute('isotope-ui-bg-color', 'true')
+    #       body.style.backgroundColor = color
+    #     else
+    #       body.setAttribute('isotope-ui-bg-color', 'false')
+    #       body.style.backgroundColor = ''
 
     applyBackgroundGradient = () ->
       if atom.config.get('isotope-ui.backgroundGradient')
@@ -110,7 +110,7 @@ module.exports =
     applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
     applyCompactness()
     applyTreeColor()
-    applyBackgroundColor()
+    # applyBackgroundColor()
     applyBackgroundGradient()
     applyBackgroundImage()
     applyGutterStyle()
@@ -132,11 +132,11 @@ module.exports =
     atom.config.onDidChange 'isotope-ui.colorTreeSelection', ->
       applyTreeColor()
 
-    atom.config.onDidChange 'isotope-ui.customBackgroundColor', ->
-      applyBackgroundColor()
-
-    atom.config.onDidChange 'isotope-ui.customBackgroundColorPicker', ->
-      applyBackgroundColor()
+    # atom.config.onDidChange 'isotope-ui.customBackgroundColor', ->
+    #   applyBackgroundColor()
+    #
+    # atom.config.onDidChange 'isotope-ui.customBackgroundColorPicker', ->
+    #   applyBackgroundColor()
 
     atom.config.onDidChange 'isotope-ui.backgroundGradient', ->
       applyBackgroundGradient()
