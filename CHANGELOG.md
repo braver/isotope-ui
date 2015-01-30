@@ -105,5 +105,9 @@
 # 1.2.7, 1.2.8 - Mini editor
 * Now properly applies fonts to mini editor
 
-# 1.2.9
+# 1.2.9 - Bold
 * Bold font is now thinner for light and thin fonts
+
+# 1.2.10 - Lists
+* Temporarily disabling custom background color because of errors
+* Improve lists: command palette, autocomplete, etc.
