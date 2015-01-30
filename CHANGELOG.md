@@ -102,4 +102,8 @@
 * Use the editor's font for the UI
 * Minor improvements
 
-# 1.2.5 - Minor
+# 1.2.7, 1.2.8 - Mini editor
+* Now properly applies fonts to mini editor
+
+# 1.2.9
+* Bold font is now thinner for light and thin fonts
