@@ -15,12 +15,9 @@
   }
 }
 
-
 atom-text-editor,
 atom-text-editor::shadow {
 
-
-  // atom-color-highlight
   atom-color-highlight {
     dot-color-marker {
       margin-top: .4em;
@@ -38,12 +35,11 @@ atom-text-editor::shadow {
     }
   }
 
-
-  //autocomplete-plus
-  .autocomplete-plus.popover-list ol.list-group {
-    overflow: auto;
+  .autocomplete {
+    &.select-list ol li {
+      padding: 0;
+    }
   }
-
 
   // minimap
   atom-text-editor-minimap::shadow .minimap-visible-area {

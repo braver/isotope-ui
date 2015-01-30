@@ -54,7 +54,6 @@
   }
 
   .icon {
-    display: inline-block;
     &:before{
       height: 100%;
       line-height: 100%;
@@ -68,13 +67,19 @@
     float: left;
   }
 
-  .primary-line,
-  .secondary-line {
-    display: inline-block;
+  .two-lines {
+    height: auto;
+  }
+  .primary-line {
+    line-height: @modular-scale-xxl;
   }
   .secondary-line {
+    line-height: @modular-scale-m;
+    padding-bottom: @modular-scale-xs * 1rem;
+  }
+  .secondary-line,
+  .key-binding {
     color: @fg-subtle;
-    padding-left: @component-icon-size + @component-icon-padding;
   }
 
   .selected {
@@ -93,12 +98,6 @@
 
   li {
     overflow: hidden; //prevent a stacking issue with keybindings
-    &.two-lines {
-      height: @component-line-height;
-      &.selected .secondary-line {
-        text-shadow: none;
-      }
-    }
 
     &:hover {
       color: lighten(@base-fg, 12%);
