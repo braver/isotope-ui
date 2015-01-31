@@ -109,5 +109,4 @@
 * Bold font is now thinner for light and thin fonts
 
 # 1.2.10 - Lists
-* Temporarily disabling custom background color because of errors
 * Improve lists: command palette, autocomplete, etc.

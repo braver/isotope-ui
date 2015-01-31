@@ -37,6 +37,14 @@ module.exports =
         Looks better off when scrollbars always visible (e.g. on Linux)'
       type: 'boolean'
       default: true
+    customBackgroundColor:
+      description: 'Choose a custom background color.'
+      type: 'boolean'
+      default: false
+    customBackgroundColorPicker:
+      description: 'Choose your background color.'
+      type: 'color'
+      default: 'white'
     backgroundGradient:
       description: 'Apply a subtle gradient to the background.'
       type: 'boolean'
