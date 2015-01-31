@@ -110,3 +110,4 @@
 
 # 1.2.10 - Lists
 * Improve lists: command palette, autocomplete, etc.
+* Tree-view focussed state now visible
