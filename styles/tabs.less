@@ -85,33 +85,6 @@
     }
   }
 
-  .tab.active {
-    z-index: 1;
-    flex: 2 0 auto;
-    padding-right: @modified-icon-width + 2px;
-    background-color: @tab-background-color-active;
-    color: @base-fg;
-
-    & .close-icon {
-      color: @base-fg;
-      transform: scale(1);
-    }
-
-    &:hover .close-icon {
-      color: @base-fg;
-
-      &:hover {
-        color: @ui-accent;
-      }
-    }
-
-    // Active pane marker
-    atom-pane.active &:before {
-      transform: scaleY(1);
-    }
-
-  }
-
   .tab.modified {
     &:not(:hover) .close-icon {
       .close-icon-mixin();
@@ -167,6 +140,28 @@
         margin-left: -10px;
         border-color: transparent @level-5-bg transparent transparent;
       }
+    }
+  }
+}
+
+// only show active tab in the active pane
+.pane.active .tab.active {
+  z-index: 1;
+  flex: 2 0 auto;
+  padding-right: @modified-icon-width + 2px;
+  background-color: @tab-background-color-active;
+  color: @base-fg;
+
+  & .close-icon {
+    color: @base-fg;
+    transform: scale(1);
+  }
+
+  &:hover .close-icon {
+    color: @base-fg;
+
+    &:hover {
+      color: @ui-accent;
     }
   }
 }
