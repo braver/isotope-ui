@@ -35,8 +35,33 @@ atom-text-editor::shadow {
   }
 
   .selection .region {
-      border-radius: 2 * @component-border-radius;
-      box-shadow: inset 0 0 1px @fg-subtle;
+      // outlined selections!
+      // margins to compensate for size change from added border
+      // prevents double borders by layering and using the selection background
+      // to hide underlying borders
+      // only kinda fails if you select over 2 rows
+
+      @selection-border: @fg-subtle;
+      border: 1px solid @selection-border;
+      margin-top: -2px;
+      &:first-child {
+        border-top-left-radius: 1.5 * @component-border-radius;
+        border-top-right-radius: 1.5 * @component-border-radius;
+        border-bottom-color: @syntax-selection-color;
+        z-index: 0; //put it on top
+        margin-top: -2px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 1.5 * @component-border-radius;
+        border-bottom-right-radius: 1.5 * @component-border-radius;
+        border-top-color: @syntax-selection-color;
+        margin-top: -1px;
+      }
+      &:last-child:first-child {
+        border-bottom-color: @selection-border;
+        border-top-color: @selection-border;
+        margin-top: -2px;
+      }
   }
 
 
