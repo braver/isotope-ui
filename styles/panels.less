@@ -20,21 +20,16 @@ atom-panel {
   }
 }
 
-.tool-panel.tool-panel {
-  color: @fg-subtle;
-  position: relative;
-  background-color: @tool-panel-background-color;
+.tool-panel {
+  .top-edge();
+  &.tool-panel {
+    color: @fg-subtle;
+    position: relative;
+    background-color: @tool-panel-background-color;
 
-  &.panel-bottom {
-    background-color: @level-4-bg;
-  }
-
-  &.panel-left {
-
-  }
-
-  &.panel-right {
-
+    &.panel-bottom {
+      background-color: @level-4-bg;
+    }
   }
 }
 

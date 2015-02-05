@@ -1,6 +1,8 @@
 .status-bar {
-  height: round(@tab-height);
-  line-height: round(@tab-height);
+  .top-edge();
+  
+  height: round(@component-line-height);
+  line-height: round(@component-line-height);
   background: @tool-panel-background-color;
   font-size: @modular-scale-m * 1rem;
 
