@@ -1,6 +1,6 @@
 @modified-icon-width: @component-icon-size / 2;
 @tab-text-color: @fg-subtle;
-@tab-top-padding: 0;
+@tab-top-padding: @modular-scale-xxs * 1rem;
 @tab-bottom-border-height: 0;
 @tab-border: 0 solid @level-5-bg;
 @tab-max-width: 160px;
@@ -41,8 +41,6 @@
   overflow-x: auto;
   overflow-y: hidden;
   background: @tab-bar-background-color;
-
-  margin-top: @modular-scale-xxs * 1rem; // create a small space above tabs
 
   &::-webkit-scrollbar {
     display: none;
