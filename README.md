@@ -54,7 +54,6 @@ This package includes a number of fonts that were designed especially for user i
 
 ## Plans
 
-- Add config for brightness and contrast
 - Tweak and improve stuff for specific packages
 - Use it every day
 - [Make it better almost every day](https://github.com/braver/isotope-ui/issues/2)
