@@ -1,10 +1,8 @@
 # Isotope UI theme
 
-A clean and configurable UI theme that adapts to your taste, offering endless possibilities. One Atom, many Isotopes ;)
+A clean and configurable UI theme that adapts to your taste, offering endless possibilities. One Atom, many Isotopes ;) Isotope bases its colors on the selected syntax theme and blends with all of them.
 
-Isotope relies on syntax-variables.less to set a background color, and derives all other colors from that. It's intended to provide an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast.
-
-It's also flexible: you can configure typography, background (images even) and a number of other options to your liking.
+It's intended to provide an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast.
 
 Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-ui](https://github.com/atom/one-dark-ui) theme that Isotope was forked from.
 
@@ -17,7 +15,8 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 ## Features
 
 - Automatically adapts to your favourite syntax theme
-- Tweaks [minimap](https://atom.io/packages/minimap), [zen](https://atom.io/packages/zen), [color-highlight](https://atom.io/packages/atom-color-highlight) (more to come)
+- Tweaks [minimap](https://atom.io/packages/minimap) and [color-highlight](https://atom.io/packages/atom-color-highlight) (more to come)
+- Looks awesome in [Zen](https://atom.io/packages/Zen) mode
 - Configurable!
 
 
