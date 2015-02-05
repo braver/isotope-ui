@@ -30,7 +30,6 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 - Choose between a flat or gradient background.
 - Or even use any image as background (from your computer or [the internets](http://hubblesite.org)).
 - Choose tree-view highlight color.
-- Style the gutter, or not.
 - Choose low contrast tooltips (or fancy colorful ones).
 - Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
 

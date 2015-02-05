@@ -53,10 +53,6 @@ module.exports =
        the internets (e.g. hubblesite.org or unsplash.com).'
       type: 'string'
       default: 'atom://isotope-ui/resources/images/raket.jpg'
-    gutterStyle:
-      description: 'Turn off to relegate gutter styling to syntax theme.'
-      type: 'boolean'
-      default: true
     lowContrastTooltip:
       description: 'Make tooltips low contrast and not so colorful.'
       type: 'boolean'
