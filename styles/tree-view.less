@@ -84,6 +84,19 @@
     }
   }
 }
+.tree-view-resizer {
+  padding-left: @modular-scale-xxs * 1rem;
+  .tree-view-resize-handle {
+    width: 8px;
+  }
+}
+.right {
+  .tree-view-resizer {
+    padding-left: 0;
+    padding-right: @modular-scale-xxs * 1rem;
+  }
+}
+
 
 // optional color tree-view selected item just like tabs
 [isotope-ui-treecolor='true'] {
@@ -108,12 +121,5 @@
         }
       }
     }
-  }
-}
-
-.tree-view-resizer {
-  padding-left: @modular-scale-xxs * 1rem;
-  .tree-view-resize-handle {
-    width: 8px;
   }
 }
