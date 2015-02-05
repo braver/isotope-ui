@@ -21,6 +21,21 @@
     .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
   }
 
+  li,
+  li:not(.list-nested-item),
+  li.list-nested-item > .list-item {
+    min-height: @component-line-height / @modular-scale;
+    line-height: @component-line-height / @modular-scale;
+  }
+
+  li.selected:before,
+  li:not(.list-nested-item).selected:before,
+  li.list-nested-item.selected > .list-item:before {
+    height: @component-line-height / @modular-scale;
+    min-height: @component-line-height / @modular-scale;
+    line-height: @component-line-height / @modular-scale;
+  }
+
   // hide pointer icons in treeview
   &.has-collapsable-children {
     .list-nested-item > .list-item:before {

@@ -29,7 +29,6 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 - Select hip 'thin' fonts, or trusty old 'regular'.
 - Choose between a flat or gradient background.
 - Or even use any image as background (from your computer or [the internets](http://hubblesite.org)).
-- Make the layout take up less vertical space (e.g. for small screens).
 - Choose tree-view highlight color.
 - Style the gutter, or not.
 - Choose low contrast tooltips (or fancy colorful ones).
@@ -41,6 +40,7 @@ html, body { font-size: 9px; }
 
 
 ## Fonts
+
 This package includes a number of fonts that were designed especially for user interfaces. You can pick and choose without having to find and install anything:
 
 - Cantarell - the system font for GNOME 3 (by Dave Crossland)
@@ -52,6 +52,7 @@ This package includes a number of fonts that were designed especially for user i
 - Source Sans Pro - Adobe's UI font also used in Brackets (by Paul D. Hunt)
 - Ubuntu - Ubuntu's system font (by Dalton Maag)
 - System default - Attempts to match your OS using this stack: 'Helvetica Neue', 'Segoe UI', Ubuntu, Cantarell, sans-serif
+
 
 ## Plans
 
