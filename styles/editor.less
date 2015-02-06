@@ -54,7 +54,7 @@ atom-text-editor:not(.mini)::shadow {
     // to hide underlying borders
     // only kinda fails if you select over 2 rows
 
-    @selection-border: @fg-faded;
+    @selection-border: contrast( @syntax-selection-color, darken(@syntax-selection-color, 12%), lighten(@syntax-selection-color, 12%) );;
     border: 1px solid @selection-border;
     margin-top: -2px;
     &:first-child {
