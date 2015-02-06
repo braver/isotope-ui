@@ -53,27 +53,29 @@ atom-text-editor:not(.mini)::shadow {
     // prevents double borders by layering and using the selection background
     // to hide underlying borders
     // only kinda fails if you select over 2 rows
+    // selection aligns better on a well centered font (e.g. source code pro)
 
-    @selection-border: contrast( @syntax-selection-color, darken(@syntax-selection-color, 12%), lighten(@syntax-selection-color, 12%) );;
+    @selection-border: contrast(
+      @syntax-selection-color,
+      darken(@syntax-selection-color, 9%),
+      lighten(@syntax-selection-color, 9%)
+    );
     border: 1px solid @selection-border;
-    margin-top: -2px;
+    margin-top: -1px;
     &:first-child {
       border-top-left-radius: 1.5 * @component-border-radius;
       border-top-right-radius: 1.5 * @component-border-radius;
       border-bottom-color: @syntax-selection-color;
       z-index: 0; //put it on top
-      margin-top: -2px;
     }
     &:last-child {
       border-bottom-left-radius: 1.5 * @component-border-radius;
       border-bottom-right-radius: 1.5 * @component-border-radius;
       border-top-color: @syntax-selection-color;
-      margin-top: -1px;
     }
     &:last-child:first-child {
       border-bottom-color: @selection-border;
       border-top-color: @selection-border;
-      margin-top: -2px;
     }
   }
 }
