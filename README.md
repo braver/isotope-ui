@@ -15,7 +15,7 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 ## Features
 
 - Automatically adapts to your favourite syntax theme
-- Tweaks [minimap](https://atom.io/packages/minimap) and [color-highlight](https://atom.io/packages/atom-color-highlight) (more to come)
+- Tweaks [minimap](https://atom.io/packages/minimap), [color-highlight](https://atom.io/packages/atom-color-highlight), [web-browser](https://atom.io/packages/web-browser) (more to come)
 - Looks awesome in [Zen](https://atom.io/packages/Zen) mode
 - Configurable!
 
