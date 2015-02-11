@@ -73,7 +73,10 @@
     .title {
       position: relative;
       z-index: 1;
-      padding: 0  @modular-scale * @component-padding 0  @component-padding;
+      padding:  0 @modular-scale-xxl * 1rem 0 @modular-scale-xl * 1rem;;
+    }
+    &.active .title {
+      padding: 0 @modular-scale-xxl * 1rem 0 @modular-scale-xl * 1rem;
     }
 
     .close-icon {
@@ -147,9 +150,13 @@
 atom-pane.active .tab.active {
   z-index: 1;
   flex: 2 0 auto;
-  padding-right: @modified-icon-width + 2px;
   background-color: @tab-background-color-active;
   color: @base-fg;
+  padding: 0;
+
+  .title {
+    padding-right: @modular-scale * @modular-scale * @component-padding;
+  }
 
   & .close-icon {
     color: @base-fg;
