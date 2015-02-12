@@ -2,9 +2,10 @@ module.exports =
 
   apply: () ->
 
-    # functions
-
     body = document.querySelector('body')
+
+
+    # functions
 
     applyFont = (font) ->
       body.setAttribute('isotope-ui-font', font)
@@ -35,7 +36,6 @@ module.exports =
         body.setAttribute('isotope-ui-bg-gradient', 'true')
       else
         body.setAttribute('isotope-ui-bg-gradient', 'false')
-        #applyBackgroundImage()
 
     applyBackgroundImage = () ->
       if atom.config.get('isotope-ui.backgroundImage')
