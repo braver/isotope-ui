@@ -154,6 +154,10 @@ atom-pane.active .tab.active {
   color: @base-fg;
   padding: 0;
 
+  &:not([data-type="TextEditor"]) {
+    background-color: @level-3-bg;
+  }
+
   .title {
     padding: 0 @modular-scale-xxl * 1rem 0 @modular-scale-l * 1rem;
   }
