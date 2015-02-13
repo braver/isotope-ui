@@ -1,3 +1,6 @@
+## 1.4.0 - More awesome
+* * Outlined selections introduced in 1.3.0 now in [separate package](https://atom.io/packages/selection-outlines)
+
 ## 1.3.0 - More awesome
 * Now more compact by default (drops the config option)
 * Scrollbars look better when always visible
