@@ -7,8 +7,6 @@
 @tab-min-width: @tab-height * 2;
 
 .close-icon-mixin() {
-  right: -12px;
-  margin-right: @modular-scale * @component-padding;
   margin-top: -7px;
   text-align: right;
   top: 50%;
@@ -28,7 +26,7 @@
 
   &:hover {
     color: @ui-accent;
-    transition: transform .1s, border .1s, color .1s;
+    transition: transform .1s, color .1s;
   }
 
   &:active {
@@ -154,9 +152,10 @@ atom-pane.active .tab.active {
   color: @base-fg;
   padding: 0;
 
-  &:not([data-type="TextEditor"]) {
-    background-color: @level-3-bg;
-  }
+  // for later atom update
+  // &:not([data-type="TextEditor"]) {
+  //   background-color: @level-3-bg;
+  // }
 
   .title {
     padding: 0 @modular-scale-xxl * 1rem 0 @modular-scale-l * 1rem;
