@@ -21,6 +21,8 @@ Test plan:
 
 - git control
 
+- multiple panes
+
 Linux:
 
-- scrollbars tree-view (left/right)
+- scrollbars (tree-view) (left/right)
