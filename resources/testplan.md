@@ -1,5 +1,7 @@
 Test plan:
 
+- styleguide
+
 - git diff
 - git conflicted (-> merge-conflicts)
 
