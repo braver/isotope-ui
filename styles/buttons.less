@@ -1,12 +1,12 @@
 // text color indicates state, background indicates interaction
 .btn-mixin (@bg-color, @fg-color) {
 
-  @level-0-bg: lighten(@bg-color, @ui-contrast + 12%);
-  @level-1-bg: lighten(@bg-color, @ui-contrast + 6%);
-  @level-2-bg:  darken(@bg-color, @ui-contrast);
-  @level-3-bg:  darken(@bg-color, @ui-contrast + 3%);
-  @level-4-bg:  darken(@bg-color, @ui-contrast + 6%);
-  @level-5-bg:  darken(@bg-color, @ui-contrast + 9%);
+  @level-0-bg: lighten(@bg-color, 12%);
+  @level-1-bg: lighten(@bg-color, 6%);
+  @level-2-bg:  darken(@bg-color, 0%);
+  @level-3-bg:  darken(@bg-color, 3%);
+  @level-4-bg:  darken(@bg-color, 6%);
+  @level-5-bg:  darken(@bg-color, 9%);
 
   color: @fg-color;
   background: @level-1-bg;

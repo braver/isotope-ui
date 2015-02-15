@@ -33,10 +33,6 @@
 // leading color
 @ui-theme-color: @syntax-background-color;
 
-// tweaks, will later be provided by settings
-@theme-adjust-saturation: 0%;
-@theme-adjust-contrast:   0%;
-
 // Tend towards blue instead of red when base color is white
 .ui-hue() when (hsvhue(@ui-theme-color) = 0) and (hsvsaturation(@ui-theme-color) = 0%) {
   @ui-hue: 180;
@@ -45,9 +41,8 @@
   @ui-hue: hsvhue(@ui-theme-color);
 }
 .ui-hue();
-@ui-saturation:    max(7.5% + @theme-adjust-saturation, 0%); // limit to > 0%
+@ui-saturation:    7.5%;
 @ui-brightness:    24%;
-@ui-contrast:      @theme-adjust-contrast * 0.12;
 @ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 66 );
 
 
@@ -55,12 +50,12 @@
 // background
 @base-bg: hsv(@ui-hue, @ui-saturation, @ui-brightness);
 
-@level-0-bg: lighten(@base-bg, @ui-contrast + 12%);
-@level-1-bg: lighten(@base-bg, @ui-contrast + 6%);
-@level-2-bg:  darken(@base-bg, @ui-contrast);
-@level-3-bg:  darken(@base-bg, @ui-contrast + 3%);
-@level-4-bg:  darken(@base-bg, @ui-contrast + 6%);
-@level-5-bg:  darken(@base-bg, @ui-contrast + 9%);
+@level-0-bg: lighten(@base-bg, 12%);
+@level-1-bg: lighten(@base-bg, 6%);
+@level-2-bg:  darken(@base-bg, 0%);
+@level-3-bg:  darken(@base-bg, 3%);
+@level-4-bg:  darken(@base-bg, 6%);
+@level-5-bg:  darken(@base-bg, 9%);
 
 @bg-info:    hsl(208, 100%/1.33, 42%/1.33);
 @bg-success: hsl(160,  70%/1.33, 42%/1.33);
@@ -70,13 +65,13 @@
 
 
 // foreground
-@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness + @ui-contrast) * 2.4) );
+@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness) * 2.4) );
 
 @fg-subtle: fadeout(@base-fg, 18%);
 @fg-faded: fade(@base-fg, 24%);
 @fg-ignored:  fade(@base-fg, 48%);
-@fg-highlight: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 88%);
-@fg-selected: hsl(@ui-hue, @ui-saturation*8, @ui-contrast*10 + 98%);
+@fg-highlight: hsl(@ui-hue, @ui-saturation*8, 88%);
+@fg-selected: hsl(@ui-hue, @ui-saturation*8, 98%);
 
 @fg-info:    hsl(219,  79%/1.33, 66%/1.33);
 @fg-success: hsl(140,  44%/1.33, 62%/1.33);
@@ -156,7 +151,7 @@
 
 @disclosure-arrow-size:    1rem;
 
-@component-padding:        @modular-scale-l * 1rem;
+@component-padding:        @modular-scale-m * 1rem;
 @component-icon-padding:   @modular-scale-xs * 1rem;
 @component-icon-size:      16/12 * 1rem;
 @component-line-height:    @modular-scale-xxl * 1rem;

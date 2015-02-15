@@ -1,7 +1,7 @@
 atom-text-editor,
 atom-text-editor::shadow {
   .cursor-line {
-    background: fadeout( darken(@ui-theme-color, @ui-contrast + 3%), 60%);
+    background: fadeout( darken(@ui-theme-color, 3%), 60%);
   }
   .bracket-matcher .region {
     border-bottom: 1px solid @base-fg;
@@ -42,82 +42,6 @@ atom-text-editor::shadow {
     background: @ui-site-color-5;
     .text-subtle {
       color: fade(@fg-highlight, 60%);
-    }
-  }
-}
-
-atom-text-editor:not(.mini)::shadow {
-  .selection .region {
-    // outlined selections!
-    // prevents double borders by layering
-    // and using the selection background
-    // to hide underlying borders
-    // there at most three regions per selection
-    // debugging tip: assing bright border colors
-
-    @selection-border: contrast(
-      @syntax-selection-color,
-      darken(@syntax-selection-color, 9%),
-      lighten(@syntax-selection-color, 9%)
-    );
-    border: 1px solid @selection-border;
-    box-sizing: border-box;
-    &:after {
-        content: '';
-        display: block;
-        position: relative;
-        height: 100%;
-    }
-
-    // first region
-    &:first-child {
-      border-top-left-radius: 1.5 * @component-border-radius;
-      border-top-right-radius: 1.5 * @component-border-radius;
-      border-bottom-color: @syntax-selection-color;
-      z-index: 0; //put it on top
-
-      // if the first isn't the second to last (there are one or three regions)
-      &:not(:nth-last-child(2)):after {
-        bottom: -1px;
-        border-bottom: 1px solid @syntax-selection-color;
-      }
-
-      // if the first is the second to last (there are two regions)
-      &:nth-last-child(2) {
-        border-bottom: 1px solid @selection-border;
-      }
-    }
-    // last region
-    &:last-child {
-      border-bottom-left-radius: 1.5 * @component-border-radius;
-      border-bottom-right-radius: 1.5 * @component-border-radius;
-
-      // the last is the second (there are two)
-      &:nth-child(2) {
-        border-top-color: @syntax-selection-color;
-        &:after {
-          top: -2px;
-          border-top: 1px solid @selection-border;
-        }
-      }
-    }
-
-    // last region if there are three
-    &:nth-child(3) {
-      border-top-color: @syntax-selection-color;
-      &:after {
-        top: -2px;
-        border-top: 1px solid @syntax-selection-color;
-      }
-    }
-
-    // the last is the first, ie. there is only one
-    &:last-child:first-child {
-      border-bottom-color: @selection-border;
-      border-top-color: @selection-border;
-      &:after {
-        display: none;
-      }
     }
   }
 }

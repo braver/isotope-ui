@@ -1,5 +1,7 @@
 Test plan:
 
+- styleguide
+
 - git diff
 - git conflicted (-> merge-conflicts)
 
@@ -19,6 +21,8 @@ Test plan:
 
 - git control
 
+- multiple panes
+
 Linux:
 
-- scrollbars tree-view (left/right)
+- scrollbars (tree-view) (left/right)

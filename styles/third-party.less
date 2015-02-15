@@ -39,7 +39,11 @@ atom-text-editor::shadow {
 
   // minimap
   atom-text-editor-minimap::shadow .minimap-visible-area {
-    background-color: @level-0-bg;
-    opacity: .24;
+    background-color: contrast(
+        @syntax-background-color,
+        darken(@syntax-background-color, 33%),
+        lighten(@syntax-background-color, 33%)
+      );
+    opacity: .33;
   }
 }
