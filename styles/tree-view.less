@@ -123,3 +123,22 @@
     }
   }
 }
+
+body[isotope-ui-spacious='true'] .tree-view.list-tree {
+  padding-top: @component-line-height/2 - @modular-scale-xxs * 1rem + .25rem;
+
+  li,
+  li:not(.list-nested-item),
+  li.list-nested-item > .list-item {
+    min-height: @component-line-height;
+    line-height: @component-line-height;
+  }
+
+  li.selected:before,
+  li:not(.list-nested-item).selected:before,
+  li.list-nested-item.selected > .list-item:before {
+    height: @component-line-height;
+    min-height: @component-line-height;
+    line-height: @component-line-height;
+  }
+}

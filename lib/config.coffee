@@ -64,6 +64,12 @@ module.exports =
       else
         body.style.fontFamily = ''
 
+    applySpaciousMode = () ->
+      if atom.config.get('isotope-ui.spaciousMode')
+        body.setAttribute('isotope-ui-spacious', 'true')
+      else
+        body.setAttribute('isotope-ui-spacious', 'false')
+
 
     # run when atom is ready
 
@@ -75,6 +81,7 @@ module.exports =
     applyBackgroundColor()
     applyTooltipContrast()
     applyEditorFont()
+    applySpaciousMode()
 
 
     # run when configs change
@@ -108,6 +115,9 @@ module.exports =
 
     atom.config.onDidChange 'isotope-ui.matchEditorFont', ->
       applyEditorFont()
+
+    atom.config.onDidChange 'isotope-ui.spaciousMode', ->
+      applySpaciousMode()
 
     atom.config.onDidChange 'editor.fontFamily', ->
       applyEditorFont()

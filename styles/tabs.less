@@ -168,3 +168,17 @@ atom-pane .tab-bar .tab .title:before {
   vertical-align: top;
   line-height: @tab-height;
 }
+
+
+body[isotope-ui-spacious='true'] {
+  .tab-bar {
+    height: @tab-height + @tab-top-padding + 1;
+    .tab {
+      height: @tab-height + 1;
+      line-height: @tab-height + 1;
+    }
+  }
+  atom-pane .tab-bar .tab .title:before {
+    line-height: @tab-height + 1;
+  }
+}
