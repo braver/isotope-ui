@@ -31,6 +31,7 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 - Choose tree-view highlight color.
 - Choose low contrast tooltips (or fancy colorful ones).
 - Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
+- Choose a more spacious layout for your 27"
 
 ```
 html, body { font-size: 9px; }

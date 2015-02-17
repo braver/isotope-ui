@@ -1,3 +1,6 @@
+# 1.5.0 - Space man
+* Back by popular demand: you can opt for a more spacious layout
+
 # 1.4.0 - Maintenance improvements
 Collects a number of almost invisible improvements to make Isotope more sturdy and 'competitive' with core themes.
 * Outlined selections introduced in 1.3.0 now in [separate package](https://atom.io/packages/selection-outlines)
