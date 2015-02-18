@@ -159,6 +159,17 @@ atom-pane.active .tab.active {
 
   &:not([data-type="TextEditor"]) {
     background-color: @level-3-bg;
+    color: contrast(@level-3-bg, @base-fg, @level-1-bg);
+    & .close-icon {
+      color:contrast(@level-3-bg, @base-fg, @level-1-bg);
+    }
+    &:hover .close-icon {
+      color: contrast(@level-3-bg, @base-fg, @level-1-bg);
+
+      &:hover {
+        color: @ui-accent;
+      }
+    }
   }
 }
 
