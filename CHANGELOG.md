@@ -1,5 +1,6 @@
 # 1.5.0 - Space man
 * Back by popular demand: you can opt for a more spacious layout
+* Tabs are now seamless in views like Settings and Search Results
 
 # 1.4.0 - Maintenance improvements
 Collects a number of almost invisible improvements to make Isotope more sturdy and 'competitive' with core themes.
