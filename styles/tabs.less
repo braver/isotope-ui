@@ -172,6 +172,34 @@ atom-pane.active .tab.active {
         color: @ui-accent;
       }
     }
+    &[data-type="MarkdownPreviewView"] {
+      background-color: #fff;
+      color: contrast(#fff, @base-fg, @level-1-bg);
+      & .close-icon {
+        color:contrast(#fff, @base-fg, @level-1-bg);
+      }
+      &:hover .close-icon {
+        color: contrast(#fff, @base-fg, @level-1-bg);
+
+        &:hover {
+          color: @ui-accent;
+        }
+      }
+    }
+    &[data-type="GitControlView"] {
+      background-color: @level-2-bg;
+      color: contrast(@level-2-bg, @base-fg, @level-1-bg);
+      & .close-icon {
+        color:contrast(@level-2-bg, @base-fg, @level-1-bg);
+      }
+      &:hover .close-icon {
+        color: contrast(@level-2-bg, @base-fg, @level-1-bg);
+
+        &:hover {
+          color: @ui-accent;
+        }
+      }
+    }
   }
 }
 
