@@ -202,8 +202,10 @@ atom-pane.active .tab.active {
 
 
 atom-pane .tab-bar .tab .title:before {
-  vertical-align: top;
-  line-height: @tab-height;
+  // importants overrule file-icons package
+  font-size: 1rem !important;
+  vertical-align: top !important;
+  line-height: @tab-height !important;
 }
 
 
