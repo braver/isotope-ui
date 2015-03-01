@@ -7,8 +7,9 @@
 
 .close-icon-mixin() {
   margin-top: -6px;
+  margin-right: -6px;
   top: 50%;
-  right: 1rem;
+  right: @modular-scale-l * 1rem;
   width: 12px;
   height: 12px;
   border: none !important; //overrule default modified indicator
@@ -64,10 +65,10 @@
     }
 
     .title {
-      padding:  0 @modular-scale-xxl * 1rem 0 @modular-scale-l * 1rem;
+      padding: 0 @modular-scale-l * 2rem 0 @modular-scale-m * 1rem;
     }
     &.active .title {
-      padding: 0 @modular-scale-xxl * 1rem 0 @modular-scale-l * 1rem;
+      padding: 0 @modular-scale-l * 2rem 0 @modular-scale-m * 1rem;
     }
 
     .close-icon {
@@ -141,7 +142,7 @@ atom-pane.active .tab.active {
   padding: 0;
 
   .title {
-    padding: 0 @modular-scale-xxl * 1rem 0 @modular-scale-l * 1rem;
+    padding: 0 @modular-scale-l * 2rem 0 @modular-scale-m * 1rem;
   }
 
   & .close-icon {
