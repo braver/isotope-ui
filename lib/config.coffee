@@ -8,52 +8,52 @@ module.exports =
     # functions
 
     applyFont = (font) ->
-      body.setAttribute('isotope-ui-font', font)
+      body.setAttribute('data-isotope-ui-font', font)
 
     applyFontWeight = (weight) ->
-      body.setAttribute('isotope-ui-fontweight', weight)
+      body.setAttribute('data-isotope-ui-fontweight', weight)
 
     applyTreeColor = () ->
       if atom.config.get('isotope-ui.colorTreeSelection')
-        body.setAttribute('isotope-ui-treecolor', 'true')
+        body.setAttribute('data-isotope-ui-treecolor', 'true')
       else
-        body.setAttribute('isotope-ui-treecolor', 'false')
+        body.setAttribute('data-isotope-ui-treecolor', 'false')
 
     applyBackgroundColor = () ->
       if atom.config.get('isotope-ui.customBackgroundColor')
         atom.config.set('isotope-ui.backgroundImage', 'false')
         atom.config.set('isotope-ui.backgroundGradient', 'false')
-        body.setAttribute('isotope-ui-bg-color', 'true')
+        body.setAttribute('data-isotope-ui-bg-color', 'true')
         body.style.backgroundColor = atom.config.get('isotope-ui.customBackgroundColorPicker').toHexString()
       else
-        body.setAttribute('isotope-ui-bg-color', 'false')
+        body.setAttribute('data-isotope-ui-bg-color', 'false')
         body.style.backgroundColor = ''
 
     applyBackgroundGradient = () ->
       if atom.config.get('isotope-ui.backgroundGradient')
         atom.config.set('isotope-ui.backgroundImage', 'false')
         atom.config.set('isotope-ui.backgroundColor', 'false')
-        body.setAttribute('isotope-ui-bg-gradient', 'true')
+        body.setAttribute('data-isotope-ui-bg-gradient', 'true')
       else
-        body.setAttribute('isotope-ui-bg-gradient', 'false')
+        body.setAttribute('data-isotope-ui-bg-gradient', 'false')
 
     applyBackgroundImage = () ->
       if atom.config.get('isotope-ui.backgroundImage')
         atom.config.set('isotope-ui.customBackgroundColor', 'false')
         atom.config.set('isotope-ui.backgroundColor', 'false')
         atom.config.set('isotope-ui.backgroundGradient', 'false')
-        body.setAttribute('isotope-ui-bg-image', 'true')
+        body.setAttribute('data-isotope-ui-bg-image', 'true')
         body.style.backgroundImage =
           'url(' + atom.config.get('isotope-ui.backgroundImagePath') + ')'
       else
-        body.setAttribute('isotope-ui-bg-image', 'false')
+        body.setAttribute('data-isotope-ui-bg-image', 'false')
         body.style.backgroundImage = ''
 
     applyTooltipContrast = () ->
       if atom.config.get('isotope-ui.lowContrastTooltip')
-        body.setAttribute('isotope-ui-tooltip-lowcontrast', 'true')
+        body.setAttribute('data-isotope-ui-tooltip-lowcontrast', 'true')
       else
-        body.setAttribute('isotope-ui-tooltip-lowcontrast', 'false')
+        body.setAttribute('data-isotope-ui-tooltip-lowcontrast', 'false')
 
     applyEditorFont = () ->
       if atom.config.get('isotope-ui.matchEditorFont')
@@ -66,9 +66,9 @@ module.exports =
 
     applySpaciousMode = () ->
       if atom.config.get('isotope-ui.spaciousMode')
-        body.setAttribute('isotope-ui-spacious', 'true')
+        body.setAttribute('data-isotope-ui-spacious', 'true')
       else
-        body.setAttribute('isotope-ui-spacious', 'false')
+        body.setAttribute('data-isotope-ui-spacious', 'false')
 
 
     # run when atom is ready

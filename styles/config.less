@@ -2,117 +2,117 @@
 //this stylesheet does the css interpretation
 
 //font family
-[isotope-ui-font='Cantarell'] {
+[data-isotope-ui-font='Cantarell'] {
   &,
   atom-text-editor.mini {
     font-family: 'Cantarell', @font-family;
   }
 }
-[isotope-ui-font='Clear Sans'] {
+[data-isotope-ui-font='Clear Sans'] {
   &,
   atom-text-editor.mini {
     font-family: 'Clear Sans', @font-family;
   }
-  &[isotope-ui-fontweight='Extra light / Thin'] {
+  &[data-isotope-ui-fontweight='Extra light / Thin'] {
     &,
     atom-text-editor.mini {
       font-family: 'Clear Sans Thin', @font-family;
     }
   }
-  &[isotope-ui-fontweight='Light'] {
+  &[data-isotope-ui-fontweight='Light'] {
     &,
     atom-text-editor.mini {
       font-family: 'Clear Sans Light', @font-family;
     }
   }
 }
-[isotope-ui-font='Fira Sans'] {
+[data-isotope-ui-font='Fira Sans'] {
   &,
   atom-text-editor.mini {
     font-family: 'Fira Sans', @font-family;
   }
-  &[isotope-ui-fontweight='Extra light / Thin'] {
+  &[data-isotope-ui-fontweight='Extra light / Thin'] {
     &,
     atom-text-editor.mini {
       font-family: 'Fira Sans Thin', @font-family;
     }
   }
-  &[isotope-ui-fontweight='Light'] {
+  &[data-isotope-ui-fontweight='Light'] {
     &,
     atom-text-editor.mini {
       font-family: 'Fira Sans Light', @font-family;
     }
   }
 }
-[isotope-ui-font='Open Sans'] {
+[data-isotope-ui-font='Open Sans'] {
   &,
   atom-text-editor.mini {
     font-family: 'Open Sans', @font-family;
   }
-  &[isotope-ui-fontweight='Extra light / Thin'],
-  &[isotope-ui-fontweight='Light'] {
+  &[data-isotope-ui-fontweight='Extra light / Thin'],
+  &[data-isotope-ui-fontweight='Light'] {
     &,
     atom-text-editor.mini {
       font-family: 'Open Sans Light', @font-family;
     }
   }
 }
-[isotope-ui-font='Oxygen'] {
+[data-isotope-ui-font='Oxygen'] {
   &,
   atom-text-editor.mini {
     font-family: 'Oxygen', @font-family;
   }
 }
-[isotope-ui-font='Roboto'] {
+[data-isotope-ui-font='Roboto'] {
   &,
   atom-text-editor.mini {
     font-family: 'Roboto', @font-family;
   }
-  &[isotope-ui-fontweight='Extra light / Thin'] {
+  &[data-isotope-ui-fontweight='Extra light / Thin'] {
     &,
     atom-text-editor.mini {
       font-family: 'Roboto Thin', @font-family;
     }
   }
-  &[isotope-ui-fontweight='Light'] {
+  &[data-isotope-ui-fontweight='Light'] {
     &,
     atom-text-editor.mini {
       font-family: 'Roboto Light', @font-family;
     }
   }
 }
-[isotope-ui-font='Source Sans Pro'] {
+[data-isotope-ui-font='Source Sans Pro'] {
   &,
   atom-text-editor.mini {
     font-family: 'Source Sans Pro', @font-family;
   }
-  &[isotope-ui-fontweight='Extra light / Thin'] {
+  &[data-isotope-ui-fontweight='Extra light / Thin'] {
     &,
     atom-text-editor.mini {
       font-family: 'Source Sans Pro Thin', @font-family;
     }
   }
-  &[isotope-ui-fontweight='Light'] {
+  &[data-isotope-ui-fontweight='Light'] {
     &,
     atom-text-editor.mini {
       font-family: 'Source Sans Pro Light', @font-family;
     }
   }
 }
-[isotope-ui-font='Ubuntu']  {
+[data-isotope-ui-font='Ubuntu']  {
   &,
   atom-text-editor.mini {
     font-family: 'Ubuntu', @font-family;
   }
-  &[isotope-ui-fontweight='Extra light / Thin'],
-  &[isotope-ui-fontweight='Light'] {
+  &[data-isotope-ui-fontweight='Extra light / Thin'],
+  &[data-isotope-ui-fontweight='Light'] {
     &,
     atom-text-editor.mini {
       font-family: 'Ubuntu Light', @font-family;
     }
   }
 }
-[isotope-ui-font='System Default']  {
+[data-isotope-ui-font='System Default']  {
   &,
   atom-text-editor.mini {
     font-family: @font-family;
@@ -120,20 +120,20 @@
 }
 
 //font weight
-[isotope-ui-fontweight='Extra light / Thin'] {
+[data-isotope-ui-fontweight='Extra light / Thin'] {
   font-weight: 200;
 }
-[isotope-ui-fontweight='Light'] {
+[data-isotope-ui-fontweight='Light'] {
   font-weight: 300;
 }
-[isotope-ui-fontweight='Regular'] {
+[data-isotope-ui-fontweight='Regular'] {
   font-weight: 400;
 }
 
 // todo maintain zen
-[isotope-ui-bg-color='true'],
-[isotope-ui-bg-gradient='true'],
-[isotope-ui-bg-image='true'] {
+[data-isotope-ui-bg-color='true'],
+[data-isotope-ui-bg-gradient='true'],
+[data-isotope-ui-bg-image='true'] {
   atom-workspace:not(.zen) {
 
     /*
@@ -155,7 +155,7 @@
   }
 }
 
-[isotope-ui-bg-gradient='true']{
+[data-isotope-ui-bg-gradient='true']{
   atom-workspace {
     // the grain overlay makes the gradient brighter, so we compensate
     background-image: linear-gradient(
@@ -175,7 +175,7 @@
   }
 }
 
-[isotope-ui-bg-image='true'] {
+[data-isotope-ui-bg-image='true'] {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(atom://isotope-ui/resources/images/raket.jpg);
@@ -232,8 +232,8 @@
   }
 }
 
-[isotope-ui-bg-color='true'],
-[isotope-ui-bg-image='true'] {
+[data-isotope-ui-bg-color='true'],
+[data-isotope-ui-bg-image='true'] {
   atom-workspace {
     background: transparent;
   }
