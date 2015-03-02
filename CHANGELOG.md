@@ -1,3 +1,6 @@
+# 1.6.0 - Whitespace
+* Tweaks to the modular scale and overall spacing and layout improvements
+
 # 1.5.1 - Seamless
 * Tabs are now seamless in views like Settings and Search Results
 
