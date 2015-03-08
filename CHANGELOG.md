@@ -1,3 +1,6 @@
+# 1.6.1 - Data attributes
+* store settings in data-* attributes for html standards compliance
+
 # 1.6.0 - Whitespace
 * Tweaks to the modular scale and overall spacing and layout improvements
 
