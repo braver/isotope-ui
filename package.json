@@ -3,7 +3,7 @@
   "main": "lib/isotope-ui",
   "theme": "ui",
   "version": "1.6.1",
-  "description": "A scalable and configurable UI theme.",
+  "description": "A clean and configurable UI theme.",
   "license": "MIT",
   "repository": "https://github.com/braver/isotope-ui",
   "engines": {

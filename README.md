@@ -12,7 +12,7 @@ A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope
 
 - Automatically adapts to your favourite syntax theme
 - Tweaks [minimap](https://atom.io/packages/minimap), [color-highlight](https://atom.io/packages/atom-color-highlight), [web-browser](https://atom.io/packages/web-browser) (more to come)
-- Looks awesome in [Distraction free mode](https://atom.io/packages/distraction-free-mode)
+- Looks awesome in [Zen](https://atom.io/packages/Zen)
 - Configurable!
 
 
