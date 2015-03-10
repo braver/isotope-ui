@@ -133,13 +133,14 @@
   }
 }
 
+atom-pane .tab.active {
+  z-index: 1;
+  background: @level-4-bg;
+}
 // only show active tab in the active pane
 atom-pane.active .tab.active {
-  z-index: 1;
-  flex: 2 0 auto;
   background-color: @tab-background-color-active;
   color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
-  padding: 0;
 
   .title {
     padding: 0 @modular-scale-l * 2rem 0 @modular-scale-m * 1rem;
