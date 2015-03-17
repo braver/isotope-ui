@@ -32,11 +32,11 @@
   @ui-hue: 180;
 }
 .ui-hue() when (hsvhue(@ui-theme-color) > 0), (hsvsaturation(@ui-theme-color) > 0%) {
-  @ui-hue: hsvhue(@ui-theme-color);
+  @ui-hue: hsvhue(@ui-theme-color) - 20;
 }
 .ui-hue();
-@ui-saturation:    7.5%;
-@ui-brightness:    24%;
+@ui-saturation:    min(hsvsaturation(@ui-theme-color), 10%);
+@ui-brightness:    28%;
 @ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 66 );
 
 
