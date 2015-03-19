@@ -35,8 +35,8 @@
   @ui-hue: hsvhue(@ui-theme-color) - 20;
 }
 .ui-hue();
-@ui-saturation:    min(hsvsaturation(@ui-theme-color), 10%);
-@ui-brightness:    28%;
+@ui-saturation:    min(hsvsaturation(@ui-theme-color), 8%);
+@ui-brightness:    25%;
 @ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 66 );
 
 
@@ -59,7 +59,7 @@
 
 
 // foreground
-@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness) * 2.4) );
+@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness) * 2.6) );
 
 @fg-subtle: fadeout(@base-fg, 18%);
 @fg-faded: fade(@base-fg, 24%);
