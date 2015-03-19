@@ -15,6 +15,7 @@
   border: none !important; //overrule default modified indicator
   transform: scale(0);
   transition: transform .2s .1s, color .2s .1s;
+  background: @level-3-bg;
 
   &:before {
     position: absolute;
@@ -45,7 +46,6 @@
   .tab {
     top: @tab-top-padding;
     max-width: @tab-max-width;
-    min-width: @tab-min-width;
     height: @tab-height;
     line-height: @tab-height;
     font-size: @modular-scale-m * 1rem;
@@ -58,6 +58,7 @@
 
     &:hover {
       color: @base-fg;
+      background: @level-3-bg;
       .close-icon {
         transform: scale(1);
         color: @base-fg;
@@ -65,10 +66,7 @@
     }
 
     .title {
-      padding: 0 @modular-scale-l * 2rem 0 @modular-scale-m * 1rem;
-    }
-    &.active .title {
-      padding: 0 @modular-scale-l * 2rem 0 @modular-scale-m * 1rem;
+      padding: 0 14px 0 @modular-scale-xs * 1rem;
     }
 
     .close-icon {
@@ -76,78 +74,50 @@
     }
   }
 
-  .tab.modified .close-icon:before {
-    content: "\f052";
-  }
-  .tab.modified:not(:hover) .close-icon {
-    .close-icon-mixin();
-    transform: scale(1);
-    &:before {
-      display: block; // overrule default style
+  .tab.modified {
+    .close-icon:before {
+      content: "\f052";
     }
-  }
-  .tab.modified:hover .close-icon {
-    color: @base-fg;
-    transform: scale(1);
-
-    &:hover {
-      color: @ui-accent;
+    &:not(:hover) .close-icon {
+      .close-icon-mixin();
+      transform: scale(1);
+      &:before {
+        display: block; // overrule default style
+      }
     }
-  }
+    &:hover .close-icon {
+      color: @base-fg;
+      transform: scale(1);
 
-  .tab.is-dragging {
-    background: darken(@level-2-bg, 6%);
-    border-color: transparent;
-    opacity: .5;
-    & .close-icon,
-    &:before,
-    &:after {
-      visibility: hidden;
+      &:hover {
+        color: @ui-accent;
+      }
     }
   }
 
   .placeholder {
-    margin: 0;
-    height: @tab-height + @tab-top-padding;
-    background: @level-5-bg;
-    pointer-events: none;
-    &:after {
-      top: @tab-height/2 + @tab-top-padding - 5px ;
-      width: 10px;
-      height: 10px;
-      margin: 0;
-      border-radius: 0;
-      border: 5px solid;
-      border-color: transparent transparent transparent @level-5-bg;
-      background: transparent;
-    }
-
-    &:last-child {
-      margin-left: -2px;
-
-      &:after {
-        margin-left: -10px;
-        border-color: transparent @level-5-bg transparent transparent;
-      }
-    }
+    background: @ui-accent;
   }
 }
 
-atom-pane .tab.active {
+atom-pane .tab-bar .tab.active {
   z-index: 1;
-  background: @level-4-bg;
+  background: @level-3-bg;
+  min-width: @tab-min-width;
+  .title {
+    padding: 0 @modular-scale-xxl * 1rem 0 @modular-scale-m * 1rem;
+  }
 }
+
 // only show active tab in the active pane
-atom-pane.active .tab.active {
+atom-pane.active .tab-bar .tab.active {
   background-color: @tab-background-color-active;
   color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
 
-  .title {
-    padding: 0 @modular-scale-l * 2rem 0 @modular-scale-m * 1rem;
-  }
-
-  & .close-icon {
+  .close-icon {
     color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
+    // background-color: @tab-background-color-active;
+    background-color: inherit;
     transform: scale(1);
   }
 
