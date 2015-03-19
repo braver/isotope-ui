@@ -13,9 +13,9 @@
   width: 12px;
   height: 12px;
   border: none !important; //overrule default modified indicator
+  background: inherit;
   transform: scale(0);
   transition: transform .2s .1s, color .2s .1s;
-  background: @level-3-bg;
 
   &:before {
     position: absolute;
@@ -96,7 +96,29 @@
   }
 
   .placeholder {
+    margin: 0;
+    height: @tab-height + @tab-top-padding;
     background: @ui-accent;
+    pointer-events: none;
+    &:after {
+      top: @tab-height/2 + @tab-top-padding - 5px ;
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      border-radius: 0;
+      border: 5px solid;
+      border-color: transparent transparent transparent @ui-accent;
+      background: transparent;
+    }
+
+    &:last-child {
+      margin-left: -2px;
+
+      &:after {
+        margin-left: -10px;
+        border-color: transparent @ui-accent transparent transparent;
+      }
+    }
   }
 }
 
@@ -116,8 +138,6 @@ atom-pane.active .tab-bar .tab.active {
 
   .close-icon {
     color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
-    // background-color: @tab-background-color-active;
-    background-color: inherit;
     transform: scale(1);
   }
 
