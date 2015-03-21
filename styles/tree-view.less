@@ -67,6 +67,12 @@
     }
   }
 }
+.tree-view-resizer {
+  padding-left: @modular-scale-xxs * 1rem;
+  .tree-view-resize-handle {
+    width: 8px;
+  }
+}
 
 .right {
   .tree-view.list-tree {
@@ -83,44 +89,9 @@
       }
     }
   }
-}
-.tree-view-resizer {
-  padding-left: @modular-scale-xxs * 1rem;
-  .tree-view-resize-handle {
-    width: 8px;
-  }
-}
-.right {
   .tree-view-resizer {
     padding-left: 0;
     padding-right: @modular-scale-xxs * 1rem;
-  }
-}
-
-
-// optional color tree-view selected item just like tabs
-[data-isotope-ui-treecolor='true'] {
-  .tree-view.list-tree {
-    li {
-      &.selected,
-      &:not(.list-nested-item).selected,
-      &.list-nested-item.selected > .list-item {
-        &:before {
-          background: @ui-theme-color;
-        }
-      }
-    }
-    &:focus {
-      li {
-        &.selected,
-        &:not(.list-nested-item).selected,
-        &.list-nested-item.selected > .list-item {
-          &:before {
-            opacity: .88;
-          }
-        }
-      }
-    }
   }
 }
 

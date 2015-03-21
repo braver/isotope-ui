@@ -13,12 +13,6 @@ module.exports =
     applyFontWeight = (weight) ->
       body.setAttribute('data-isotope-ui-fontweight', weight)
 
-    applyTreeColor = () ->
-      if atom.config.get('isotope-ui.colorTreeSelection')
-        body.setAttribute('data-isotope-ui-treecolor', 'true')
-      else
-        body.setAttribute('data-isotope-ui-treecolor', 'false')
-
     applyBackgroundColor = () ->
       if atom.config.get('isotope-ui.customBackgroundColor')
         atom.config.set('isotope-ui.backgroundImage', 'false')
@@ -75,7 +69,6 @@ module.exports =
 
     applyFont(atom.config.get('isotope-ui.fontFamily'))
     applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
-    applyTreeColor()
     applyBackgroundGradient()
     applyBackgroundImage()
     applyBackgroundColor()
@@ -91,9 +84,6 @@ module.exports =
 
     atom.config.onDidChange 'isotope-ui.fontWeight', ->
       applyFontWeight(atom.config.get('isotope-ui.fontWeight'))
-
-    atom.config.onDidChange 'isotope-ui.colorTreeSelection', ->
-      applyTreeColor()
 
     atom.config.onDidChange 'isotope-ui.customBackgroundColor', ->
       applyBackgroundColor()
