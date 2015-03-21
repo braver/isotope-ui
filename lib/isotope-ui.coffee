@@ -27,11 +27,6 @@ module.exports =
         'Light',
         'Regular'
       ]
-    colorTreeSelection:
-      description: 'Make the selected file stand out in tree-view.
-        Looks better off when scrollbars always visible (e.g. on Linux)'
-      type: 'boolean'
-      default: true
     customBackgroundColor:
       description: 'Choose a custom background color.'
       type: 'boolean'
