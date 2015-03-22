@@ -2,9 +2,10 @@ atom-text-editor.mini {
   border-radius: @component-border-radius;
   border: 1px solid @input-border-color;
   font-family: @font-family;
-  font-size: @modular-scale-m * 1rem;
+  font-size: @scale-a-m * 1rem;
   background: @input-background-color;
   color: @base-fg;
+  padding-left: @space-small;
 
   &,
   &::shadow {
@@ -19,7 +20,7 @@ atom-text-editor.mini {
       border-radius: 0;
     }
     .cursor {
-      border-color: @level-5-bg;
+      border-color: @stroke;
     }
 
     .markup.underline {
@@ -40,7 +41,7 @@ atom-text-editor.mini {
       color: @base-fg;
     }
     .cursor {
-      border-color: @level-5-bg;
+      border-color: @stroke;
     }
   }
 }

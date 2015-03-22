@@ -1,16 +1,15 @@
 @tooltip-background-color:         @ui-accent;
 @tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(0,0%,20%), 60 );
-@tooltip-text-key-color:           @tooltip-background-color;
-@tooltip-background-key-color:     @tooltip-text-color;
+@tooltip-text-key-color:           darken(@tooltip-text-color, 12%);
 
 .tooltip {
   white-space: nowrap;
-  font-size: @modular-scale-m * 1rem;
-  -webkit-filter: drop-shadow(0 0 1px rgba(0,0,0,.33));
+  font-size: @scale-a-m * 1rem;
+  -webkit-filter: drop-shadow(0 0 2px rgba(0,0,0,.33));
 
   .tooltip-inner {
-    line-height: @modular-scale-m * 1rem;
-    padding: @modular-scale-xs * 1rem;
+    line-height: @text-height;
+    padding: 0 @space-small;
     border-radius: @component-border-radius;
     background-color: @tooltip-background-color;
     color: @tooltip-text-color;
@@ -19,13 +18,8 @@
   }
 
   .keystroke {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: @modular-scale-ms * 1rem;
-    padding: 2px 3px;
-    margin: 0 0 0 (@modular-scale-xxs / @modular-scale) * 1rem;
-    border-radius: @component-border-radius;
+    margin: 0 0 0 1rem;
     color: @tooltip-text-key-color;
-    background: @tooltip-background-key-color;
   }
 
   &.in {
@@ -62,34 +56,34 @@
 [data-isotope-ui-tooltip-lowcontrast='true'] {
   .tooltip {
     .tooltip-inner {
-      background: @level-0-bg;
+      background: @level-1-bg;
     }
     .keystroke {
       color: @base-fg;
     }
     &.top .tooltip-arrow {
-      border-top-color: @level-0-bg;
+      border-top-color: @level-1-bg;
     }
     &.top-left .tooltip-arrow {
-      border-top-color: @level-0-bg;
+      border-top-color: @level-1-bg;
     }
     &.top-right .tooltip-arrow {
-      border-top-color: @level-0-bg;
+      border-top-color: @level-1-bg;
     }
     &.right .tooltip-arrow {
-      border-right-color: @level-0-bg;
+      border-right-color: @level-1-bg;
     }
     &.left .tooltip-arrow {
-      border-left-color: @level-0-bg;
+      border-left-color: @level-1-bg;
     }
     &.bottom .tooltip-arrow {
-      border-bottom-color: @level-0-bg;
+      border-bottom-color: @level-1-bg;
     }
     &.bottom-left .tooltip-arrow {
-      border-bottom-color: @level-0-bg;
+      border-bottom-color: @level-1-bg;
     }
     &.bottom-right .tooltip-arrow {
-      border-bottom-color: @level-0-bg;
+      border-bottom-color: @level-1-bg;
     }
   }
 }

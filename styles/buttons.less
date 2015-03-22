@@ -1,12 +1,9 @@
 // text color indicates state, background indicates interaction
 .btn-mixin (@bg-color, @fg-color) {
 
-  @level-0-bg: lighten(@bg-color, 12%);
   @level-1-bg: lighten(@bg-color, 6%);
   @level-2-bg:  darken(@bg-color, 0%);
   @level-3-bg:  darken(@bg-color, 3%);
-  @level-4-bg:  darken(@bg-color, 6%);
-  @level-5-bg:  darken(@bg-color, 9%);
 
   color: @fg-color;
   background: @level-1-bg;
@@ -15,25 +12,25 @@
   box-shadow: 0 0 2px rgba(0,0,0,.2);
   transition: all .2s .1s;
 
-  padding: 0 @modular-scale-s * 1rem;
+  padding: 0 @space-small;
 
   height: @component-line-height;
   line-height: @component-line-height;
 
   &.btn-xs {
-    padding: 0 @modular-scale-s * 1rem;
-    height: @modular-scale-l * 1rem;
-    line-height: @modular-scale-l * 1rem;
+    padding: 0 @space-small;
+    height: @scale-b-l * 1rem;
+    line-height: @scale-b-l * 1rem;
   }
   &.btn-sm {
-    padding: 0 @modular-scale-s * 1rem;
-    height: @modular-scale-xl * 1rem;
-    line-height: @modular-scale-xl * 1rem;
+    padding: 0 @space-small;
+    height: @scale-b-xl * 1rem;
+    line-height: @scale-b-xl * 1rem;
   }
   &.btn-lg {
-    padding: 0 @modular-scale-s * 1rem;
-    height: @modular-scale-xxl * 1.333rem;
-    line-height: @modular-scale-xxl * 1.333rem;
+    padding: 0 @space-small;
+    height: @scale-b-xxl * 1.333rem;
+    line-height: @scale-b-xxl * 1.333rem;
   }
 
   &:focus,
@@ -44,7 +41,7 @@
   }
   &:active {
     color: @fg-color;
-    background: @level-5-bg;
+    background: @level-3-bg;
   }
   &.selected {
     color: @fg-selected;
@@ -82,15 +79,6 @@
 // Button Group
 
 .btn-group > .btn {
-  border-left-color: @fg-subtle;
-  border-right-color: @fg-subtle;
-  margin-right: 0px;
-}
-.btn-group > .btn:first-child {
-  border-top-left-radius: @component-border-radius;
-  border-bottom-left-radius: @component-border-radius;
-}
-.btn-group > .btn:last-child {
-  border-top-right-radius: @component-border-radius;
-  border-bottom-right-radius: @component-border-radius;
+  border-left-color: @tool-panel-background-color;
+  border-right-color: @tool-panel-background-color;
 }

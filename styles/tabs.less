@@ -1,5 +1,5 @@
 @modified-icon-width: @component-icon-size / 2;
-@tab-top-padding: @modular-scale-xxs * 1rem;
+@tab-top-padding: @space-small;
 @tab-max-width: 160px;
 @tab-min-width: @tab-height * 4;
 
@@ -9,7 +9,7 @@
   margin-top: -6px;
   margin-right: -6px;
   top: 50%;
-  right: @modular-scale-l * 1rem;
+  right: @scale-a-l * 1rem;
   width: 12px;
   height: 12px;
   border: none !important; //overrule default modified indicator
@@ -48,7 +48,7 @@
     max-width: @tab-max-width;
     height: @tab-height;
     line-height: @tab-height;
-    font-size: @modular-scale-m * 1rem;
+    font-size: @scale-a-m * 1rem;
     padding: 0;
     margin: 0;
     color: @tab-text-color;
@@ -66,7 +66,7 @@
     }
 
     .title {
-      padding: 0 14px 0 @modular-scale-xs * 1rem;
+      padding: 0 20px 0 @space-small;
     }
 
     .close-icon {
@@ -127,7 +127,7 @@ atom-pane .tab-bar .tab.active {
   background: @level-3-bg;
   min-width: @tab-min-width;
   .title {
-    padding: 0 @modular-scale-xxl * 1rem 0 @modular-scale-m * 1rem;
+    padding-right: 20px; //overrule default
   }
 }
 
@@ -195,13 +195,13 @@ atom-pane.active .tab-bar .tab.active {
 
 body[data-isotope-ui-spacious='true'] {
   .tab-bar {
-    height: @tab-height + @tab-top-padding + 1;
+    height: pow(@scale-b, 4) * 1rem + @tab-top-padding;
     .tab {
-      height: @tab-height + 1;
-      line-height: @tab-height + 1;
+      height: pow(@scale-b, 4) * 1rem;
+      line-height: pow(@scale-b, 4) * 1rem;
     }
   }
   atom-pane .tab-bar .tab .title:before {
-    line-height: @tab-height + 1;
+    line-height: pow(@scale-b, 4) * 1rem;
   }
 }
