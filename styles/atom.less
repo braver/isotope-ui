@@ -59,3 +59,22 @@ code {
   background: @level-2-bg;
   border-radius: @component-border-radius;
 }
+
+// make panes float
+body:not([zen='true']) {
+  .item-views {
+    outline: 1px solid @level-4-bg;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+  .tab-bar {
+    padding-left: 1px;
+    margin-right: 1px;
+    .tab.active {
+      outline: 1px solid @level-4-bg;
+    }
+  }
+  atom-pane {
+    padding-bottom: 1px;
+  }
+}
