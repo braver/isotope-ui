@@ -12,23 +12,23 @@
   box-shadow: 0 0 0 1px @input-border-color;
   transition: all .2s .1s;
 
-  padding: 0 @space-small;
+  padding: 0 @space;
 
   height: @component-line-height;
   line-height: @component-line-height;
 
   &.btn-xs {
-    padding: 0 @space-small;
+    padding: 0 @space;
     height: @scale-b-l * 1rem;
     line-height: @scale-b-l * 1rem;
   }
   &.btn-sm {
-    padding: 0 @space-small;
+    padding: 0 @space;
     height: @scale-b-xl * 1rem;
     line-height: @scale-b-xl * 1rem;
   }
   &.btn-lg {
-    padding: 0 @space-small;
+    padding: 0 @space;
     height: pow(@scale-b, 4) * 1rem;
     line-height: pow(@scale-b, 4) * 1rem;
   }
@@ -86,4 +86,9 @@
     max-height: 100%;
     box-shadow: none;
   }
+}
+
+.project-find .btn-group.btn-group-options .btn,
+.find-and-replace .btn-group-options.btn-group .btn, {
+  font-family: inherit;
 }

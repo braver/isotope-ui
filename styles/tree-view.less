@@ -4,10 +4,10 @@
 
   .li-mixin (@fg-subtle);
 
-  @diff: (@component-line-height - @tree-item-height)/2 + @space-small;
+  @diff: (@component-line-height - @tree-item-height)/2 + @space;
 
   padding: @diff * 1rem 0 0 0;
-  padding: @space-small * 1rem 0 0 0;
+  padding: @space * 1rem 0 0 0;
 
   //necesary to make the selected item background color work for tree-view only
   li {
@@ -86,7 +86,7 @@
   }
 }
 .tree-view-resizer {
-  padding-left: @space-small;
+  padding-left: @space;
   .tree-view-resize-handle {
     width: 8px;
   }
@@ -109,7 +109,7 @@
   }
   .tree-view-resizer {
     padding-left: 0;
-    padding-right: @space-small;
+    padding-right: @space;
   }
 }
 
