@@ -91,10 +91,9 @@
 
   //alerts like "checking for updates"
   .alert-mixin (@color) {
-    @faded-color: fade(mix(@color, @level-1-bg), 20%);
-    color: @color;
-    border-color: @faded-color;
-    background-color: @faded-color;
+    color: @fg-highlight;
+    border-color: @color;
+    background-color: @color;
   }
   .alert         { .alert-mixin( @base-fg ); }
   .alert-success { .alert-mixin( @fg-success ); }
@@ -108,6 +107,9 @@
 
     input[type="checkbox"] {
       margin-left: -2rem;
+      &:checked {
+        background: @fg-success;
+      }
     }
   }
 }

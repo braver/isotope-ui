@@ -1,15 +1,15 @@
 // text color indicates state, background indicates interaction
 .btn-mixin (@bg-color, @fg-color) {
 
-  @level-1-bg: lighten(@bg-color, 6%);
-  @level-2-bg:  darken(@bg-color, 0%);
-  @level-3-bg:  darken(@bg-color, 3%);
+  @level-1-bg: @bg-color;
+  @level-2-bg:  lighten(@bg-color, 6%);
+  @level-3-bg:  darken(@bg-color, 6%);
 
   color: @fg-color;
   background: @level-1-bg;
   border-radius: @component-border-radius;
-  border: none;
-  box-shadow: 0 0 2px rgba(0,0,0,.2);
+
+  box-shadow: 0 0 0 1px @input-border-color;
   transition: all .2s .1s;
 
   padding: 0 @space-small;
@@ -29,8 +29,8 @@
   }
   &.btn-lg {
     padding: 0 @space-small;
-    height: @scale-b-xxl * 1.333rem;
-    line-height: @scale-b-xxl * 1.333rem;
+    height: pow(@scale-b, 4) * 1rem;
+    line-height: pow(@scale-b, 4) * 1rem;
   }
 
   &:focus,
@@ -78,7 +78,12 @@
 
 // Button Group
 
-.btn-group > .btn {
-  border-left-color: @tool-panel-background-color;
-  border-right-color: @tool-panel-background-color;
+.btn-group{
+  box-shadow: 0 0 0 1px @input-border-color;
+  > .btn {
+    border-left-color: @tool-panel-background-color;
+    border-right-color: @tool-panel-background-color;
+    max-height: 100%;
+    box-shadow: none;
+  }
 }
