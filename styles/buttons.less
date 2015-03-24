@@ -12,8 +12,6 @@
   box-shadow: 0 0 0 1px @input-border-color;
   transition: all .2s .1s;
 
-  padding: 0 @space;
-
   height: @component-line-height;
   line-height: @component-line-height;
 
@@ -78,21 +76,18 @@
 
 // Button Group
 
-.btn-group{
+.btn-group {
   box-shadow: 0 0 0 1px @stroke;
   border-radius: @component-border-radius;
+  display: flex;
   > .btn {
     border-left-color: @tool-panel-background-color;
     border-right-color: @tool-panel-background-color;
     max-height: 100%;
     box-shadow: none;
+    width: auto;
+    flex: 1;
   }
-}
-.btn-group .btn + .btn,
-.btn-group .btn + .btn-group,
-.btn-group .btn-group + .btn,
-.btn-group .btn-group + .btn-group {
-  margin: 0; //overrule a -1px margin
 }
 
 .project-find .btn-group.btn-group-options .btn,
