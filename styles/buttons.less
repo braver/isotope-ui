@@ -79,13 +79,20 @@
 // Button Group
 
 .btn-group{
-  box-shadow: 0 0 0 1px @input-border-color;
+  box-shadow: 0 0 0 1px @stroke;
+  border-radius: @component-border-radius;
   > .btn {
     border-left-color: @tool-panel-background-color;
     border-right-color: @tool-panel-background-color;
     max-height: 100%;
     box-shadow: none;
   }
+}
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+  margin: 0; //overrule a -1px margin
 }
 
 .project-find .btn-group.btn-group-options .btn,

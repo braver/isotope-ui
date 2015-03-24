@@ -63,18 +63,8 @@ code {
 // make panes float
 body:not([zen='true']) {
   .item-views {
-    outline: 1px solid @stroke;
-    margin-left: 1px;
-    margin-right: 1px;
-  }
-  .tab-bar {
-    padding-left: 1px;
-    margin-right: 1px;
-    .tab.active {
-      outline: 1px solid @stroke;
-    }
-  }
-  atom-pane {
-    padding-bottom: 1px;
+    border: 1px solid @stroke;
+    border-top: none;
+    border-right: none;
   }
 }
