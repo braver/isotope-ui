@@ -74,22 +74,27 @@
 }
 
 
-// Button Group
-
 .btn-group {
   box-shadow: 0 0 0 1px @stroke;
   border-radius: @component-border-radius;
-  display: flex;
   > .btn {
     border-left-color: @tool-panel-background-color;
     border-right-color: @tool-panel-background-color;
     max-height: 100%;
     box-shadow: none;
     width: auto;
+  }
+}
+
+//solidify button layout in search panel
+.tool-panel .btn-group {
+  display: flex;
+  > .btn {
     flex: 1;
   }
 }
 
+//no real sense in the default courier for these
 .project-find .btn-group.btn-group-options .btn,
 .find-and-replace .btn-group-options.btn-group .btn, {
   font-family: inherit;
