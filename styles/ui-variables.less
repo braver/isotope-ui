@@ -7,7 +7,6 @@
 @font-weight: 200;
 
 
-
 // a modular scale maintains relations across all sizes and spaces
 // hhttp://www.modularscale.com
 @scale-a: 1.15;
@@ -40,7 +39,7 @@
   @ui-hue: hsvhue(@ui-theme-color) - 20;
 }
 .ui-hue();
-@ui-saturation:    min(hsvsaturation(@ui-theme-color), 8%);
+@ui-saturation:    min(hsvsaturation(@ui-theme-color), 12%);
 @ui-brightness:    25%;
 @ui-accent:        spin( hsl( @ui-hue, 60% + @ui-saturation, 60%), 66 );
 
