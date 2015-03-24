@@ -36,8 +36,13 @@
   li.project-root,
   li.project-root:not(.list-nested-item),
   li.project-root.list-nested-item > .list-item {
+      //align it with tab titles
       min-height: @tab-height;
       line-height: @tab-height;
+      //tab titles have a 1px border
+      &:first-child {
+        margin-top: 1px;
+      }
   }
   li.selected:before,
   li:not(.list-nested-item).selected:before,
