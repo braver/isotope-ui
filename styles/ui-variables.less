@@ -39,7 +39,16 @@
   @ui-hue: hsvhue(@ui-theme-color) - 20;
 }
 .ui-hue();
-@ui-saturation:    min(hsvsaturation(@ui-theme-color), 8%);
+
+// @ui-saturation: min(hsvsaturation(@ui-theme-color), 8%);
+.ui-saturation() when (hsvhue(@ui-theme-color) >= 180) {
+  @ui-saturation: min(hsvsaturation(@ui-theme-color), 24%);
+}
+.ui-saturation() when (hsvhue(@ui-theme-color) > 280), (hsvhue(@ui-theme-color) < 180) {
+  @ui-saturation: min(hsvsaturation(@ui-theme-color), 8%);
+}
+.ui-saturation();
+
 @ui-brightness:    25%;
 @ui-accent:        spin( hsl( @ui-hue, 60% + @ui-saturation, 60%), 66 );
 
@@ -125,9 +134,9 @@
 @overlay-border-color:             @stroke;
 
 @button-background-color:          @level-1-bg;
-@button-background-color-hover:    @level-3-bg;
+@button-background-color-hover:    @level-2-bg;
 @button-background-color-selected: @level-1-bg;
-@button-border-color:              @level-1-bg;
+@button-border-color:              @stroke;
 
 @tab-bar-background-color:         @app-background-color;
 @tab-bar-border-color:             @tab-bar-background-color;
