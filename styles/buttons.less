@@ -5,16 +5,16 @@
 .btn-mixin (@bg, @fg) {
 
   @bg-level1: @bg;
-  @bg-level2:  lighten(@bg, 6%);
-  @bg-level3:  darken(@bg, 6%);
+  @bg-level2: lighten(@bg, 12%);
 
   color: @fg;
-  background-color: transparent !important;
+  background-color: transparent;
   background-image: linear-gradient(
     mix(#00D4FF, @bg-level1 , 3%) 0%,
-    darken(@bg-level1, 6%) 100%);
-  background-size: auto 200%;
-  background-position: 0 0;
+    darken(@bg-level1, 6%) 50%,
+    darken(@bg-level1, 12%) 100%);
+  background-size: auto 400%;
+  background-position: 0 50%;
 
   border-radius: @component-border-radius;
 
@@ -43,29 +43,31 @@
   &:focus,
   &:hover {
     color: @fg;
-    background-position: 0 100%;
+    background-position: 0 0;
     transition: all .1s;
   }
   &:active {
     color: @fg;
     background-image: linear-gradient(
       mix(#00D4FF, @bg-level1 , 3%) 0%,
-      darken(@bg-level1, 6%) 100%);
-    background-position: 0 50%;
+      darken(@bg-level1, 6%) 50%,
+      darken(@bg-level1, 12%) 100%);
+    background-position: 0 100%;
   }
   &.selected {
     color: @fg-selected;
     background-image: linear-gradient(
-      mix(#00D4FF, @bg-level1 , 3%) 0%,
-      darken(@bg-level1, 6%) 100%);
+      mix(#00D4FF, @bg-level2 , 3%) 0%,
+      darken(@bg-level2, 6%) 50%,
+      darken(@bg-level2 , 12%) 100%);
     background-size: auto 200%;
     background-position: 0 100%;
     &:hover {
       color: @fg-selected;
-      background-position: 0 0;
+      background-position: 0 50%;
     }
     &:active {
-      background-position: 0 50%;
+      background-position: 0 0;
     }
   }
 }
@@ -102,6 +104,8 @@
     max-height: 100%;
     box-shadow: none;
     width: auto;
+  }
+  > * {
     z-index: 1; //put them on top of the box-shadow
   }
 }
