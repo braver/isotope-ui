@@ -84,16 +84,16 @@
 
 
   //alerts like "checking for updates"
-  .alert-mixin (@color) {
-    color: @fg-highlight;
-    border-color: @color;
-    background-color: @color;
+  .alert-mixin (@bg, @fg) {
+    color: @fg;
+    border-color: @bg;
+    background-color: transparent;
   }
-  .alert         { .alert-mixin( @base-fg ); }
-  .alert-success { .alert-mixin( @bg-success ); }
-  .alert-info    { .alert-mixin( @bg-info ); }
-  .alert-warning { .alert-mixin( @bg-warning ); }
-  .alert-danger  { .alert-mixin( @bg-error ); }
+  .alert         { .alert-mixin( @base-fg, @base-fg ); }
+  .alert-success { .alert-mixin( @bg-success, @fg-success ); }
+  .alert-info    { .alert-mixin( @bg-info, @fg-info ); }
+  .alert-warning { .alert-mixin( @bg-warning, @fg-warning ); }
+  .alert-danger  { .alert-mixin( @bg-error, @fg-error ); }
 
   .checkbox {
     font-size: 1rem;
