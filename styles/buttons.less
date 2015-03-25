@@ -1,12 +1,21 @@
 // text color indicates state, background indicates interaction
-.btn-mixin (@bg-color, @fg-color) {
+// on how to transition background images:
+// http://codersblock.com/blog/gradient-animation-trick/
 
-  @level-1-bg: @bg-color;
-  @level-2-bg:  lighten(@bg-color, 6%);
-  @level-3-bg:  darken(@bg-color, 6%);
+.btn-mixin (@bg, @fg) {
 
-  color: @fg-color;
-  background: @level-1-bg;
+  @bg-level1: @bg;
+  @bg-level2:  lighten(@bg, 6%);
+  @bg-level3:  darken(@bg, 6%);
+
+  color: @fg;
+  background-color: transparent !important;
+  background-image: linear-gradient(
+    mix(#00D4FF, @bg-level1 , 3%) 0%,
+    darken(@bg-level1, 6%) 100%);
+  background-size: auto 200%;
+  background-position: 0 0;
+
   border-radius: @component-border-radius;
 
   box-shadow: 0 0 0 1px @input-border-color;
@@ -33,21 +42,31 @@
 
   &:focus,
   &:hover {
-    color: @fg-color;
-    background: @level-2-bg;
+    color: @fg;
+    background-position: 0 100%;
     transition: all .1s;
   }
   &:active {
-    color: @fg-color;
-    background: @level-3-bg;
+    color: @fg;
+    background-image: linear-gradient(
+      mix(#00D4FF, @bg-level1 , 3%) 0%,
+      darken(@bg-level1, 6%) 100%);
+    background-position: 0 50%;
   }
   &.selected {
     color: @fg-selected;
-    background: @level-2-bg;
-  }
-  &.selected:hover {
-    color: @fg-selected;
-    background: @level-1-bg;
+    background-image: linear-gradient(
+      mix(#00D4FF, @bg-level1 , 3%) 0%,
+      darken(@bg-level1, 6%) 100%);
+    background-size: auto 200%;
+    background-position: 0 100%;
+    &:hover {
+      color: @fg-selected;
+      background-position: 0 0;
+    }
+    &:active {
+      background-position: 0 50%;
+    }
   }
 }
 
@@ -83,6 +102,7 @@
     max-height: 100%;
     box-shadow: none;
     width: auto;
+    z-index: 1; //put them on top of the box-shadow
   }
 }
 
