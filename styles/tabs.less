@@ -210,7 +210,11 @@ atom-pane.active .tab-bar .tab.active {
 
 body[data-isotope-ui-spacious='true'] {
   .tab-bar {
+    padding-top: 1px; //correct possible rounding error
     height: pow(@scale-b, 4) * 1rem + @tab-top-padding;
+    &:before {
+      top: pow(@scale-b, 4) * 1rem + @tab-top-padding;
+    }
     .tab {
       height: pow(@scale-b, 4) * 1rem;
       line-height: pow(@scale-b, 4) * 1rem;
