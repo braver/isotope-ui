@@ -1,3 +1,10 @@
+# 2.0.0 - Even better everything
+* Improved pretty much everything
+* Now uses a stranded modular scale for better rhythm
+* Outlined elements for better contrast
+* More pizazz to the color variations
+* Better tabs, trees, editors, buttons, etc. etc.
+
 # 1.7.0 - The best Isotope yet
 * Improvements to background colors
 * Improved contrast
