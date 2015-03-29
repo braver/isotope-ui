@@ -2,14 +2,10 @@
 
 .tree-view.list-tree {
 
-  .li-mixin (@fg-subtle);
+  .li-mixin (@fg-subtle, @tree-item-height);
 
-  @diff: (@component-line-height - @tree-item-height)/2 + @space;
-
-  padding: @diff * 1rem 0 0 0;
   padding: @space * 1rem 0 0 0;
 
-  //necesary to make the selected item background color work for tree-view only
   li {
     &.selected,
     &:not(.list-nested-item).selected,
@@ -26,30 +22,16 @@
     .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
   }
 
-  li,
-  li:not(.list-nested-item),
-  li.list-nested-item > .list-item {
-    min-height: @tree-item-height;
-    line-height: @tree-item-height;
-
-  }
   li.project-root,
   li.project-root:not(.list-nested-item),
   li.project-root.list-nested-item > .list-item {
-      //align it with tab titles
-      min-height: @tab-height;
-      line-height: @tab-height;
-      //tab titles have a 1px border
-      &:first-child {
-        margin-top: 1px;
-      }
-  }
-  li.selected:before,
-  li:not(.list-nested-item).selected:before,
-  li.list-nested-item.selected > .list-item:before {
-    height: @tree-item-height;
-    min-height: @tree-item-height;
-    line-height: @tree-item-height;
+    //align it with tab titles
+    min-height: @tab-height;
+    line-height: @tab-height;
+    //tab titles have a 1px border
+    &:first-child {
+      margin-top: 1px;
+    }
   }
   li.project-root.selected:before,
   li.project-root:not(.list-nested-item).selected:before,
@@ -90,11 +72,9 @@
     }
   }
 }
+
 .tree-view-resizer {
   padding-left: @space;
-  .tree-view-resize-handle {
-    width: 8px;
-  }
 }
 
 .right {

@@ -1,3 +1,7 @@
+@list-item-height: @component-line-height;
+@tree-item-height: @scale-a-xxxl * 1rem;
+
+
 //a mixin for creating a number of color variations
 .li-variation-mixin (@class, @color, @hover) {
   li {
@@ -12,16 +16,22 @@
   }
 }
 
-.li-mixin (@color) {
+//the main mixin
+.li-mixin (@color, @height:@list-item-height) {
   li {
+    padding-left: @space;
+    overflow: hidden; //prevent a stacking issue with keybindings
+
     &,
     &:not(.list-nested-item),
     &.list-nested-item > .list-item {
-      min-height: @component-line-height;
-      line-height: @component-line-height;
+      min-height: @height;
+      line-height: @height;
       color: @color;
       transition: color .2s .1s;
-
+      &:before {
+        height: @scale-a-xxxl * 1rem;
+      }
       &:hover {
         color: lighten(@color, 12%);
         transition: color .1s;
@@ -29,6 +39,15 @@
 
       &.path-details { // search
         color: @fg-highlight;
+      }
+    }
+    &.selected {
+      color: @fg-selected;
+
+      &:before {
+        line-height: @height;
+        min-height: @height;
+        background-color: @level-3-bg;
       }
     }
   }
@@ -43,15 +62,16 @@
   .li-variation-mixin ( text-error,      @fg-error,    lighten(@fg-error, 12%) );
 }
 
+.list-group {
+  .li-mixin (@base-fg, @list-item-height);
+
+}
+.list-tree {
+  .li-mixin (@base-fg, @tree-item-height);
+}
 
 .list-group,
 .list-tree {
-
-  .li-mixin (@base-fg);
-
-  li {
-    padding-left: @space;
-  }
 
   .icon {
     &:before{
@@ -59,19 +79,23 @@
       line-height: 100%;
     }
   }
+  button { //e.g. open file list package
+    padding: 0;
+    height: 100%;
+    line-height: 100%;
+    margin-right: @space;
+  }
   .no-icon {
     padding-left: @component-icon-size + @component-icon-padding;
   }
-
   .status {
     float: left;
   }
-
   .two-lines {
     height: auto;
   }
   .primary-line {
-    line-height: @component-line-height;
+    line-height: @list-item-height;
   }
   .secondary-line {
     line-height: 1;
@@ -81,28 +105,12 @@
   .key-binding {
     color: @fg-subtle;
   }
-
-  .selected {
-    color: @fg-selected;
-
-    &:before {
-      line-height: @component-line-height;
-      min-height: @component-line-height;
-      background-color: @level-3-bg;
-    }
-  }
 }
 
 .select-list ol.list-group {
   margin: 0;
 
   li {
-    overflow: hidden; //prevent a stacking issue with keybindings
-
-    &:hover {
-      color: lighten(@base-fg, 12%);
-    }
-
     &.selected {
       color: @fg-selected;
       background-color: @level-3-bg;
@@ -126,8 +134,6 @@
       display: inline-block;
       left: auto;
       right: auto;
-      height: @component-line-height;
-      line-height: @component-line-height;
       width: @active-icon-size;
       float: left;
     }
@@ -136,12 +142,11 @@
     }
     li.active {
       .octicon(check, @active-icon-size);
-      &:before {
+      &:before { //icon
         margin-right: @component-icon-padding;
         color: @fg-success;
-        height: @component-line-height;
-        line-height: @component-line-height;
-
+        height: @list-item-height;
+        line-height: @list-item-height;
       }
     }
   }
@@ -149,13 +154,12 @@
 
 .select-list.popover-list {
   background-color: @overlay-background-color;
-  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1rem @stroke;
   padding: @space;
   border-radius: @component-border-radius;
 
   atom-text-editor.mini {
     margin-bottom: @space;
-    box-shadow: inset 0 0 0 1px @input-border-color;
   }
 
   .list-group li {
@@ -165,8 +169,8 @@
 
 li.ui-draggable-dragging,
 li.ui-sortable-helper {
-  line-height: @component-line-height;
-  height: @component-line-height;
+  height: @list-item-height;
+  line-height: @list-item-height;
   border: 0;
   border-radius: 0;
   list-style: none;
