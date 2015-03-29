@@ -158,9 +158,10 @@
 [data-isotope-ui-bg-gradient='true']{
   atom-workspace {
     background-image: linear-gradient(
-      lighten( spin(@app-background-color, 60%), 3%) 0%,
-      darken(@app-background-color, 12%) 100%);
+      lighten( spin(@app-background-color, 60), 1.5%) 0%,
+      darken(@app-background-color, 6%) 100%);
     &:before {
+      //add grain to prevent stair-stepping
       content: '';
       display: block;
       position: absolute;
