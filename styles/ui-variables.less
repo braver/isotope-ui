@@ -40,7 +40,6 @@
 }
 .ui-hue();
 
-// @ui-saturation: min(hsvsaturation(@ui-theme-color), 8%);
 .ui-saturation() when (hsvhue(@ui-theme-color) >= 180) {
   @ui-saturation: min(hsvsaturation(@ui-theme-color), 24%);
 }
