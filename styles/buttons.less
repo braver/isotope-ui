@@ -1,58 +1,74 @@
 // text color indicates state, background indicates interaction
-.btn-mixin (@bg-color, @fg-color) {
+// on how to transition background images:
+// http://codersblock.com/blog/gradient-animation-trick/
 
-  @level-0-bg: lighten(@bg-color, 12%);
-  @level-1-bg: lighten(@bg-color, 6%);
-  @level-2-bg:  darken(@bg-color, 0%);
-  @level-3-bg:  darken(@bg-color, 3%);
-  @level-4-bg:  darken(@bg-color, 6%);
-  @level-5-bg:  darken(@bg-color, 9%);
+.btn-mixin (@bg, @fg) {
 
-  color: @fg-color;
-  background: @level-1-bg;
+  @bg-level1: @bg;
+  @bg-level2: lighten(@bg, 12%);
+
+  color: @fg;
+  background-color: transparent;
+  background-image: linear-gradient(
+    mix(#00D4FF, @bg-level1 , 3%) 0%,
+    darken(@bg-level1, 6%) 50%,
+    darken(@bg-level1, 12%) 100%);
+  background-size: auto 400%;
+  background-position: 0 50%;
+
   border-radius: @component-border-radius;
-  border: none;
-  box-shadow: 0 0 2px rgba(0,0,0,.2);
-  transition: all .2s .1s;
 
-  padding: 0 @modular-scale-s * 1rem;
+  box-shadow: 0 0 0 1px @input-border-color;
+  transition: all .2s .1s;
 
   height: @component-line-height;
   line-height: @component-line-height;
 
   &.btn-xs {
-    padding: 0 @modular-scale-s * 1rem;
-    height: @modular-scale-l * 1rem;
-    line-height: @modular-scale-l * 1rem;
+    padding: 0 @space;
+    height: @scale-b-l * 1rem;
+    line-height: @scale-b-l * 1rem;
   }
   &.btn-sm {
-    padding: 0 @modular-scale-s * 1rem;
-    height: @modular-scale-xl * 1rem;
-    line-height: @modular-scale-xl * 1rem;
+    padding: 0 @space;
+    height: @scale-b-xl * 1rem;
+    line-height: @scale-b-xl * 1rem;
   }
   &.btn-lg {
-    padding: 0 @modular-scale-s * 1rem;
-    height: @modular-scale-xxl * 1.333rem;
-    line-height: @modular-scale-xxl * 1.333rem;
+    padding: 0 @space;
+    height: pow(@scale-b, 4) * 1rem;
+    line-height: pow(@scale-b, 4) * 1rem;
   }
 
   &:focus,
   &:hover {
-    color: @fg-color;
-    background: @level-2-bg;
+    color: @fg;
+    background-position: 0 0;
     transition: all .1s;
   }
   &:active {
-    color: @fg-color;
-    background: @level-5-bg;
+    color: @fg;
+    background-image: linear-gradient(
+      mix(#00D4FF, @bg-level1 , 3%) 0%,
+      darken(@bg-level1, 6%) 50%,
+      darken(@bg-level1, 12%) 100%);
+    background-position: 0 100%;
   }
   &.selected {
     color: @fg-selected;
-    background: @level-2-bg;
-  }
-  &.selected:hover {
-    color: @fg-selected;
-    background: @level-1-bg;
+    background-image: linear-gradient(
+      mix(#00D4FF, @bg-level2 , 3%) 0%,
+      darken(@bg-level2, 6%) 50%,
+      darken(@bg-level2 , 12%) 100%);
+    background-size: auto 200%;
+    background-position: 0 100%;
+    &:hover {
+      color: @fg-selected;
+      background-position: 0 50%;
+    }
+    &:active {
+      background-position: 0 0;
+    }
   }
 }
 
@@ -79,18 +95,31 @@
 }
 
 
-// Button Group
+.btn-group {
+  box-shadow: 0 0 0 1px @stroke;
+  border-radius: @component-border-radius;
+  > .btn {
+    border-left-color: @stroke;
+    border-right-color: @stroke;
+    max-height: 100%;
+    box-shadow: none;
+    width: auto;
+  }
+  > * {
+    z-index: 1; //put them on top of the box-shadow
+  }
+}
 
-.btn-group > .btn {
-  border-left-color: @fg-subtle;
-  border-right-color: @fg-subtle;
-  margin-right: 0px;
+//solidify button layout in search panel
+.tool-panel .btn-group {
+  display: flex;
+  > .btn {
+    flex: 1;
+  }
 }
-.btn-group > .btn:first-child {
-  border-top-left-radius: @component-border-radius;
-  border-bottom-left-radius: @component-border-radius;
-}
-.btn-group > .btn:last-child {
-  border-top-right-radius: @component-border-radius;
-  border-bottom-right-radius: @component-border-radius;
+
+//no real sense in the default courier for these
+.project-find .btn-group.btn-group-options .btn,
+.find-and-replace .btn-group-options.btn-group .btn, {
+  font-family: inherit;
 }

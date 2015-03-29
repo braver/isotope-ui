@@ -1,6 +1,6 @@
 // http://css-tricks.com/html5-progress-element/
 @progress-background-color: @ui-accent;
-@progress-height: @modular-scale-s * 1rem;
+@progress-height: @space;
 @progress-buffer-color: fade(@progress-background-color, 66%);
 
 progress {
@@ -9,8 +9,7 @@ progress {
   border-radius: @progress-height;
 
   background-color: @level-3-bg;
-  // box-shadow: inset 0 0 0 1px @level-4-bg;
-  border: 1px solid @level-4-bg;
+  border: 1px solid @stroke;
 
   background-image:
      linear-gradient(-45deg, transparent 33%, @progress-buffer-color 33%,

@@ -1,5 +1,8 @@
 .settings-view {
-
+  .setting-title,
+  .package-readme {
+    font-size: 1rem;
+  }
   .config-menu {
     background: @level-3-bg;
 
@@ -33,17 +36,13 @@
     border-top: none;
   }
 
-  .section-container {
-    max-width: 60rem;
-  }
-
   .settings-panel label,
   .breadcrumb {
     font-size: 1rem;
   }
   section .section-heading,
   .section .section-heading {
-    font-size: @modular-scale-xl * 1rem;
+    font-size: @scale-a-xl * 1rem;
 
     &.icon:before {
       font-size: 24px;
@@ -52,57 +51,55 @@
     }
   }
   .sub-section-heading {
-    font-size: @modular-scale-l * 1rem;
+    font-size: @scale-a-l * 1rem;
   }
   .section-heading-count {
-    font-size: @modular-scale-ms * 1em;
+    font-size: @scale-a-s * 1em;
   }
   .packages .themes-label {
-    font-size: @modular-scale-l * 1rem;
+    font-size: @scale-a-l * 1rem;
   }
-
+  .packages .search-container {
+    margin-bottom: 1rem;
+  }
   .setting-description {
-    font-size: @modular-scale-ms * 1rem;
+    font-size: @scale-a-s * 1rem;
   }
 
-  .available-package-view {
+  .package-card {
     font-size: 1rem;
 
     .card-name {
-      font-size: @modular-scale-l * 1rem;
-      margin-bottom: @modular-scale-s * 1rem;
+      font-size: @scale-a-l * 1rem;
       a {
         color: @fg-highlight;
       }
     }
     .package-name,
     .package-description {
-      line-height: @modular-scale-l * 1rem;
+      line-height: @scale-a-l * 1rem;
     }
     .meta-user .avatar {
-      height: @modular-scale-xxl * 1rem;
-      width: @modular-scale-xxl * 1rem;
+      height: @component-line-height;
+      width: @component-line-height;
     }
-
-    .description,
-    .downloads {
-
+    .meta-controls .install-button.is-installing {
+      background-image: linear-gradient(to right, @level-2-bg 50%, @level-1-bg 50%);
     }
   }
 
 
   //alerts like "checking for updates"
-  .alert-mixin (@color) {
-    @faded-color: fade(mix(@color, @level-1-bg), 20%);
-    color: @color;
-    border-color: @faded-color;
-    background-color: @faded-color;
+  .alert-mixin (@bg, @fg) {
+    color: @fg;
+    border-color: @bg;
+    background-color: transparent;
   }
-  .alert         { .alert-mixin( @base-fg ); }
-  .alert-success { .alert-mixin( @fg-success ); }
-  .alert-info    { .alert-mixin( @fg-info ); }
-  .alert-warning { .alert-mixin( @fg-warning ); }
-  .alert-danger  { .alert-mixin( @fg-error ); }
+  .alert         { .alert-mixin( @base-fg, @base-fg ); }
+  .alert-success { .alert-mixin( @bg-success, @fg-success ); }
+  .alert-info    { .alert-mixin( @bg-info, @fg-info ); }
+  .alert-warning { .alert-mixin( @bg-warning, @fg-warning ); }
+  .alert-danger  { .alert-mixin( @bg-error, @fg-error ); }
 
   .checkbox {
     font-size: 1rem;
@@ -110,6 +107,9 @@
 
     input[type="checkbox"] {
       margin-left: -2rem;
+      &:checked {
+        background: @fg-success;
+      }
     }
   }
 }

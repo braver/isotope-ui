@@ -1,10 +1,11 @@
+@tree-item-height: @scale-a-xxxl * 1rem;
+
 .tree-view.list-tree {
 
-  .li-mixin (@fg-subtle);
+  .li-mixin (@fg-subtle, @tree-item-height);
 
-  padding: (@component-line-height/2 - @modular-scale-xxs * .5rem) 0 0 0;
+  padding: @space * 1rem 0 0 0;
 
-  //necesary to make the selected item background color work for tree-view only
   li {
     &.selected,
     &:not(.list-nested-item).selected,
@@ -21,19 +22,23 @@
     .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
   }
 
-  li,
-  li:not(.list-nested-item),
-  li.list-nested-item > .list-item {
-    min-height: @modular-scale-xxl * 1rem;
-    line-height: @modular-scale-xxl * 1rem;
+  li.project-root,
+  li.project-root:not(.list-nested-item),
+  li.project-root.list-nested-item > .list-item {
+    //align it with tab titles
+    min-height: @tab-height;
+    line-height: @tab-height;
+    //tab titles have a 1px border
+    &:first-child {
+      margin-top: 1px;
+    }
   }
-
-  li.selected:before,
-  li:not(.list-nested-item).selected:before,
-  li.list-nested-item.selected > .list-item:before {
-    height: @modular-scale-xxl * 1rem;
-    min-height: @modular-scale-xxl * 1rem;
-    line-height: @modular-scale-xxl * 1rem;
+  li.project-root.selected:before,
+  li.project-root:not(.list-nested-item).selected:before,
+  li.project-root.list-nested-item.selected > .list-item:before {
+    height: @tab-height;
+    min-height: @tab-height;
+    line-height: @tab-height;
   }
 
   // hide pointer icons in treeview
@@ -61,17 +66,15 @@
       &:not(.list-nested-item).selected,
       &.list-nested-item.selected > .list-item {
         &:before {
-          background: @level-5-bg;
+          background: @level-1-bg;
         }
       }
     }
   }
 }
+
 .tree-view-resizer {
-  padding-left: @modular-scale-xxs * 1rem;
-  .tree-view-resize-handle {
-    width: 8px;
-  }
+  padding-left: @space;
 }
 
 .right {
@@ -91,12 +94,11 @@
   }
   .tree-view-resizer {
     padding-left: 0;
-    padding-right: @modular-scale-xxs * 1rem;
+    padding-right: @space;
   }
 }
 
 body[data-isotope-ui-spacious='true'] .tree-view.list-tree {
-  padding-top: @component-line-height - @modular-scale-xxxl * .5rem;
 
   li,
   li:not(.list-nested-item),

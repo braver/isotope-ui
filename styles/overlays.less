@@ -1,7 +1,8 @@
-@overlay-backdrop-color:           hsla( @ui-hue, @ui-saturation, 5%, .5);
+@overlay-backdrop-color: hsla( @ui-hue, @ui-saturation, 6%, .6);
 
-.overlay {
+atom-panel.modal {
   color: @base-fg;
+  padding: @component-padding;
   background-color: transparent;
   padding: @component-padding;
 
@@ -12,7 +13,7 @@
   .select-list ol.list-group,
   &.select-list ol.list-group {
     border: 1px solid @overlay-border-color;
-    background-color: lighten(@overlay-background-color, 2%);
+    background-color: @level-2-bg;
 
     li {
       border-bottom: 1px solid @level-3-bg;
@@ -28,11 +29,9 @@
     }
   }
 
-
-  & > * {
-    position: relative; // fixes stacking order
+  > * {
+    position: relative;
   }
-
 
   // Container
   &:before {
@@ -44,14 +43,12 @@
     bottom: 0;
     z-index: 0;
     background-color: @overlay-background-color;
-    border-top: 1px solid hsla(0,0%,0%,.2);
-    border-radius: 0 0 @component-border-radius*2 @component-border-radius*2;
-    box-shadow: 0 6px 12px -2px hsla(0,0%,0%,.4);
+    border: 1px solid @stroke;
+    border-top: 1px solid @stroke;
+    border-radius: 0 0 @component-border-radius @component-border-radius;
+    box-shadow: 0 0 1rem @stroke;
   }
-
   // Backdrop
-  // TODO: Add extra wrapper to translate individually or easier positioning
-
   &:after {
     content: "";
     position: fixed;
@@ -61,12 +58,5 @@
     bottom: 0;
     z-index: -1;
     background: @overlay-backdrop-color;
-    -webkit-animation: overlay-fade .1s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-
-  @-webkit-keyframes overlay-fade {
-      0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
 }

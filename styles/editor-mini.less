@@ -1,10 +1,12 @@
 atom-text-editor.mini {
   border-radius: @component-border-radius;
-  border: 1px solid @input-border-color;
+  box-shadow: 0 0 0 1px @input-border-color;
   font-family: @font-family;
-  font-size: @modular-scale-m * 1rem;
+  font-size: @scale-a-m * 1rem;
   background: @input-background-color;
   color: @base-fg;
+  padding-left: @space;
+
 
   &,
   &::shadow {
@@ -16,15 +18,12 @@ atom-text-editor.mini {
     }
     .selection .region {
       background: @level-2-bg;
-      border-radius: 0;
     }
     .cursor {
-      border-color: @level-5-bg;
+      border-color: @stroke;
     }
-
     .markup.underline {
       color: @base-fg;
-
     }
   }
 
@@ -38,9 +37,6 @@ atom-text-editor.mini {
     }
     .placeholder-text {
       color: @base-fg;
-    }
-    .cursor {
-      border-color: @level-5-bg;
     }
   }
 }

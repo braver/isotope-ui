@@ -3,44 +3,31 @@
   padding: @component-padding 0; // stops jumping of the title when collapsing
 }
 
-.styleguide .section-heading {
-  font-size: 1.5em;
-  line-height: 1.2;
-}
-
-.styleguide h2 {
-  font-size: 1.4em;
-  line-height: 1.2;
-  margin-bottom: 0;
-}
-
-.styleguide .overlay:after {
+.styleguide atom-panel.modal:after {
   position: absolute;  // prevent overlay backdrop from leaking outside
   left: -@component-padding/2;
   right: -@component-padding/2;
   bottom: -@component-padding/2;
 }
-
-.styleguide .overlay:after {
+.styleguide .atom-panel.modal:after {
   position: absolute;  // prevent overlay backdrop from leaking outside
 }
 
 .styleguide .select-list atom-text-editor[mini],
 .styleguide .popover-list atom-text-editor[mini] {
-  // line-height: 25px;
 }
 
 .example {
   border: none;
 
   .example-rendered {
-    border: 1px solid @level-5-bg;
+    border: 1px solid @stroke;
     border-right: none;
     background: @level-2-bg;
   }
 
   .example-code {
-    border: 1px solid @level-5-bg;
+    border: 1px solid @stroke;
     border-radius: 0 @component-border-radius @component-border-radius 0;
 
     .btn-group .btn.selected {

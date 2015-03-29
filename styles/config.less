@@ -157,11 +157,11 @@
 
 [data-isotope-ui-bg-gradient='true']{
   atom-workspace {
-    // the grain overlay makes the gradient brighter, so we compensate
     background-image: linear-gradient(
-      lighten( spin(@app-background-color, 66%), 5%) 0%,
-      darken(@app-background-color, 8%) 100%);
+      lighten( spin(@app-background-color, 60), 1.5%) 0%,
+      darken(@app-background-color, 6%) 100%);
     &:before {
+      //add grain to prevent stair-stepping
       content: '';
       display: block;
       position: absolute;

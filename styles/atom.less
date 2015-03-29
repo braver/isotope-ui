@@ -19,26 +19,26 @@ h4,
 h5,
 h6 {
   line-height: 1;
-  margin-bottom: @modular-scale-l * 1rem;
+  margin-bottom: @scale-a-l * 1rem;
 }
 h1 {
-  font-size: @modular-scale-xxl * 1rem;
+  font-size: @scale-a-xxl * 1rem;
 }
 h2 {
-  font-size: @modular-scale-xl * 1rem;
+  font-size: @scale-a-xl * 1rem;
 }
 h3 {
-  font-size: @modular-scale-l * 1rem;
+  font-size: @scale-a-l * 1rem;
 }
 h4,
 h5,
 h6 {
-  font-size: @modular-scale-m * 1rem;
+  font-size: 1rem;
 }
 
 p {
-  line-height: @modular-scale-l * 1rem;
-  margin-bottom: @modular-scale-l * 1rem;
+  line-height: @scale-b-l * 1rem;
+  margin-bottom: @scale-b-l * 1rem;
 }
 
 label {
@@ -48,7 +48,7 @@ label {
 pre {
   box-shadow: none;
   color: @base-fg;
-  background: @level-1-bg;
+  background: @level-3-bg;
   border-radius: @component-border-radius;
   border: none;
   margin: 0;
@@ -63,18 +63,7 @@ code {
 // make panes float
 body:not([zen='true']) {
   .item-views {
-    outline: 1px solid @level-4-bg;
-    margin-left: 1px;
-    margin-right: 1px;
-  }
-  .tab-bar {
-    padding-left: 1px;
-    margin-right: 1px;
-    .tab.active {
-      outline: 1px solid @level-4-bg;
-    }
-  }
-  atom-pane {
-    padding-bottom: 1px;
+    border: 1px solid @stroke;
+    border-top: none;
   }
 }
