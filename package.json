@@ -8,5 +8,8 @@
   "repository": "https://github.com/braver/isotope-ui",
   "engines": {
     "atom": ">0.50.0"
-  }
+  },
+  "keywords": [
+    "configurable","minimal","clean","compact","desaturated"
+  ]
 }
