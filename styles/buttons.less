@@ -111,12 +111,18 @@
 }
 
 //solidify button layout in search panel
+.package-card .btn-group,
 .tool-panel .btn-group {
   display: flex;
   max-height: @component-line-height;
   > .btn {
     flex: 1;
   }
+}
+.settings-view .package-card .meta-controls .status-indicator {
+    max-width: 4px;
+    min-width: 4px;
+    width: 4px;
 }
 
 //no real sense in the default courier for these
