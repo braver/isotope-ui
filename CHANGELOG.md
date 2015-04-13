@@ -1,3 +1,7 @@
+# 2.1.0 - Even better everything
+* Better search panel background
+* Solve some minor issues with button groups
+
 # 2.0.0 - Even better everything
 * Improved pretty much everything
 * Now uses a stranded modular scale for better rhythm
