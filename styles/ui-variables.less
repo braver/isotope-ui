@@ -9,23 +9,24 @@
 
 // a modular scale maintains relations across all sizes and spaces
 // hhttp://www.modularscale.com
+// rounding prevents stray pixel rounding error glitches
 @scale-a: 1.15;
 @scale-b: 1.3;
 
-@scale-a-s:    pow(@scale-a, -1);
+@scale-a-s:    round(pow(@scale-a, -1), 1);
 @scale-a-m:    1;
-@scale-a-l:    pow(@scale-a, 1);
-@scale-a-xl:   pow(@scale-a, 2);
-@scale-a-xxl:  pow(@scale-a, 3);
-@scale-a-xxxl: pow(@scale-a, 4);
+@scale-a-l:    round(pow(@scale-a, 1), 1);
+@scale-a-xl:   round(pow(@scale-a, 2), 1);
+@scale-a-xxl:  round(pow(@scale-a, 3), 1);
+@scale-a-xxxl: round(pow(@scale-a, 4), 1);
 
-@scale-b-s:    pow(@scale-b, -1);
+@scale-b-s:    round(pow(@scale-b, -1), 1);
 @scale-b-m:    1;
-@scale-b-l:    pow(@scale-b, 1);
-@scale-b-xl:   pow(@scale-b, 2);
-@scale-b-xxl:  pow(@scale-b, 3);
+@scale-b-l:    round(pow(@scale-b, 1), 1);
+@scale-b-xl:   round(pow(@scale-b, 2), 1);
+@scale-b-xxl:  round(pow(@scale-b, 3), 1);
 
-@space: @scale-b-s * 1rem;
+@space: round(@scale-b-s, 1) * 1rem;
 @text-height: @scale-b-xxl * 1rem;
 
 // leading color
