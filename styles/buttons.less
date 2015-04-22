@@ -18,25 +18,25 @@
 
   border-radius: @component-border-radius;
 
-  box-shadow: 0 0 0 1px @input-border-color;
+  border: 1px solid darken(@bg, 12%);
   transition: all .2s .1s;
-
-  height: @component-line-height;
+  height: auto;
+  min-height: @component-line-height;
   line-height: @component-line-height;
 
   &.btn-xs {
     padding: 0 @space;
-    height: @scale-b-l * 1rem;
+    // height: @scale-b-l * 1rem;
     line-height: @scale-b-l * 1rem;
   }
   &.btn-sm {
     padding: 0 @space;
-    height: @scale-b-xl * 1rem;
+    // height: @scale-b-xl * 1rem;
     line-height: @scale-b-xl * 1rem;
   }
   &.btn-lg {
     padding: 0 @space;
-    height: pow(@scale-b, 4) * 1rem;
+    // height: pow(@scale-b, 4) * 1rem;
     line-height: pow(@scale-b, 4) * 1rem;
   }
 
@@ -94,35 +94,31 @@
   .btn-mixin(@bg-error, @fg-highlight);
 }
 
-
 .btn-group {
-  box-shadow: 0 0 0 1px @stroke;
-  border-radius: @component-border-radius;
-  > .btn {
-    border-left-color: @stroke;
-    border-right-color: @stroke;
-    max-height: 100%;
-    box-shadow: none;
-    width: auto;
+  > .btn:first-child {
+    border-left: 1px solid @stroke;
   }
-  > * {
-    z-index: 1; //put them on top of the box-shadow
+  > .btn:last-child {
+    border-right: 1px solid @stroke;
+  }
+}
+.find-and-replace {
+  .btn-group > .btn {
+    box-sizing: border-box;
+    max-height: @component-line-height;
+    border: none;
+    box-shadow: 0 0 0 1px @stroke;
+    &:first-child {
+      border-left: none;
+    }
+    &:last-child {
+      border-right: none;
+    }
   }
 }
 
-//solidify button layout in search panel
-.package-card .btn-group,
-.tool-panel .btn-group {
-  display: flex;
-  max-height: @component-line-height;
-  > .btn {
-    flex: 1;
-  }
-}
 .settings-view .package-card .meta-controls .status-indicator {
-    max-width: 4px;
-    min-width: 4px;
-    width: 4px;
+  box-sizing: content-box;
 }
 
 //no real sense in the default courier for these
