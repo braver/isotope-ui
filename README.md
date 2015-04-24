@@ -24,7 +24,6 @@ A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope
 - Select hip 'thin' fonts, or trusty old 'regular'.
 - Choose between a flat or gradient background.
 - Or even use any image as background (from your computer or [the internets](http://hubblesite.org)).
-- Choose tree-view highlight color.
 - Choose low contrast tooltips (or fancy colorful ones).
 - Choose a more spacious layout for your 27"
 - Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
