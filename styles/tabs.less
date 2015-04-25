@@ -109,20 +109,25 @@
     }
   }
 
+  .tab.is-dragging {
+    .close-icon,
+    &:before {
+      visibility: hidden;
+    }
+    &::after {
+      background: darken(@tab-background-color, 6%);
+      border-color: transparent;
+      opacity: .5;
+    }
+  }
+
   .placeholder {
     margin: 0;
     height: @tab-height + @tab-top-padding;
     background: @ui-accent;
     pointer-events: none;
     &:after {
-      top: @tab-height/2 + @tab-top-padding - 5px ;
-      width: 10px;
-      height: 10px;
-      margin: 0;
-      border-radius: 0;
-      border: 5px solid;
-      border-color: transparent transparent transparent @ui-accent;
-      background: transparent;
+      display: none;
     }
 
     &:last-child {
