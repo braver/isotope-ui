@@ -26,17 +26,14 @@
 
   &.btn-xs {
     padding: 0 @space;
-    // height: @scale-b-l * 1rem;
     line-height: @scale-b-l * 1rem;
   }
   &.btn-sm {
     padding: 0 @space;
-    // height: @scale-b-xl * 1rem;
     line-height: @scale-b-xl * 1rem;
   }
   &.btn-lg {
     padding: 0 @space;
-    // height: pow(@scale-b, 4) * 1rem;
     line-height: pow(@scale-b, 4) * 1rem;
   }
 
@@ -45,6 +42,7 @@
     color: @fg;
     background-position: 0 0;
     transition: all .1s;
+    border: 1px solid darken(@bg, 12%);
   }
   &:active {
     color: @fg;
@@ -53,6 +51,7 @@
       darken(@bg-level1, 6%) 50%,
       darken(@bg-level1, 12%) 100%);
     background-position: 0 100%;
+    border: 1px solid darken(@bg, 12%);
   }
   &.selected {
     color: @fg-selected;
@@ -62,12 +61,15 @@
       darken(@bg-level2 , 12%) 100%);
     background-size: auto 200%;
     background-position: 0 100%;
+    border: 1px solid darken(@bg, 12%);
     &:hover {
       color: @fg-selected;
       background-position: 0 50%;
+      border: 1px solid darken(@bg, 12%);
     }
     &:active {
       background-position: 0 0;
+      border: 1px solid darken(@bg, 12%);
     }
   }
 }
