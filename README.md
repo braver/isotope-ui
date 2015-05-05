@@ -11,17 +11,13 @@ A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope
 ## Features
 
 - Automatically adapts to your favourite syntax theme
-- Tweaks [minimap](https://atom.io/packages/minimap), [color-highlight](https://atom.io/packages/atom-color-highlight), [web-browser](https://atom.io/packages/web-browser) (more to come)
 - Looks awesome in [Zen](https://atom.io/packages/Zen)
 - Configurable!
 
 
 ## Configuration
 
-**You may need to reload atom before settings become available ([settings-view #347](https://github.com/atom/settings-view/issues/347))**
-
-- Choose from a number of fonts included in this theme, or match the editor's font.
-- Select hip 'thin' fonts, or trusty old 'regular'.
+- Choose from a number of fonts included in this theme, or match the editor's font. Multiple font-weights are available.
 - Choose between a flat or gradient background.
 - Or even use any image as background (from your computer or [the internets](http://hubblesite.org)).
 - Choose low contrast tooltips (or fancy colorful ones).
@@ -35,7 +31,7 @@ html, body { font-size: 9px; }
 
 ## Fonts
 
-This package includes a number of fonts that were designed especially for user interfaces. You can pick and choose without having to find and install anything:
+This package includes a number of fonts that were designed especially for user interfaces. You can pick and choose without having to install anything on your system:
 
 - Cantarell - the system font for GNOME 3 (by Dave Crossland)
 - Clear Sans - Intel's new font (by Daniel Ratighan)
@@ -48,4 +44,4 @@ This package includes a number of fonts that were designed especially for user i
 - System default - Attempts to match your OS using this stack: 'Helvetica Neue', 'Segoe UI', Ubuntu, Cantarell, sans-serif
 
 
-Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-ui](https://github.com/atom/one-dark-ui) theme that Isotope was forked from.
+Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-ui](https://github.com/atom/one-dark-ui) theme that Isotope was originally forked from.
