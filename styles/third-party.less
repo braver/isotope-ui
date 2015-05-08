@@ -18,9 +18,8 @@ atom-workspace .browser-page webview {
 }
 
 .cli-status {
-  pre,
-  atom-text-editor.mini {
-    border-radius: 0;
+  atom-text-editor[mini] {
+    height: @component-line-height;
   }
 }
 
@@ -41,12 +40,6 @@ atom-text-editor::shadow {
           display: none;
         }
       }
-    }
-  }
-
-  .autocomplete {
-    &.select-list ol li {
-      padding: 0;
     }
   }
 

@@ -1,10 +1,10 @@
-@tree-item-height: @scale-a-xxxl * 1rem;
+@tree-item-height: @scale-b-xl * 1rem;
 
 .tree-view.list-tree {
 
   .li-mixin (@fg-subtle, @tree-item-height);
 
-  padding: @space * 1rem 0 0 0;
+  padding: @space * .5rem 0 0 0;
 
   li {
     &.selected,
@@ -28,10 +28,6 @@
     //align it with tab titles
     min-height: @tab-height;
     line-height: @tab-height;
-    //tab titles have a 1px border
-    &:first-child {
-      margin-top: 1px;
-    }
   }
   li.project-root.selected:before,
   li.project-root:not(.list-nested-item).selected:before,

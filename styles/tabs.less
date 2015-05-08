@@ -1,5 +1,5 @@
 @modified-icon-width: @component-icon-size / 2;
-@tab-top-padding: @space;
+@tab-top-padding: @space/2;
 @tab-max-width: 160px;
 @tab-min-width: 60px;
 
@@ -42,7 +42,7 @@
   &:before {
     content: '';
     position: absolute;
-    top: @tab-height + @space;
+    top: @tab-height + @tab-top-padding;
     left: 0;
     width: 100%;
     height: 1px;
