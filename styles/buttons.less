@@ -108,14 +108,20 @@
 .project-find {
   .btn-group > .btn {
     box-sizing: border-box;
+    height: @component-line-height;
+    min-height: @component-line-height;
     max-height: @component-line-height;
-    border: none;
-    box-shadow: 0 0 0 1px @stroke;
-    &:first-child {
-      border-left: none;
-    }
-    &:last-child {
-      border-right: none;
+    line-height: ~"calc("@component-line-height ~"- 2px)";
+    border-color: @stroke;
+  }
+  .find-meta-container {
+    margin: -1px 0;
+    padding: 0;
+    top: 0.5rem;
+    right: @component-padding;
+    line-height: @component-line-height;
+    .result-counter {
+      margin: 0;
     }
   }
 }
