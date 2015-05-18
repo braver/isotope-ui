@@ -6,14 +6,14 @@
 @tab-text-color: @fg-subtle;
 
 .close-icon-mixin() {
-  margin-top: -6px;
+  margin-top: -7px;
   margin-right: -6px;
   top: 50%;
   right: @scale-a-l * 1rem;
   width: 12px;
   height: 12px;
   border: none !important; //overrule default modified indicator
-  background: inherit;
+  background: transparent;
   transform: scale(0);
   transition: transform .2s .1s, color .2s .1s;
 
@@ -72,7 +72,7 @@
 
     &:hover {
       color: @base-fg;
-      background: @level-3-bg;
+      background: fade(@level-3-bg, 30%);
       .close-icon {
         transform: scale(1);
         color: @base-fg;
@@ -143,7 +143,7 @@
 
 atom-pane .tab-bar .tab.active {
   z-index: 1;
-  background: @level-3-bg;
+  background: fade(@level-3-bg, 60%);
   min-width: @tab-min-width;
   border-color: @stroke;
   .title {
