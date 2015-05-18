@@ -1,7 +1,8 @@
 .status-bar {
 
-  height:  @scale-b-xxl * 1rem;
-  line-height:  @scale-b-xxl * 1rem;
+  height:  @component-line-height;
+  line-height:  @component-line-height;
+  line-height: ~"calc("@component-line-height ~"- 1px)";
   background: @tool-panel-background-color;
   font-size: 1rem;
 
