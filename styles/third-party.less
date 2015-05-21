@@ -17,31 +17,8 @@ atom-workspace .browser-page webview {
   overflow: hidden;
 }
 
-.cli-status {
-  atom-text-editor[mini] {
-    height: @component-line-height;
-  }
-}
-
 atom-text-editor,
 atom-text-editor::shadow {
-
-  atom-color-highlight {
-    dot-color-marker {
-      margin-top: .4em;
-      max-width: .6em;
-      max-height: .6em;
-      border-radius: @component-border-radius;
-
-      &.selected {
-        box-shadow: 0 0 1px 1px @base-fg;
-
-        .selector {
-          display: none;
-        }
-      }
-    }
-  }
 
   // minimap
   atom-text-editor-minimap::shadow .minimap-visible-area {
