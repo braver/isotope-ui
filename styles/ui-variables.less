@@ -37,7 +37,7 @@
   @ui-hue: 180;
 }
 .ui-hue() when (hsvhue(@ui-theme-color) > 0), (hsvsaturation(@ui-theme-color) > 0%) {
-  @ui-hue: hsvhue(@ui-theme-color) - 20;
+  @ui-hue: hsvhue(@ui-theme-color);
 }
 .ui-hue();
 
@@ -45,11 +45,18 @@
   @ui-saturation: min(hsvsaturation(@ui-theme-color), 24%);
 }
 .ui-saturation() when (hsvhue(@ui-theme-color) > 280), (hsvhue(@ui-theme-color) < 180) {
-  @ui-saturation: min(hsvsaturation(@ui-theme-color), 8%);
+  @ui-saturation: min(hsvsaturation(@ui-theme-color), 6%);
 }
 .ui-saturation();
 
-@ui-brightness:    25%;
+.ui-brightness() when (hsvvalue(@ui-theme-color) >= 50%) {
+  @ui-brightness: hsvvalue(@ui-theme-color) - 80%;
+}
+.ui-brightness() when (hsvvalue(@ui-theme-color) < 50%) {
+  @ui-brightness: hsvvalue(@ui-theme-color) + 6%;
+}
+.ui-brightness();
+
 @ui-accent:        spin( hsl( @ui-hue, 60% + @ui-saturation, 60%), 66 );
 
 
@@ -70,7 +77,7 @@
 
 
 // foreground
-@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness) * 2.6) );
+@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness) * 3) );
 
 @fg-subtle: fadeout(@base-fg, 18%);
 @fg-faded: fade(@base-fg, 24%);
