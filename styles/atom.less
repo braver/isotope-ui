@@ -10,6 +10,7 @@ body {
 atom-workspace {
   background-color: @app-background-color;
   font-family: inherit;
+  border-top: 1px solid @stroke;
 }
 
 h1,
@@ -72,4 +73,7 @@ body:not([zen='true']) {
    atom-workspace {
       border-top: 1px solid @stroke;
    }
+}
+body[data-isotope-ui-minimal="true"] .item-views {
+  border: none;
 }

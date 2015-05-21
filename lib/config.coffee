@@ -60,9 +60,17 @@ module.exports =
 
     applySpaciousMode = () ->
       if atom.config.get('isotope-ui.spaciousMode')
+        atom.config.set('isotope-ui.minimalMode', 'false')
         body.setAttribute('data-isotope-ui-spacious', 'true')
       else
         body.setAttribute('data-isotope-ui-spacious', 'false')
+
+    applyMinimalMode = () ->
+      if atom.config.get('isotope-ui.minimalMode')
+        atom.config.set('isotope-ui.spaciousMode', 'false')
+        body.setAttribute('data-isotope-ui-minimal', 'true')
+      else
+        body.setAttribute('data-isotope-ui-minimal', 'false')
 
 
     # run when atom is ready
@@ -75,6 +83,7 @@ module.exports =
     applyTooltipContrast()
     applyEditorFont()
     applySpaciousMode()
+    applyMinimalMode()
 
 
     # run when configs change
@@ -108,6 +117,9 @@ module.exports =
 
     atom.config.onDidChange 'isotope-ui.spaciousMode', ->
       applySpaciousMode()
+
+    atom.config.onDidChange 'isotope-ui.minimalMode', ->
+      applyMinimalMode()
 
     atom.config.onDidChange 'editor.fontFamily', ->
       applyEditorFont()
