@@ -4,7 +4,7 @@
 
   .li-mixin (@fg-subtle, @tree-item-height);
 
-  padding: @space/3 0 0 0;
+  padding: 0;
 
   li {
     &.selected,
@@ -22,20 +22,20 @@
     .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
   }
 
-  li.project-root,
-  li.project-root:not(.list-nested-item),
-  li.project-root.list-nested-item > .list-item {
-    //align it with tab titles
-    min-height: @tab-height;
-    line-height: @tab-height;
-  }
-  li.project-root.selected:before,
-  li.project-root:not(.list-nested-item).selected:before,
-  li.project-root.list-nested-item.selected > .list-item:before {
-    height: @tab-height;
-    min-height: @tab-height;
-    line-height: @tab-height;
-  }
+    li.project-root,
+    li.project-root:not(.list-nested-item),
+    li.project-root.list-nested-item > .list-item {
+      //align it with tab titles
+      min-height: ~"calc("@tab-height ~"- 2px)";
+      line-height: ~"calc("@tab-height ~"- 2px)";
+    }
+    li.project-root.selected:before,
+    li.project-root:not(.list-nested-item).selected:before,
+    li.project-root.list-nested-item.selected > .list-item:before {
+      height: ~"calc("@tab-height ~"- 2px)";
+      min-height: ~"calc("@tab-height ~"- 2px)";
+      line-height: ~"calc("@tab-height ~"- 2px)";
+    }
 
   // hide pointer icons in treeview
   &.has-collapsable-children {
@@ -72,6 +72,25 @@
 body:not([data-isotope-ui-minimal='true']) {
   .tree-view-resizer {
     padding-left: @space/3;
+  }
+  .tree-view.list-tree {
+    padding-top: @space/3;
+  }
+}
+body([data-isotope-ui-minimal='true']) {
+  li.project-root,
+  li.project-root:not(.list-nested-item),
+  li.project-root.list-nested-item > .list-item {
+    //align it with tab titles
+    min-height: ~"calc("@tab-height ~"- 4px)";
+    line-height: ~"calc("@tab-height ~"- 4px)";
+  }
+  li.project-root.selected:before,
+  li.project-root:not(.list-nested-item).selected:before,
+  li.project-root.list-nested-item.selected > .list-item:before {
+    height: ~"calc("@tab-height ~"- 4px)";
+    min-height: ~"calc("@tab-height ~"- 4px)";
+    line-height: ~"calc("@tab-height ~"- 4px)";
   }
 }
 
