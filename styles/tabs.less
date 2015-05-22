@@ -14,8 +14,7 @@
   height: 12px;
   border: none !important; //overrule default modified indicator
   background: transparent;
-  transform: scale(0);
-  transition: transform .2s .1s, color .2s .1s;
+  opacity: 0;
 
   &:before {
     position: absolute;
@@ -28,7 +27,7 @@
 
   &:hover {
     color: @ui-accent;
-    transition: transform .1s, color .1s;
+    opacity: 1;
   }
 }
 
@@ -59,7 +58,7 @@
       color: @base-fg;
       background: fade(@level-3-bg, 30%);
       .close-icon {
-        transform: scale(1);
+        opacity: 1;
         color: @base-fg;
       }
     }
