@@ -28,13 +28,11 @@
       min-height: @height;
       line-height: @height;
       color: @color;
-      transition: color .2s .1s;
       &:before {
         height: @scale-a-xxxl * 1rem;
       }
       &:hover {
         color: lighten(@color, 12%);
-        transition: color .1s;
       }
 
       &.path-details { // search
@@ -60,6 +58,10 @@
   .li-variation-mixin( text-success,    @fg-success,  lighten(@fg-success, 12%) );
   .li-variation-mixin( text-warning,    @fg-warning,  lighten(@fg-warning, 12%) );
   .li-variation-mixin( text-error,      @fg-error,    lighten(@fg-error, 12%) );
+}
+
+.command-palette .list-group .character-match {
+  font-weight: inherit;
 }
 
 .list-group {
