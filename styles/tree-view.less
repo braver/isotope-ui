@@ -1,10 +1,25 @@
-@tree-item-height: @scale-b-xl * 1rem;
+.project-root(@height) {
+  li.project-root,
+  li.project-root:not(.list-nested-item),
+  li.project-root.list-nested-item > .list-item {
+    //align it with tab titles
+    min-height: @height;
+    line-height: @height;
+  }
+  li.project-root.selected:before,
+  li.project-root:not(.list-nested-item).selected:before,
+  li.project-root.list-nested-item.selected > .list-item:before {
+    height: @height;
+    min-height: @height;
+    line-height: @height;
+  }
+}
 
 .tree-view.list-tree {
 
-  .li-mixin (@fg-subtle, @tree-item-height);
+  .li-mixin (@fg-subtle, @scale-b-xl * 1rem);
 
-  padding: 0;
+  padding: @space/3 0 0 0;
 
   li {
     &.selected,
@@ -22,20 +37,7 @@
     .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
   }
 
-    li.project-root,
-    li.project-root:not(.list-nested-item),
-    li.project-root.list-nested-item > .list-item {
-      //align it with tab titles
-      min-height: ~"calc("@tab-height ~"- 2px)";
-      line-height: ~"calc("@tab-height ~"- 2px)";
-    }
-    li.project-root.selected:before,
-    li.project-root:not(.list-nested-item).selected:before,
-    li.project-root.list-nested-item.selected > .list-item:before {
-      height: ~"calc("@tab-height ~"- 2px)";
-      min-height: ~"calc("@tab-height ~"- 2px)";
-      line-height: ~"calc("@tab-height ~"- 2px)";
-    }
+  .project-root(~"calc("@tab-height ~"- 2px)");
 
   // hide pointer icons in treeview
   &.has-collapsable-children {
@@ -69,29 +71,8 @@
   }
 }
 
-body:not([data-isotope-ui-minimal='true']) {
-  .tree-view-resizer {
-    padding-left: @space/3;
-  }
-  .tree-view.list-tree {
-    padding-top: @space/3;
-  }
-}
-body([data-isotope-ui-minimal='true']) {
-  li.project-root,
-  li.project-root:not(.list-nested-item),
-  li.project-root.list-nested-item > .list-item {
-    //align it with tab titles
-    min-height: ~"calc("@tab-height ~"- 4px)";
-    line-height: ~"calc("@tab-height ~"- 4px)";
-  }
-  li.project-root.selected:before,
-  li.project-root:not(.list-nested-item).selected:before,
-  li.project-root.list-nested-item.selected > .list-item:before {
-    height: ~"calc("@tab-height ~"- 4px)";
-    min-height: ~"calc("@tab-height ~"- 4px)";
-    line-height: ~"calc("@tab-height ~"- 4px)";
-  }
+.tree-view-resizer {
+  padding-left: @space/3;
 }
 
 .right {
@@ -116,19 +97,15 @@ body([data-isotope-ui-minimal='true']) {
 }
 
 body[data-isotope-ui-spacious='true'] .tree-view.list-tree {
+  .project-root(~"calc("@component-line-height ~" + 4px)");
+}
 
-  li,
-  li:not(.list-nested-item),
-  li.list-nested-item > .list-item {
-    min-height: @component-line-height;
-    line-height: @component-line-height;
+body[data-isotope-ui-minimal='true'] {
+  .tree-view-resizer {
+    padding-left: 0;
   }
-
-  li.selected:before,
-  li:not(.list-nested-item).selected:before,
-  li.list-nested-item.selected > .list-item:before {
-    height: @component-line-height;
-    min-height: @component-line-height;
-    line-height: @component-line-height;
+  .tree-view.list-tree {
+    padding-top: 0;
+    .project-root(~"calc("@tab-height ~"- 4px)");
   }
 }

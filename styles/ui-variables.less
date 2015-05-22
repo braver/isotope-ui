@@ -27,7 +27,6 @@
 @scale-b-xxl:  round(pow(@scale-b, 3), 1);
 
 @space: round(@scale-b-s, 1) * 1rem;
-@text-height: round(@scale-b-xxl) * 1rem;
 
 // leading color
 @ui-theme-color: @syntax-background-color;
@@ -166,7 +165,7 @@
 @component-padding:        @scale-a-m * 1rem;
 @component-icon-padding:   @space;
 @component-icon-size:      16/12 * 1rem;
-@component-line-height:    @text-height;
+@component-line-height:    round(@scale-b-xxl) * 1rem;
 @component-border-radius:  2px;
 
-@tab-height: @text-height + (@scale-b-s * 1rem);
+@tab-height: @component-line-height + (@scale-b-s * 1rem);

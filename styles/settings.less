@@ -5,6 +5,9 @@
   .package-readme {
     font-size: 1rem;
   }
+  .panels {
+    max-width: 60rem;
+  }
   .config-menu {
     background: @level-3-bg;
 
@@ -30,6 +33,7 @@
     height: @component-line-height * @scale-a;
     padding: 0;
     line-height: @component-line-height * @scale-a;
+    border-radius: @component-border-radius;
   }
 
   .link {
@@ -89,6 +93,9 @@
     .meta-controls .install-button.is-installing {
       background-image: linear-gradient(to right, @level-2-bg 50%, @level-1-bg 50%);
       border-color: @level-2-bg;
+    }
+    .meta-controls .status-indicator{
+      max-height: @component-line-height;
     }
   }
 
