@@ -1,24 +1,27 @@
 @height: 8px;
 
 @-webkit-keyframes animate {
-  0% {-webkit-transform: translate(-25%);}
-  100% {-webkit-transform: translate(25%);}
+  0% {
+    -webkit-transform: translate(-25%);
+  }
+  100% {
+    -webkit-transform: translate(25%);
+  }
 }
 
 progress {
   -webkit-appearance: none;
   max-height: @height;
   box-sizing: border-box;
-  border-radius: @height;
-  border: 1px solid @base-fg;
+  border: 1px solid @stroke;
   position: relative;
   overflow: hidden;
+  border-radius: @height;
 
   &::-webkit-progress-bar {
     background: white;
   }
   &::-webkit-progress-value {
-    border-radius: @height;
     background-color: @ui-accent;
   }
 
@@ -27,13 +30,13 @@ progress {
       content:'';
       display: block;
       position: absolute;
-      left: -50%;
+      left: 25%;
       top: 0;
-      width: 200%;
+      width: 50%;
       height: 100%;
       background: @ui-accent;
       z-index: 1;
-      background: radial-gradient(circle, white, @ui-accent);
+      background: radial-gradient(circle, @ui-accent, white);
       transform: translate(0);
       -webkit-animation: animate 3s alternate ease-in-out infinite;
     }
