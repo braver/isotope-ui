@@ -1,3 +1,7 @@
+# 2.4.0 - Even better everything
+* Minimal mode!
+* Removed some of the transitions to make it feel more snappy
+
 # 2.3.0 - Even better everything
 * Line-heights for buttons, mini-editor and tabs improved
 * Improved rendering for many custom font-sizes
