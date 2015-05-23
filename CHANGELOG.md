@@ -1,13 +1,13 @@
-# 2.4.0 - Even better everything
-* Minimal mode!
+# 2.4.0 - Minimal mode!
+* Added a truly minimal layout mode!
 * Removed some of the transitions to make it feel more snappy
 
-# 2.3.0 - Even better everything
+# 2.3.0
 * Line-heights for buttons, mini-editor and tabs improved
 * Improved rendering for many custom font-sizes
 * Transparent bottom panels for gradient and image backgrounds
 
-# 2.1.0 - Even better everything
+# 2.1.0
 * Better search panel background
 * Solve some minor issues with button groups
 
