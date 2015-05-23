@@ -10,6 +10,8 @@ A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope
 
 ## Features
 
+**New feature** - a truly minimal mode!
+
 - Automatically adapts to your favourite syntax theme
 - Configurable!
 
