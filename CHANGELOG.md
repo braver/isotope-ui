@@ -1,6 +1,7 @@
 # 2.4.0 - Minimal mode!
 * Added a truly minimal layout mode!
 * Removed some of the transitions to make it feel more snappy
+* Default font-size now 11px (you can change this!)
 
 # 2.3.0
 * Line-heights for buttons, mini-editor and tabs improved
