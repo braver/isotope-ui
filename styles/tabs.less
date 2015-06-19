@@ -78,6 +78,7 @@
     }
     &:not(:hover) .close-icon {
       .close-icon-mixin();
+      opacity: 1;
       transform: scale(1);
       &:before {
         display: block; // overrule default style
@@ -201,17 +202,20 @@ atom-pane.active .tab-bar .tab.active {
 
 body[data-isotope-ui-spacious='true'] {
   .tab-bar {
-    height: ~"calc("@tab-height + @tab-top-padding ~"+ 2px)";
+    height: ~"calc("@tab-height + @tab-top-padding ~"+ 2px)" !important;
     &:before {
-      top: ~"calc("@tab-height + @tab-top-padding ~"+ 2px)";
+      top: ~"calc("@tab-height + @tab-top-padding ~"+ 2px)" !important;
     }
     .tab {
-      height: ~"calc("@tab-height ~"+ 3px)";
-      line-height: ~"calc("@tab-height ~"+ 1px)";
+      height: ~"calc("@tab-height ~"+ 2px)" !important;
+      line-height: ~"calc("@tab-height ~"+ 1px)" !important;
     }
   }
   atom-pane .tab-bar .tab .title:before {
-    line-height: pow(@scale-b, 4) * 1rem;
+    line-height: pow(@scale-b, 4) * 1rem !important;
+  }
+  .tab-bar .tab .close-icon {
+    margin-top: -5px !important;
   }
 }
 
@@ -240,6 +244,6 @@ body:not([data-isotope-ui-minimal='true']) .tab-bar {
 
 body[data-isotope-ui-minimal='true'] {
   .tab-bar .tab .close-icon {
-    margin-top: -6px;
+    margin-top: -6px !important;
   }
 }
