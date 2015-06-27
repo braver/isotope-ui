@@ -130,7 +130,7 @@
     // pad in front of the text where the icon would be We'll pad the non-
     // active items with a 'fake' icon so other classes can pad the item
     // without worrying about the icon padding.
-    li:before,
+    li::before,
     li.selected:before {
       content: '';
       background-color: transparent;
@@ -146,7 +146,7 @@
     }
     li.active {
       .octicon(check, @active-icon-size);
-      &:before { //icon
+      &::before { //icon
         margin-right: @component-icon-padding;
         color: @fg-success;
         height: @list-item-height;
@@ -158,7 +158,7 @@
 
 .select-list.popover-list {
   background-color: @overlay-background-color;
-  box-shadow: 0 0 1rem @stroke;
+  box-shadow: @shadow;
   padding: @space;
   border-radius: @component-border-radius;
 
@@ -180,5 +180,5 @@ li.ui-sortable-helper {
   list-style: none;
   padding: 0 @component-padding;
   background: @level-2-bg;
-  box-shadow: 0 0 1px @stroke;
+  box-shadow: @shadow;
 }

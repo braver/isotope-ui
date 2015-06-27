@@ -8,7 +8,7 @@
 .badge {
   color: @fg-highlight;
   background: @level-2-bg;
-  border-radius: @scale-a-s * 1rem;
+  border-radius: 2 * @component-border-radius;
 }
 
 .label {
@@ -30,11 +30,8 @@
 
 .fuzzy-finder .list-group .character-match,
 autocomplete-suggestion-list .character-match {
-    font-weight: normal;
+    font-weight: bolder;
 }
-
-// TODO: Move to a better place, not sure where it gets used
-.caret {
-  border-top: 5px solid #fff;
-  margin-top: -1px;
+autocomplete-suggestion-list.select-list.popover-list .suggestion-description-content {
+  font-size: inherit;
 }
