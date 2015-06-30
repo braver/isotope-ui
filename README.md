@@ -4,7 +4,7 @@ A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope
 
 ![flat background](https://github.com/braver/isotope-ui/raw/master/resources/images/flat.png)
 
-![gradient background](https://github.com/braver/isotope-ui/raw/master/resources/images/gradient.png)
+![minimal](https://github.com/braver/isotope-ui/raw/master/resources/images/minimal.png)
 
 ![image background](https://github.com/braver/isotope-ui/raw/master/resources/images/image.png)
 
