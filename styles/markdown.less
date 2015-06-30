@@ -1,0 +1,55 @@
+// markdown-preview ---------------------------
+
+.markdown-preview {
+  font-size: @scale-a-l * 1rem;
+  color: @base-fg;
+  background-color: darken(@level-2-bg, 3%);
+
+
+  h1, h2 {
+    color: inherit;
+    border-color: @stroke;
+  }
+
+  a {
+    color: @fg-info;
+  }
+
+  hr {
+    background-color: @stroke;
+  }
+
+  blockquote {
+    color: @fg-subtle;
+    border-left-color: @level-1-bg;
+  }
+
+  table {
+    th,
+    td {
+      border-color: @stroke;
+    }
+    th {
+      background-color: @level-2-bg;
+    }
+    tr {
+      background-color: @level-3-bg;
+      &:nth-child(2n) {
+        background-color: @level-2-bg;
+      }
+    }
+  }
+
+  code {
+    color: @base-fg;
+    border: 1px solid @stroke;
+    background-color: @level-2-bg;
+    background-clip: padding-box;
+  }
+
+  atom-text-editor::shadow {
+    .line.cursor-line {
+      background-color: transparent;
+    }
+  }
+}
