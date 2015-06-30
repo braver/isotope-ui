@@ -169,13 +169,13 @@ atom-pane.active .tab-bar .tab.active {
       }
     }
     &[data-type="MarkdownPreviewView"] {
-      background-color: #fff;
-      color: contrast(#fff, @base-fg, @level-1-bg);
+      background-color: darken(@level-2-bg, 3%);
+      color: contrast(darken(@level-2-bg, 3%), @base-fg, @level-1-bg);
       & .close-icon {
-        color:contrast(#fff, @base-fg, @level-1-bg);
+        color:contrast(darken(@level-2-bg, 3%), @base-fg, @level-1-bg);
       }
       &:hover .close-icon {
-        color: contrast(#fff, @base-fg, @level-1-bg);
+        color: contrast(darken(@level-2-bg, 3%), @base-fg, @level-1-bg);
 
         &:hover {
           color: @ui-accent;
