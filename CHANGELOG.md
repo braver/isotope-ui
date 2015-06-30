@@ -1,3 +1,6 @@
+# 2.5.0 - Markdown
+* The Markdown Preview tab now has a styling to match the UI.
+
 # 2.4.0 - Minimal mode!
 * Added a truly minimal layout mode!
 * Removed some of the transitions to make it feel more snappy
