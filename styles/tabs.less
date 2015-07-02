@@ -130,7 +130,7 @@ atom-pane .tab-bar .tab.active {
   z-index: 1;
   background: fade(@level-3-bg, 60%);
   min-width: @tab-min-width;
-  border-color: @stroke;
+  // border-color: 1px solid @stroke;
   .title {
     padding-right: 20px; //overrule default
   }
@@ -235,10 +235,14 @@ body:not([data-isotope-ui-minimal='true']) .tab-bar {
   }
   .tab {
     top: @tab-top-padding;
-    border-top-left-radius: @component-border-radius * 1.5;
-    border-top-right-radius: @component-border-radius * 1.5;
-    border: 1px solid transparent;
+    border-top-left-radius: @component-border-radius;
+    border-top-right-radius: @component-border-radius;
     height: ~"calc("@tab-height + @tab-top-padding ~"- 1px)";
+    border: 1px solid transparent;
+    border-bottom: none;
+    &.active {
+        border-color: @stroke;
+    }
   }
 }
 
