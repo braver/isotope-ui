@@ -29,7 +29,8 @@
       line-height: @height;
       color: @color;
       &:before {
-        height: @scale-a-xxxl * 1rem;
+        height: @height;
+        line-height: @height;
       }
       &:hover {
         color: lighten(@color, 12%);
@@ -45,7 +46,7 @@
       &:before {
         line-height: @height;
         min-height: @height;
-        background-color: @level-3-bg;
+        background-color: @level-2-bg;
       }
     }
   }
