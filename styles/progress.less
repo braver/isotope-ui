@@ -43,7 +43,7 @@ progress {
       z-index: 1;
       background: radial-gradient(circle, @ui-accent, mix(@ui-accent, #fff, 50%));
       transform: translate(0);
-      -webkit-animation: animate 3s alternate ease-in-out infinite;
+      -webkit-animation: animate 3s alternate ease-in-out 7; // stop animation after 7 runs (21s) to limit CPU usage
     }
   }
 }
