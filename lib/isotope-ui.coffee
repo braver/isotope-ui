@@ -5,7 +5,7 @@ module.exports =
       description: 'Use one of the fonts available in this package.
         View the README for descriptions of each.'
       type: 'string'
-      default: 'Open Sans'
+      default: 'System Default'
       enum: [
         'Cantarell',
         'Clear Sans',
@@ -21,7 +21,7 @@ module.exports =
       description: 'Not all fonts come in all weights: Canterell and Oxygen
         only have regular, Ubuntu and Open Sans don\'t have thin.'
       type: 'string'
-      default: 'Light'
+      default: 'Regular'
       enum: [
         'Extra light / Thin',
         'Light',
