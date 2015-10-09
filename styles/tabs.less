@@ -199,26 +199,6 @@ atom-pane.active .tab-bar .tab.active {
   }
 }
 
-
-body[data-isotope-ui-spacious='true'] {
-  .tab-bar {
-    height: ~"calc("@tab-height + @tab-top-padding ~"+ 2px)" !important;
-    &:before {
-      top: ~"calc("@tab-height + @tab-top-padding ~"+ 2px)" !important;
-    }
-    .tab {
-      height: ~"calc("@tab-height ~"+ 2px)" !important;
-      line-height: ~"calc("@tab-height ~"+ 1px)" !important;
-    }
-  }
-  atom-pane .tab-bar .tab .title:before {
-    line-height: pow(@scale-b, 4) * 1rem !important;
-  }
-  .tab-bar .tab .close-icon {
-    margin-top: -5px !important;
-  }
-}
-
 body:not([data-isotope-ui-minimal='true']) .tab-bar {
   height: ~"calc("@tab-height + @tab-top-padding ~"- 2px)";
 
