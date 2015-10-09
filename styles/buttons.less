@@ -37,12 +37,16 @@
   }
 
   &:focus,
-  &:hover {
+  &:hover,
+  &:active {
     color: @fg;
+  }
+  &:not([disabled]):focus,
+  &:not([disabled]):hover {
     background-position: 0 0;
     transition: all .1s;
   }
-  &:active {
+  &:not([disabled]):active {
     color: @fg;
     background-image: linear-gradient(
       mix(#00D4FF, @bg-level1 , 3%) 0%,
@@ -50,7 +54,7 @@
       darken(@bg-level1, 12%) 100%);
     background-position: 0 100%;
   }
-  &.selected {
+  &:selected {
     color: @fg-selected;
     background-image: linear-gradient(
       mix(#00D4FF, @bg-level2 , 3%) 0%,
@@ -60,9 +64,11 @@
     background-position: 0 100%;
     &:hover {
       color: @fg-selected;
+    }
+    &:not([disabled]):hover {
       background-position: 0 50%;
     }
-    &:active {
+    &:not([disabled]):active {
       background-position: 0 0;
     }
   }
