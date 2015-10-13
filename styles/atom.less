@@ -62,3 +62,10 @@ code {
   background: @level-2-bg;
   border-radius: @component-border-radius;
 }
+// make panes float
+body:not([zen='true']) {
+  .item-views {
+    border: 1px solid @item-views-stroke;
+    border-top: none;
+  }
+}

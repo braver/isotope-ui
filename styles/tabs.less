@@ -6,7 +6,7 @@
 @tab-text-color: @fg-subtle;
 
 .close-icon-mixin() {
-  margin-top: -8px;
+  margin-top: -9px;
   margin-right: -6px;
   top: 50%;
   right: @scale-a-l * 1rem;
@@ -36,6 +36,19 @@
   overflow-x: auto;
   overflow-y: hidden;
   background: @tab-bar-background-color;
+  height: ~"calc("@tab-height~"- 2px)";
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: ~"calc("@tab-height + @tab-top-padding ~"- 2px)";
+    left: 0;
+    width: 100%;
+    height: 1px;
+    margin-top: -1px;
+    border-top: 1px solid @item-views-stroke;
+    z-index: 1;
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -44,14 +57,14 @@
   .tab {
     max-width: @tab-max-width;
     height: ~"calc("@tab-height ~"- 2px)";
-    line-height: ~"calc("@tab-height ~"- 2px)";
+    line-height: ~"calc("@tab-height ~"- 4px)";
     font-size: inherit;
     padding: 0;
     margin: 0;
     color: @tab-text-color;
     background: transparent;
+    border: 1px solid transparent;
     border-bottom: none;
-    border-top: none;
     text-align: center;
     transition: background .1s;
 
@@ -132,7 +145,7 @@ atom-pane .tab-bar .tab.active {
   z-index: 1;
   background: fade(@level-3-bg, 60%);
   min-width: @tab-min-width;
-  // border-color: 1px solid @stroke;
+  border-color: @item-views-stroke;
   .title {
     padding-right: 20px; //overrule default
   }
@@ -141,7 +154,7 @@ atom-pane .tab-bar .tab.active {
   }
 }
 
-// only show active tab in the active pane
+// active tab in the active pane
 atom-pane.active .tab-bar .tab.active {
   background-color: @tab-background-color-active;
   color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
@@ -201,17 +214,28 @@ atom-pane.active .tab-bar .tab.active {
   }
 }
 
-body:not([data-isotope-ui-minimal='true']) .tab-bar {
-  height: ~"calc("@tab-height + @tab-top-padding ~"- 2px)";
-  .tab {
-    top: @tab-top-padding;
-    border-top-left-radius: @component-border-radius;
-    border-top-right-radius: @component-border-radius;
-    height: ~"calc("@tab-height + @tab-top-padding ~"- 1px)";
+body:not([data-isotope-ui-minimal='true']) {
+  .tab-bar {
+      height: ~"calc("@tab-height + @tab-top-padding ~"- 2px)";
+
+      .tab {
+        top: @tab-top-padding;
+        border-top-left-radius: @component-border-radius;
+        border-top-right-radius: @component-border-radius;
+        height: ~"calc("@tab-height + @tab-top-padding ~"- 1px)";
+        border-bottom: none;
+      }
+    }
+  atom-pane.active .tab-bar .tab.active {
+      box-shadow: inset .5*@tab-height @tab-height @tab-height -1*@tab-height rgba(255,255,255,.1);
   }
 }
+
 body[data-isotope-ui-minimal='true'] {
+  .tab-bar::before {
+    top: ~"calc("@tab-height + @tab-top-padding ~"- 5px)";
+  }
   .tab-bar .tab .close-icon {
-    margin-top: -6px !important;
+    margin-top: -7px !important;
   }
 }
