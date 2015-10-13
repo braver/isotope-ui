@@ -6,9 +6,9 @@ atom-text-editor.mini {
   background: @input-background-color;
   color: @base-fg;
   padding-left: @space;
-  line-height: @component-line-height;
-  max-height: @component-line-height;
-  height: @component-line-height;
+  line-height: ~"calc("@component-line-height ~"+ 2px)";
+  max-height: ~"calc("@component-line-height ~"+ 2px)";
+  height: ~"calc("@component-line-height ~"+ 2px)";
 
   &,
   &::shadow {
