@@ -27,9 +27,25 @@
     &.list-nested-item.selected > .list-item {
       color: @base-fg;
       &:before {
-        border-top-left-radius: @component-border-radius;
-        border-bottom-left-radius: @component-border-radius;
+        box-sizing: content-box;
+        margin-top: -1px;
+        border-top: 1px solid mix(@level-2-bg, @level-3-bg);
+        border-bottom: 1px solid mix(@level-2-bg, @level-3-bg);
         background-color: mix(@level-2-bg, @level-3-bg);
+      }
+    }
+    .icon {
+      padding-left: 22px;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      &[data-name=".gitignore"]::before {
+        top: -1px;
+      }
+      &[data-name="Gruntfile.js"]::before {
+        top: -1px;
       }
     }
 
@@ -65,44 +81,17 @@
       &:not(.list-nested-item).selected,
       &.list-nested-item.selected > .list-item {
         &:before {
-          background: @level-3-bg;
+          background-color: @level-3-bg;
+          border-color: @level-3-bg;
         }
       }
     }
-  }
-}
-
-.tree-view-resizer {
-  padding-left: @space/3;
-}
-
-.right {
-  .tree-view.list-tree {
-    li {
-      &.selected,
-      &:not(.list-nested-item).selected,
-      &.list-nested-item.selected > .list-item {
-        &:before {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          border-top-right-radius: @component-border-radius;
-          border-bottom-right-radius: @component-border-radius;
-        }
-      }
-    }
-  }
-  .tree-view-resizer {
-    padding-left: 0;
-    padding-right: @space/3;
   }
 }
 
 body[data-isotope-ui-minimal='true'] {
-  .tree-view-resizer {
-    padding-left: 0;
-  }
   .tree-view.list-tree {
     padding-top: 0;
-    .project-root(~"calc("@tab-height ~"- 4px)");
+    .project-root(~"calc("@tab-height ~"- 3px)");
   }
 }

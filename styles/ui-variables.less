@@ -4,7 +4,7 @@
 //provide defaults, users can set configs that are handled in config.less
 @font-family: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
 @font-size: 11px;
-@font-weight: 200;
+@font-weight: 400;
 
 
 // a modular scale maintains relations across all sizes and spaces
@@ -76,12 +76,12 @@
 
 
 // foreground
-@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness) * 3.3) );
+@base-fg: hsl(@ui-hue, @ui-saturation, max(24%, (@ui-brightness) * 2.8) );
 
-@fg-subtle: fadeout(@base-fg, 18%);
-@fg-faded: fade(@base-fg, 24%);
-@fg-ignored:  fade(@base-fg, 48%);
-@fg-highlight: hsl(@ui-hue, @ui-saturation, 88%);
+@fg-subtle: mix(@base-fg, @base-bg, 76%);
+@fg-faded: mix(@base-fg, @base-bg, 36%);
+@fg-ignored:  mix(@base-fg, @base-bg, 48%);
+@fg-highlight: hsl(@ui-hue, @ui-saturation, 86%);
 @fg-selected: hsl(@ui-hue, @ui-saturation, 98%);
 
 @fg-info:    hsl(200, 60%, 60%);
@@ -166,6 +166,6 @@
 @component-icon-padding:   @space;
 @component-icon-size:      16/12 * 1rem;
 @component-line-height:    round(@scale-b-xxl) * 1rem;
-@component-border-radius:  2px;
+@component-border-radius:  4px;
 
 @tab-height: @component-line-height + (@scale-b-s * 1rem);

@@ -53,6 +53,7 @@
     border-bottom: none;
     border-top: none;
     text-align: center;
+    transition: background .1s;
 
     &:hover {
       color: @base-fg;
@@ -60,6 +61,7 @@
       .close-icon {
         opacity: 1;
         color: @base-fg;
+        transition: opacity .1s;
       }
     }
 
@@ -201,31 +203,13 @@ atom-pane.active .tab-bar .tab.active {
 
 body:not([data-isotope-ui-minimal='true']) .tab-bar {
   height: ~"calc("@tab-height + @tab-top-padding ~"- 2px)";
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: ~"calc("@tab-height + @tab-top-padding ~"- 2px)";
-    left: 0;
-    width: 100%;
-    height: 1px;
-    margin-top: -1px;
-    background: @stroke;
-    z-index: 1;
-  }
   .tab {
     top: @tab-top-padding;
     border-top-left-radius: @component-border-radius;
     border-top-right-radius: @component-border-radius;
     height: ~"calc("@tab-height + @tab-top-padding ~"- 1px)";
-    border: 1px solid transparent;
-    border-bottom: none;
-    &.active {
-        border-color: @stroke;
-    }
   }
 }
-
 body[data-isotope-ui-minimal='true'] {
   .tab-bar .tab .close-icon {
     margin-top: -6px !important;
