@@ -2,11 +2,7 @@
 
 A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope adapts to match any syntax theme and you can change its appearance quite extensively. It provides an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast.
 
-![flat background](https://github.com/braver/isotope-ui/raw/master/resources/images/flat.png)
-
-![minimal](https://github.com/braver/isotope-ui/raw/master/resources/images/minimal.png)
-
-![image background](https://github.com/braver/isotope-ui/raw/master/resources/images/image.png)
+![isotope](https://github.com/braver/isotope-ui/raw/master/resources/images/minimal.png)
 
 
 
@@ -44,6 +40,3 @@ This package includes a number of fonts that were designed especially for user i
 - Source Sans Pro - Adobe's UI font also used in Brackets (by Paul D. Hunt)
 - Ubuntu - Ubuntu's system font (by Dalton Maag)
 - System default - Attempts to match your OS using this stack: 'Helvetica Neue', 'Segoe UI', Ubuntu, Cantarell, sans-serif
-
-
-Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-ui](https://github.com/atom/one-dark-ui) theme that Isotope was originally forked from.
