@@ -11,5 +11,22 @@ atom-notifications {
     &.has-close .message {
       padding-right: 4rem;
     }
+    .message p {
+      line-height: 1rem;
+    }
+    .close {
+      height: 3rem;
+      line-height: 3rem;
+    }
+    &.icon:before {
+      padding-top: ~"calc((3rem - 16px) / 2)";
+    }
+    .close-all.btn {
+      border: none !important;
+    }
+    .btn.btn-error {
+      height: 2rem;
+      line-height: ~"calc(2rem - 2px)";
+    }
   }
 }
