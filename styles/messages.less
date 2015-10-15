@@ -23,6 +23,31 @@ atom-notifications {
     }
     .close-all.btn {
       border: none !important;
+      color: inherit;
+      &:hover,
+      &:active {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+    }
+    .close-all.btn.btn-error,
+    .btn-copy-report {
+      &:hover,
+      &:active {
+        color: darken(@fg-error, 32%);
+      }
+    }
+    .close-all.btn.btn-warning {
+      &:hover,
+      &:active {
+        color: darken(@fg-warning, 32%);
+      }
+    }
+    .close-all.btn.btn-success {
+      &:hover,
+      &:active {
+        color: darken(@fg-success, 32%);
+      }
     }
     .btn.btn-error {
       height: 2rem;
