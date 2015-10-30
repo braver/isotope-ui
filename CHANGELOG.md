@@ -1,3 +1,6 @@
+# 2.7.0 - Atom 1.1.0
+* Removes Markdown customizations that are now integrated into core
+
 # 2.6.0 - Fresh up
 * Back on track to remain the cleanest UI for Atom!
 * Lots of little tweaks and tucks.

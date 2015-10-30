@@ -156,20 +156,6 @@ atom-pane .tab-bar .tab.active {
 
 // active tab in the active pane
 atom-pane.active .tab-bar .tab.active {
-  background-color: @tab-background-color-active;
-  color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
-
-  .close-icon {
-    color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
-  }
-
-  &:hover .close-icon {
-    color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
-  }
-  &:hover .close-icon:hover {
-    color: @ui-accent;
-  }
-
   &:not([data-type="TextEditor"]) {
     background-color: @level-3-bg;
     color: contrast(@level-3-bg, @base-fg, @level-1-bg);
@@ -181,20 +167,6 @@ atom-pane.active .tab-bar .tab.active {
 
       &:hover {
         color: @ui-accent;
-      }
-    }
-    &[data-type="MarkdownPreviewView"] {
-      background-color: darken(@level-2-bg, 3%);
-      color: contrast(darken(@level-2-bg, 3%), @base-fg, @level-1-bg);
-      & .close-icon {
-        color:contrast(darken(@level-2-bg, 3%), @base-fg, @level-1-bg);
-      }
-      &:hover .close-icon {
-        color: contrast(darken(@level-2-bg, 3%), @base-fg, @level-1-bg);
-
-        &:hover {
-          color: @ui-accent;
-        }
       }
     }
     &[data-type="GitControlView"] {
@@ -210,6 +182,22 @@ atom-pane.active .tab-bar .tab.active {
           color: @ui-accent;
         }
       }
+    }
+  }
+  &,
+  &[data-type="MarkdownPreviewView"] {
+    background-color: @tab-background-color-active;
+    color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
+
+    .close-icon {
+      color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
+    }
+
+    &:hover .close-icon {
+      color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
+    }
+    &:hover .close-icon:hover {
+      color: @ui-accent;
     }
   }
 }
