@@ -10,8 +10,7 @@ atom-text-editor.mini {
   max-height: ~"calc("@component-line-height ~"+ 2px)";
   height: ~"calc("@component-line-height ~"+ 2px)";
 
-  &,
-  &::shadow {
+  & {
     background: @level-3-bg;
     color: @base-fg;
 
@@ -29,8 +28,7 @@ atom-text-editor.mini {
     }
   }
 
-  &.is-focused,
-  &.is-focused::shadow {
+  &.is-focused {
     background: @input-background-color;
     box-shadow: 0 0 0 1px @ui-accent;
     color: @fg-highlight;
