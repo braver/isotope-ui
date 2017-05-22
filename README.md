@@ -1,3 +1,7 @@
+# Looking for maintainers!
+
+This theme desperately needs some attention. Anyone who wants to have a go at it let me know.
+
 # Isotope UI theme
 
 A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope adapts to match any syntax theme and you can change its appearance quite extensively. It provides an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast.
