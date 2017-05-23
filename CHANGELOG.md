@@ -1,3 +1,6 @@
+# 2.8.1
+* Fixed horizontal scrolling on the tree view (broken since Atom v1.17.0)
+
 # 2.8.0
 * Updated the default system font stack
 * Fixed deprecated (since Atom v1.13.0) selectors
