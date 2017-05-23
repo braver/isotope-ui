@@ -1,3 +1,7 @@
+# 2.8.0
+* Updated the default system font stack
+* Fixed deprecated (since Atom v1.13.0) selectors
+
 # 2.7.1
 * Added text-color-modified
 
