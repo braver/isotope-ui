@@ -1,3 +1,6 @@
+# 2.7.1
+* Added text-color-modified
+
 # 2.7.0 - Atom 1.1.0
 * Removes Markdown customizations that are now integrated into core
 
