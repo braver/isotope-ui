@@ -39,4 +39,4 @@ This package includes a number of fonts that were designed especially for user i
 - Roboto - the new font for Android (by Christian Robertson)
 - Source Sans Pro - Adobe's UI font also used in Brackets (by Paul D. Hunt)
 - Ubuntu - Ubuntu's system font (by Dalton Maag)
-- System default - Attempts to match your OS using this stack: 'Helvetica Neue', 'Segoe UI', Ubuntu, Cantarell, sans-serif
+- System default - Attempts to match your OS using this stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
