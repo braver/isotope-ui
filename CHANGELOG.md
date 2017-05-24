@@ -1,4 +1,12 @@
-# 2.8.1
+# 2.8.4
+* Improved linter styling
+* Defaulted TH cells to a normal font weight
+* Improved styling for docks
+* Made tabs widths even and full-width
+* Cleaned up tree view styling
+* Made a few little things more Isotope-ish
+
+# 2.8.1, 2.8.2, 2.8.3
 * Fixed horizontal scrolling on the tree view (broken since Atom v1.17.0)
 
 # 2.8.0
