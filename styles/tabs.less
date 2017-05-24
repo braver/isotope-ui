@@ -1,6 +1,6 @@
 @modified-icon-width: @component-icon-size / 2;
 @tab-top-padding: @space/3;
-@tab-max-width: 160px;
+@tab-max-width: none;
 @tab-min-width: 60px;
 
 @tab-text-color: @fg-subtle;
@@ -226,4 +226,8 @@ body[data-isotope-ui-minimal='true'] {
   .tab-bar .tab .close-icon {
     margin-top: -7px !important;
   }
+}
+
+.tab-bar .tab.active {
+  flex: 1;
 }
