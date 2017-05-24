@@ -70,3 +70,73 @@ code {
 .inset-panel {
   border-radius: 0;
 }
+
+.atom-dock-resize-handle {
+  position: relative;
+  background-color: @stroke;
+}
+
+.atom-dock-toggle-button .atom-dock-toggle-button-inner.left .icon-chevron-left {
+  transform: translateX(11px);
+}
+
+.atom-dock-toggle-button .atom-dock-toggle-button-inner.left .icon-chevron-right {
+  transform: translateX(12px);
+}
+
+.atom-dock-toggle-button .atom-dock-toggle-button-inner.right .icon-chevron-left {
+  transform: translateX(-11px);
+}
+
+.atom-dock-toggle-button .atom-dock-toggle-button-inner.right .icon-chevron-right {
+  transform: translateX(-12px);
+}
+
+.atom-dock-toggle-button .atom-dock-toggle-button-inner.top .icon-chevron-up {
+  transform: translateY(10px);
+}
+
+.atom-dock-toggle-button .atom-dock-toggle-button-inner.top .icon-chevron-down {
+  transform: translateY(11px);
+}
+
+.atom-dock-toggle-button .atom-dock-toggle-button-inner.bottom .icon-chevron-up {
+  transform: translateY(-11px);
+}
+
+.atom-dock-toggle-button .atom-dock-toggle-button-inner.bottom .icon-chevron-down {
+  transform: translateY(-10px);
+}
+
+.atom-dock-resize-handle::before {
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+.atom-dock-resize-handle.left,
+.atom-dock-resize-handle.right {
+  width: 1px;
+
+  &::before {
+    left: -4px;
+    right: -4px;
+  }
+}
+
+.atom-dock-resize-handle.top,
+.atom-dock-resize-handle.bottom {
+  height: 1px;
+
+  &::before {
+    top: -4px;
+    bottom: -4px;
+  }
+}
+
