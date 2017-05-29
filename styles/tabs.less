@@ -79,7 +79,7 @@
     }
 
     .title {
-      padding: 0 20px 0 @space;
+      padding: 0 30px 0 @space;
     }
 
     .close-icon {
@@ -147,7 +147,7 @@ atom-pane .tab-bar .tab.active {
   min-width: @tab-min-width;
   border-color: @item-views-stroke;
   .title {
-    padding-right: 20px; //overrule default
+    padding-right: 30px; //overrule default
   }
   .close-icon {
     opacity: 1;
@@ -228,6 +228,20 @@ body[data-isotope-ui-minimal='true'] {
   }
 }
 
-.tab-bar .tab.active {
-  flex: 1;
+.tab-bar {
+  .tab,
+  .tab.active {
+    flex: 1 1 0;
+    min-width: 7em;
+    max-width: none;
+  }
+}
+
+body[data-isotope-ui-tabsizing="minimum"] .tab-bar {
+  .tab,
+  .tab.active {
+    flex: 0 0 auto;
+    min-width: 2.75em;
+    max-width: 7em * 3.3;
+  }
 }

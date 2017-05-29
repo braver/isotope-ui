@@ -60,6 +60,14 @@ module.exports =
       description: 'Make the layout more minimal.'
       type: 'boolean'
       default: false
+    tabSizing:
+      description: 'In Even mode all tabs will be the same size. Great for quickly closing many tabs. In Minimum mode the tabs will only take as little space as needed and also show longer file names.'
+      type: 'string'
+      default: 'Even'
+      enum: [
+        'Even',
+        'Minimum'
+      ]
 
 
   activate: (state) ->
