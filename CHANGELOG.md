@@ -1,3 +1,6 @@
+# 2.8.5
+* Added the ability to switch between even (2.8.4) or minimum (< 2.8.4) tab sizing styles.
+
 # 2.8.4
 * Improved linter styling
 * Defaulted TH cells to a normal font weight
